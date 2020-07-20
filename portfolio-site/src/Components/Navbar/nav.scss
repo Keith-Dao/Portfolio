@@ -1,0 +1,5 @@
+@import '../Main Styles/colours'; // TODO: Change this to use at a later point
+
+nav{
+    background-color: $primary-colour; // This would need to be changed when @import is changed to @use
+}

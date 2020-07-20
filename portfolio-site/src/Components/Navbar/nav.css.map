@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,mBAAmB;ADEnB,AAAA,GAAG,CAAA;EACC,gBAAgB,ECFH,OAAO;CDGvB",
+    "sources": [
+        "nav.scss",
+        "../Main Styles/_colours.scss"
+    ],
+    "names": [],
+    "file": "nav.css"
+}

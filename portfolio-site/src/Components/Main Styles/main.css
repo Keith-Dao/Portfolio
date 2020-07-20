@@ -1,0 +1,8 @@
+/* Default styling */
+*, *::before, *::after {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=main.css.map */
