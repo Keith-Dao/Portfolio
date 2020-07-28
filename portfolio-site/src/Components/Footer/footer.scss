@@ -1,0 +1,10 @@
+footer{
+    position: relative;
+    bottom: 100%;
+
+    & .footer-content{
+        position: absolute;
+        margin-bottom: -100%;
+        width: 100%;
+    }
+}

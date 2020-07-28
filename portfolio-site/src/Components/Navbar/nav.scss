@@ -1,5 +1,58 @@
-@import '../Main Styles/colours'; // TODO: Change this to use at a later point
+@import '../Main Styles/colours';
 
 nav{
-    background-color: $primary-colour; // This would need to be changed when @import is changed to @use
+    // background-color: $primary-colour;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    
+    & *{
+        display: inline-block;
+        position: relative;
+    }
+
+    & .logo{
+        left: 0;
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 5px 0 5px 5px;
+    }
+
+    & .nav-links-container{
+        position: absolute;
+        right: 0;
+
+        & ul li{
+            padding: 10.5px 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            list-style-type: none;
+            background-color: transparent;
+            $transition-time: 500ms;
+            transition: background-color $transition-time, 
+                        color $transition-time;
+            position: relative;
+            
+            &:hover{
+                background-color: $primary-hover-colour;
+                color: $primary-font-hover-colour;
+                
+                &::after{
+                    transform: scaleX(1);
+                }
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 5px;
+                background-color: $primary-font-hover-colour;
+                left: 0;
+                bottom: 0;
+                transition: transform ease-in-out $transition-time;
+            }
+        }
+    }
 }

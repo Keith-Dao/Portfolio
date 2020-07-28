@@ -1,0 +1,11 @@
+footer {
+  position: relative;
+  bottom: 100%;
+}
+
+footer .footer-content {
+  position: absolute;
+  margin-bottom: -100%;
+  width: 100%;
+}
+/*# sourceMappingURL=footer.css.map */
