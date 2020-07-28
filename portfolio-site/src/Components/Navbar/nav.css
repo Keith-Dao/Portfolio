@@ -1,29 +1,40 @@
 /* Colour Palate */
 nav {
-  width: 100%;
+  margin: 0 auto;
+  width: clamp(0px, 100%, 1920px);
+  height: 50px;
   text-align: left;
   position: relative;
+  display: flexbox;
 }
 
 nav * {
-  display: inline-block;
   position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav .logo {
-  left: 0;
+  left: 1%;
   font-weight: bold;
   font-size: 1.5rem;
-  padding: 5px 0 5px 5px;
 }
 
 nav .nav-links-container {
   position: absolute;
   right: 0;
+  top: 0;
 }
 
 nav .nav-links-container ul li {
-  padding: 10.5px 10px;
+  padding: 10px 10px;
   font-size: 1rem;
   cursor: pointer;
   list-style-type: none;
@@ -46,13 +57,13 @@ nav .nav-links-container ul li:hover::after {
 nav .nav-links-container ul li::after {
   content: '';
   position: absolute;
-  width: 100%;
+  width: calc(100% - 10px);
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  height: 5px;
+  height: 3px;
   background-color: #eee;
-  left: 0;
-  bottom: 0;
+  left: 5px;
+  bottom: 7px;
   -webkit-transition: -webkit-transform ease-in-out 500ms;
   transition: -webkit-transform ease-in-out 500ms;
   transition: transform ease-in-out 500ms;
