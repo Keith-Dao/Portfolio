@@ -1,6 +1,13 @@
+@import 'colours';
+
 /* Default styling */
 *, *::before, *::after{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    color: $primary-font-colour;
+}
+
+body{
+    overflow-x: hidden;
 }
