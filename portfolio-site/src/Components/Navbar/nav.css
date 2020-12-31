@@ -1,38 +1,28 @@
 nav {
-  margin: 0 auto;
-  width: clamp(0px, 100%, 1920px);
-  height: 50px;
-  text-align: left;
+  float: left;
+  width: clamp(50px, 10%, 500px);
+  height: 100vh;
+  text-align: center;
   position: relative;
-  display: flexbox;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #333;
 }
 
 nav * {
   position: relative;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
 }
 
-nav .logo {
-  left: 1%;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-nav .nav-links-container {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-nav .nav-links-container ul li {
+nav ul li {
   padding: 10px 10px;
   font-size: 1rem;
   cursor: pointer;
@@ -43,17 +33,17 @@ nav .nav-links-container ul li {
   position: relative;
 }
 
-nav .nav-links-container ul li:hover {
+nav ul li:hover {
   background-color: #555;
   color: #eee;
 }
 
-nav .nav-links-container ul li:hover::after {
+nav ul li:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
 
-nav .nav-links-container ul li::after {
+nav ul li::after {
   content: '';
   position: absolute;
   width: calc(100% - 10px);

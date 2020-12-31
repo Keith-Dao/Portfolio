@@ -2,64 +2,51 @@
 
 nav{
     // background-color: $primary-colour;
-    margin: 0 auto;
-    width: clamp(0px, 100%, 1920px);
-    height: 50px;
-    text-align: left;
+    float: left;
+    width: clamp(50px, 10%, 500px);
+    height: 100vh;
+    text-align: center;
     position: relative;
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $primary-colour;
     
     & *{
-        // display: inline-block;
         position: relative;
-        height: 100%;
-        display: flex;
-        align-content: center;
-        align-items: center;
+        width: 100%;
     }
 
-    & .logo{
-        left: 1%;
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
-
-    & .nav-links-container{
-        position: absolute;
-        right: 0;
-        top: 0; 
-
-        & ul li{
-            padding: 10px 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            list-style-type: none;
-            background-color: transparent;
-            $transition-time: 500ms;
-            transition: background-color $transition-time, 
-                        color $transition-time;
-            position: relative;
+    & ul li{
+        padding: 10px 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        list-style-type: none;
+        background-color: transparent;
+        $transition-time: 500ms;
+        transition: background-color $transition-time, 
+                    color $transition-time;
+        position: relative;
+        
+        &:hover{
+            background-color: $primary-hover-colour;
+            color: $primary-font-hover-colour;
             
-            &:hover{
-                background-color: $primary-hover-colour;
-                color: $primary-font-hover-colour;
-                
-                &::after{
-                    transform: scaleX(1);
-                }
-            }
-
             &::after{
-                content: '';
-                position: absolute;
-                width: calc(100% - 10px);
-                transform: scaleX(0);
-                height: 3px;
-                background-color: $primary-font-hover-colour;
-                left: 5px;
-                bottom: 7px;
-                transition: transform ease-in-out $transition-time;
+                transform: scaleX(1);
             }
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: calc(100% - 10px);
+            transform: scaleX(0);
+            height: 3px;
+            background-color: $primary-font-hover-colour;
+            left: 5px;
+            bottom: 7px;
+            transition: transform ease-in-out $transition-time;
         }
     }
 }
