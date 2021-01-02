@@ -27,10 +27,11 @@ nav{
         transition: background-color $transition-time, 
                     color $transition-time;
         position: relative;
+        color: $primary-nav-font-colour;
         
         &:hover{
             background-color: $primary-hover-colour;
-            color: $primary-font-hover-colour;
+            color: $primary-nav-font-hover-colour;
             
             &::after{
                 transform: scaleX(1);
@@ -43,7 +44,7 @@ nav{
             width: calc(100% - 10px);
             transform: scaleX(0);
             height: 3px;
-            background-color: $primary-font-hover-colour;
+            background-color: $primary-nav-font-hover-colour;
             left: 5px;
             bottom: 7px;
             transition: transform ease-in-out $transition-time;

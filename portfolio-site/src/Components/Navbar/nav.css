@@ -31,6 +31,7 @@ nav ul li {
   -webkit-transition: background-color 500ms, color 500ms;
   transition: background-color 500ms, color 500ms;
   position: relative;
+  color: #aaa;
 }
 
 nav ul li:hover {
