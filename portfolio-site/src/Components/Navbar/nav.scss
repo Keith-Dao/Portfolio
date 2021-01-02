@@ -1,16 +1,16 @@
 @import '../Main Styles/colours';
 
 nav{
-    // background-color: $primary-colour;
     float: left;
     width: clamp(50px, 10%, 500px);
     height: 100vh;
     text-align: center;
-    position: relative;
+    position: sticky;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: $primary-colour;
+    top: 0;
     
     & *{
         position: relative;

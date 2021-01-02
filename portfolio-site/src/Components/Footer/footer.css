@@ -1,11 +1,14 @@
 footer {
   position: relative;
   bottom: 100%;
+  clear: both;
 }
 
 footer .footer-content {
   position: absolute;
   margin-bottom: -100%;
   width: 100%;
+  background-color: red;
+  height: 50px;
 }
 /*# sourceMappingURL=footer.css.map */
