@@ -52,10 +52,10 @@ nav ul li::after {
   width: calc(100% - 1rem);
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  height: 0.2rem;
+  height: 0.1rem;
   background-color: #eee;
   left: 0.5rem;
-  bottom: 0.45rem;
+  bottom: 0.25rem;
   -webkit-transition: -webkit-transform ease-in-out 500ms;
   transition: -webkit-transform ease-in-out 500ms;
   transition: transform ease-in-out 500ms;

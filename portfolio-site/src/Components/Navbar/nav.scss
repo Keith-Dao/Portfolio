@@ -43,10 +43,10 @@ nav{
             position: absolute;
             width: calc(100% - 1rem);
             transform: scaleX(0);
-            height: 0.2rem;
+            height: 0.1rem;
             background-color: $primary-nav-font-hover-colour;
             left: 0.5rem;
-            bottom: 0.45rem;
+            bottom: 0.25rem;
             transition: transform ease-in-out $transition-time;
         }
     }
