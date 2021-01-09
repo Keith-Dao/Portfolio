@@ -7,7 +7,8 @@ import NavBar from './Components/Navbar/nav';
 import Footer from './Components/Footer/footer';
 import Content from './Components/Content/content'
 
-function App() {
+
+const App = () => {
   const sections = [
     {header: 'resume',
     content: <div>This is where the resume would go.</div>},
@@ -15,9 +16,8 @@ function App() {
     content: <div>This is where the projects would go.</div>},
     {header: 'social',
     content: <div>This is where the social media links would go.</div>}
-  ]
+  ];
 
- 
   return (
     <div className="App">
       <Landing />
@@ -25,7 +25,7 @@ function App() {
       <Content sections={sections}/>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

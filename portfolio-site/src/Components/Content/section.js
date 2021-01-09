@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Section(props){
-    console.log(props)
+const Section = (props) => {
     return (
         <div className="section">
             <div className="section-title">
@@ -11,7 +10,7 @@ function Section(props){
                 {props.content}
             </div>
         </div>
-    );
+    )
 }
 
 export default Section;
