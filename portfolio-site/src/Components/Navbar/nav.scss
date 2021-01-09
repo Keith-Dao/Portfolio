@@ -2,7 +2,7 @@
 
 nav{
     float: left;
-    width: clamp(50px, 10%, 500px);
+    width: clamp(3rem, 10%, 30rem);
     height: 100vh;
     text-align: center;
     position: sticky;
@@ -18,7 +18,7 @@ nav{
     }
 
     & ul li{
-        padding: 10px 10px;
+        padding: 0.625rem;
         font-size: 1rem;
         cursor: pointer;
         list-style-type: none;
@@ -41,12 +41,12 @@ nav{
         &::after{
             content: '';
             position: absolute;
-            width: calc(100% - 10px);
+            width: calc(100% - 1rem);
             transform: scaleX(0);
-            height: 3px;
+            height: 0.2rem;
             background-color: $primary-nav-font-hover-colour;
-            left: 5px;
-            bottom: 7px;
+            left: 0.5rem;
+            bottom: 0.45rem;
             transition: transform ease-in-out $transition-time;
         }
     }
