@@ -1,14 +1,13 @@
 import React from 'react';
-// import './section.css';
 
 function Section(props){
+    console.log(props)
     return (
-        <div class="section">
-            <div class="section-title">
-                {props.title}
+        <div className="section">
+            <div className="section-title">
+                {props.header.replace(/\b\w/g, l => l.toUpperCase())}
             </div>
-            <div class="section-content">
-                This is where the content goes
+            <div className="section-content">
                 {props.content}
             </div>
         </div>

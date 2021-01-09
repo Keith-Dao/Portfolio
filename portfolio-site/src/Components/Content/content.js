@@ -2,12 +2,12 @@ import React from 'react';
 import Section from './section'
 import './content.css';
 
-function Content(){
+function Content(props){
     return (
         <div id="content">
-            <Section title={'Test'} />
-            <Section title={'|'} />
-            <Section title={'123'} />
+            {props.sections.map((section) => 
+                <Section key={"section_"+section.header} header={section.header} content={section.content} />
+            )}
         </div>
     );
 }
