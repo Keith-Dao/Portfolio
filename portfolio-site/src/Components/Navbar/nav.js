@@ -5,9 +5,6 @@ const NavBar = (props) => {
     return (
     <nav id="main-navbar">
         <ul className = "nav-links">
-            <li key="landing"> 
-                Landing page
-            </li>
             {props.sections.map((section) => 
                 <li key={section.header}>
                     {section.header.replace(/\b\w/g, l => l.toUpperCase())}

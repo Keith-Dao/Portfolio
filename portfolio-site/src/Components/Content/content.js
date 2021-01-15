@@ -5,8 +5,10 @@ import './content.css';
 const Content = (props) => {
     return (
         <div id="content">
-            {props.sections.map((section) => 
-                <Section key={"section_"+section.header} header={section.header} content={section.content} />
+            {props.sections
+                .filter((section) => section.content != null)
+                .map((section) => 
+                    <Section key={"section_"+section.header} header={section.header} content={section.content} />
             )}
         </div>
     )

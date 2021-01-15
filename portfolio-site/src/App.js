@@ -10,6 +10,7 @@ import Content from './Components/Content/content'
 
 const App = () => {
   const sections = [
+    {header: 'landing page'},
     {header: 'resume',
     content: <div>This is where the resume would go.</div>},
     {header: 'projects',
