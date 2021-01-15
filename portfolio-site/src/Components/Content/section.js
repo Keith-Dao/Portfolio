@@ -2,12 +2,14 @@ import React from 'react';
 
 const Section = (props) => {
     return (
-        <div className="section">
-            <div className="section-title">
-                {props.header.replace(/\b\w/g, l => l.toUpperCase())}
-            </div>
-            <div className="section-content">
-                {props.content}
+        <div className="section-wrapper">
+            <div className="section">
+                <div className="section-title">
+                    {props.header.replace(/\b\w/g, l => l.toUpperCase())}
+                </div>
+                <div className="section-content">
+                    {props.content}
+                </div>
             </div>
         </div>
     )

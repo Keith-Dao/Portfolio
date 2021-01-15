@@ -1,41 +1,46 @@
 @import '../Main Styles/colours';
 
 #content{
-    margin: 1% 5% 1% 15%;
+    width: 100vw;
+    display: block;
+    background-image: linear-gradient(150deg, rgb(54, 175, 153), red);
+    top: 0;
+    min-height: 100vh;
+    padding: 1% 5% 1% 15%;
 
-    .section{
-        // Border
-        border: 0.125rem solid $primary-colour;
-        border-radius: 0.3rem;
-
+    .section-wrapper {
+        $gradient-angle: 135deg;
         // Positioning
         margin-top: 1.6rem;
-        position: relative;
 
-        // Sizing
-        padding: 1.5rem;
-        width: 100%;
-        min-height: 3rem;
-        
-        .section-title{
-            // Align title
-            display: inline-block;
-            text-align: center;
-            position: absolute;
-           // height: 16px;
-            left: 50%;
-            top: -0.96rem;
-            transform: translate(-50%);
+        // Border
+        border-radius: 0.3rem;
+        background-image: linear-gradient($gradient-angle, $border-colour-glass, rgba(255, 255, 255,0.3));
+        padding: 2px;
 
-            // Change text background
-            padding: 0 3%;
-            background: white;
+        .section{
+            // Border
+            border-radius: 0.3rem;
+
+            // Sizing
+            padding: 0.5rem 1.5rem;
+            width: 100%;
+            min-height: 3rem;
+    
+            // Background
+            background-image: linear-gradient($gradient-angle, rgba(255, 255, 255, 0.5), transparent);
             
-            // Change text
-            color: $primary-colour;
-            font-weight: bold;
-            font-size: 1.6rem;
+            .section-title{
+                // Sizing
+                padding: 0 3%;
+                
+                // Change text
+                color: $primary-colour;
+                font-weight: bold;
+                font-size: 1.6rem;
+            }
+    
         }
-
     }
+    
 }
