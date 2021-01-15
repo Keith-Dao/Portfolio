@@ -28,6 +28,7 @@ nav{
                     color $transition-time;
         position: relative;
         color: $primary-nav-font-colour;
+        font-weight: bold;
         
         &:hover{
             background-color: $primary-hover-colour-glass;

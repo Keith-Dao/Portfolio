@@ -34,6 +34,7 @@ nav div#nav-links button {
   transition: background-color 500ms, color 500ms;
   position: relative;
   color: #aaa;
+  font-weight: bold;
 }
 
 nav div#nav-links button:hover {
