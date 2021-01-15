@@ -4,13 +4,13 @@ import './nav.css';
 const NavBar = (props) => {
     return (
     <nav id="main-navbar">
-        <ul className = "nav-links">
+        <div id="nav-links">
             {props.sections.map((section) => 
-                <li key={section.header}>
+                <button key={section.header} type="button">
                     {section.header.replace(/\b\w/g, l => l.toUpperCase())}
-                </li>
+                </button>
             )}
-        </ul>
+        </div>
     </nav>
     )
     
