@@ -2,7 +2,7 @@ import React from 'react';
 
 const Section = (props) => {
     return (
-        <div className="section-wrapper">
+        <div className="section-wrapper" id={props.header.replace(' ', () => '-')}>
             <div className="section">
                 <div className="section-title">
                     {props.header.replace(/\b\w/g, l => l.toUpperCase())}

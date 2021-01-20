@@ -1,7 +1,8 @@
 @import '../Main Styles/colours';
 
-#landing {
+#landing-page{
     height: 100vh;
     width: 100vw;
     background: red; // Change this later
+    z-index: 1;
 }

@@ -9,12 +9,9 @@ import Content from './Components/Content/content'
 
 const App = () => {
   const sections = [
-    {header: 'landing page',
-    interaction: 'toggle',
-    toggle: ''},
+    {header: 'landing page'},
     {header: 'resume',
-    interaction: 'viewable',
-    viewable: ''},
+    link: 'resume.pdf'}, // TODO add the pdf link
     {header: 'projects',
     content: <div>This is where the projects would go.</div>},
     {header: 'about me',
@@ -26,6 +23,7 @@ const App = () => {
   return (
     <div className="App">
       <Landing />
+      <div className="parallax"></div>
       <NavBar sections={sections}/>
       <Content sections={sections}/>
       <Footer />

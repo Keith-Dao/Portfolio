@@ -16,8 +16,8 @@ nav {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: rgba(51, 51, 51, 0.75);
-  -webkit-backdrop-filter: blur(2rem);
-          backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
   top: 0;
   z-index: 1;
 }
@@ -36,13 +36,13 @@ nav div#nav-links button {
   -webkit-transition: background-color 500ms, color 500ms;
   transition: background-color 500ms, color 500ms;
   position: relative;
-  color: #aaa;
+  color: #fff;
   font-weight: bold;
 }
 
 nav div#nav-links button:hover {
   background-color: rgba(85, 85, 85, 0.75);
-  color: #eee;
+  color: #fff;
 }
 
 nav div#nav-links button:hover::after {
@@ -57,7 +57,7 @@ nav div#nav-links button::after {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   height: 0.1rem;
-  background-color: #eee;
+  background-color: #fff;
   left: 0.5rem;
   bottom: 0.25rem;
   -webkit-transition: -webkit-transform ease-in-out 500ms;

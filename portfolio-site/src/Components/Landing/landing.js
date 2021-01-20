@@ -3,7 +3,7 @@ import './landing.css';
 
 function Landing(){
     return (
-        <div id="landing">
+        <div id="landing-page">
             This is the landing div
         </div>
     );

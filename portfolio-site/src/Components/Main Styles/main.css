@@ -11,4 +11,18 @@
 body {
   overflow-x: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.parallax {
+  background-image: linear-gradient(150deg, #36af99 0%, red 200%);
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
 /*# sourceMappingURL=main.css.map */
