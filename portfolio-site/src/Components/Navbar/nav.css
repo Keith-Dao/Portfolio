@@ -40,7 +40,6 @@ nav div#nav-links button {
 
 nav div#nav-links button:hover {
   background-color: rgba(85, 85, 85, 0.75);
-  color: #fff;
 }
 
 nav div#nav-links button:hover::after {
