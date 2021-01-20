@@ -22,8 +22,6 @@
   width: 100%;
   min-height: 3rem;
   background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent);
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
   min-height: 50vh;
 }
 
