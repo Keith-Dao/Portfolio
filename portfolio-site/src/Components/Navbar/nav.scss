@@ -10,7 +10,9 @@ nav{
     flex-direction: column;
     justify-content: center;
     background-color: $primary-colour-glass;
+    backdrop-filter: blur(2rem);
     top: 0;
+    z-index: 1;
     
     & *{
         position: relative;
