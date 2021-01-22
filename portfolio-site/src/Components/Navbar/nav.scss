@@ -1,54 +1,168 @@
 @import '../Main Styles/colours';
+@import '../Main Styles/breakpoints';
 
 nav{
-    float: left;
-    width: clamp(3rem, 10%, 30rem);
-    height: 100vh;
-    text-align: center;
     position: sticky;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: $primary-colour-glass;
+    width: 100%;
+    height: 2rem;
     top: 0;
     z-index: 1;
-    
-    & *{
-        position: relative;
-        width: 100%;
-    }
 
-    & div#nav-links button{
-        padding: 0.625rem;
-        font-size: 1rem;
-        border-style: none;
+    & label#nav-hamburger-wrapper{
         cursor: pointer;
-        background-color: transparent;
-        $transition-time: 500ms;
-        transition: background-color $transition-time, 
-                    color $transition-time;
-        position: relative;
-        color: $primary-nav-font-colour;
-        font-weight: bold;
+        height: 1.3rem;
+        width: 1rem;
+        display: block;
+        z-index: 2;
+
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
         
-        &:hover{
-            background-color: $primary-hover-colour-glass;
-            
-            &::after{
-                transform: scaleX(1);
-            }
+        &::before, & input::before, & input::after {
+            content: "";
+            width: 100%;
+            height: 0.2rem;
+            display: block;
+            border-radius: 4rem;
+            visibility: visible;
+            position: absolute;
+            cursor: pointer;
+
+            background-color: $primary-nav-font-colour;
+
+            transition: transform 500ms ease-in-out,
+                        opacity 500ms ease-in-out;
         }
 
-        &::after{
-            content: '';
-            position: absolute;
-            width: calc(100% - 1rem);
-            transform: scaleX(0);
-            height: 0.1rem;
-            background-color: $primary-nav-font-colour;
-            left: 0.5rem;
-            bottom: 0.25rem;
-            transition: transform ease-in-out $transition-time;
+        & input{
+            width: 100%;
+            visibility: hidden;
+
+            &::before{
+                top: 0.5rem;
+            }
+
+            &::after{ 
+                top: 1rem;
+            }
+        }
+    }
+
+    & div#nav-links{
+        visibility: hidden;
+        opacity: 0;
+        background-color: $primary-colour-glass;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        $animation-time: 500ms;
+        transition: opacity $animation-time ease-in-out, 
+                    visibility $animation-time ease-in-out;
+
+        & a{
+            width: 60%;
+            
+        }
+        & button{
+            width: 100%;
+            margin: 0 auto;
+            padding: 0.625rem;
+            font-size: 1rem;
+            border-style: none;
+            cursor: pointer;
+            background-color: transparent;
+            color: $primary-nav-font-colour;
+            font-weight: bold;
+        }
+    }
+
+    &.show{
+        & div#nav-links{
+            visibility: visible;
+            opacity: 1;
+        }
+
+        & label#nav-hamburger-wrapper::before{
+            transform: translate(0, 0.5rem) rotate(45deg) ;
+        }
+
+        & input#nav-hamburger::after{
+            transform: translate(0, -0.5rem) rotate(-45deg);
+        }
+
+        & input#nav-hamburger::before{
+            opacity: 0;
+        }
+    }
+
+    @media screen and (min-width: $tablet-landscape-min-width) {
+        float: left;
+        width: clamp(3rem, 10%, 30rem);
+        height: 100vh;
+        text-align: center;
+        background-color: $primary-colour-glass;
+        justify-content: center;
+        
+
+        & label#nav-hamburger-wrapper{
+            display: none;
+        }
+        
+        & div{
+            position: relative;
+            width: 100%;
+        }
+
+        & div#nav-links{
+            visibility: visible;
+            background-color: transparent;
+            height: auto;
+            opacity: 1;
+            position: relative;
+            display: block;
+            width: 100%;
+            
+            & a{
+                width: 100%;
+            }
+
+            & button{
+                width: 100%;
+                $transition-time: 500ms;
+                transition: background-color $transition-time, 
+                            color $transition-time;
+                position: relative;
+                
+                
+                &:hover{
+                    background-color: $primary-hover-colour-glass;
+                    
+                    &::after{
+                        transform: scaleX(1);
+                    }
+                }
+    
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: calc(100% - 1rem);
+                    transform: scaleX(0);
+                    height: 0.1rem;
+                    background-color: $primary-nav-font-colour;
+                    left: 0.5rem;
+                    bottom: 0.25rem;
+                    transition: transform ease-in-out $transition-time;
+                }
+            }
         }
     }
 }

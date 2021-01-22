@@ -1,10 +1,67 @@
 nav {
-  float: left;
-  width: clamp(3rem, 10%, 30rem);
-  height: 100vh;
-  text-align: center;
   position: -webkit-sticky;
   position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 2rem;
+  top: 0;
+  z-index: 1;
+}
+
+nav label#nav-hamburger-wrapper {
+  cursor: pointer;
+  height: 1.3rem;
+  width: 1rem;
+  display: block;
+  z-index: 2;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+nav label#nav-hamburger-wrapper::before, nav label#nav-hamburger-wrapper input::before, nav label#nav-hamburger-wrapper input::after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  display: block;
+  border-radius: 4rem;
+  visibility: visible;
+  position: absolute;
+  cursor: pointer;
+  background-color: #fff;
+  -webkit-transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+nav label#nav-hamburger-wrapper input {
+  width: 100%;
+  visibility: hidden;
+}
+
+nav label#nav-hamburger-wrapper input::before {
+  top: 0.5rem;
+}
+
+nav label#nav-hamburger-wrapper input::after {
+  top: 1rem;
+}
+
+nav div#nav-links {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(51, 51, 51, 0.75);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,51 +72,105 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(51, 51, 51, 0.75);
-  top: 0;
-  z-index: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
 }
 
-nav * {
-  position: relative;
-  width: 100%;
+nav div#nav-links a {
+  width: 60%;
 }
 
 nav div#nav-links button {
+  width: 100%;
+  margin: 0 auto;
   padding: 0.625rem;
   font-size: 1rem;
   border-style: none;
   cursor: pointer;
   background-color: transparent;
-  -webkit-transition: background-color 500ms, color 500ms;
-  transition: background-color 500ms, color 500ms;
-  position: relative;
   color: #fff;
   font-weight: bold;
 }
 
-nav div#nav-links button:hover {
-  background-color: rgba(85, 85, 85, 0.75);
+nav.show div#nav-links {
+  visibility: visible;
+  opacity: 1;
 }
 
-nav div#nav-links button:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+nav.show label#nav-hamburger-wrapper::before {
+  -webkit-transform: translate(0, 0.5rem) rotate(45deg);
+          transform: translate(0, 0.5rem) rotate(45deg);
 }
 
-nav div#nav-links button::after {
-  content: '';
-  position: absolute;
-  width: calc(100% - 1rem);
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  height: 0.1rem;
-  background-color: #fff;
-  left: 0.5rem;
-  bottom: 0.25rem;
-  -webkit-transition: -webkit-transform ease-in-out 500ms;
-  transition: -webkit-transform ease-in-out 500ms;
-  transition: transform ease-in-out 500ms;
-  transition: transform ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
+nav.show input#nav-hamburger::after {
+  -webkit-transform: translate(0, -0.5rem) rotate(-45deg);
+          transform: translate(0, -0.5rem) rotate(-45deg);
+}
+
+nav.show input#nav-hamburger::before {
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    float: left;
+    width: clamp(3rem, 10%, 30rem);
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.75);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  nav label#nav-hamburger-wrapper {
+    display: none;
+  }
+  nav div {
+    position: relative;
+    width: 100%;
+  }
+  nav div#nav-links {
+    visibility: visible;
+    background-color: transparent;
+    height: auto;
+    opacity: 1;
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  nav div#nav-links a {
+    width: 100%;
+  }
+  nav div#nav-links button {
+    width: 100%;
+    -webkit-transition: background-color 500ms, color 500ms;
+    transition: background-color 500ms, color 500ms;
+    position: relative;
+  }
+  nav div#nav-links button:hover {
+    background-color: rgba(85, 85, 85, 0.75);
+  }
+  nav div#nav-links button:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  nav div#nav-links button::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 1rem);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    height: 0.1rem;
+    background-color: #fff;
+    left: 0.5rem;
+    bottom: 0.25rem;
+    -webkit-transition: -webkit-transform ease-in-out 500ms;
+    transition: -webkit-transform ease-in-out 500ms;
+    transition: transform ease-in-out 500ms;
+    transition: transform ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
+  }
 }
 /*# sourceMappingURL=nav.css.map */

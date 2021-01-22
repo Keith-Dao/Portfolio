@@ -12,6 +12,16 @@ body {
   overflow-x: hidden;
 }
 
+body.scroll-lock {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  body.scroll-lock {
+    overflow: scroll;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -1,4 +1,5 @@
 @import 'colours';
+@import 'breakpoints';
 
 /* Default styling */
 *, *::before, *::after{
@@ -13,6 +14,14 @@
 
 body{
     overflow-x: hidden;
+}
+
+body.scroll-lock{
+    overflow: hidden;
+
+    @media screen and (min-width: $tablet-landscape-min-width) {
+        overflow: scroll;
+    }
 }
 
 html{
