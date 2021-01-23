@@ -94,7 +94,7 @@ nav{
 
         // Positioning
         position: fixed;
-        top: 100vh;
+        top: 100vh; // Keep nav off screen to prevent popping on screen change
 
         // Content alignment
         display: flex;
@@ -150,7 +150,7 @@ nav{
             // Show links
             opacity: 1;
             visibility: visible;
-            top: 0;
+            top: 0; // Move nav on screen
         }
 
         & label#nav-hamburger-wrapper{
@@ -201,7 +201,7 @@ nav{
     
             // Positioning
             position: relative;
-            top: 0;
+            top: 0; // Move nav on screen
 
             // Links
             & a{
