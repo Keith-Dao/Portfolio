@@ -3,9 +3,12 @@
 
 /* Default styling */
 *, *::before, *::after{
+    // Remove default browser styling
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
+    // Set default font styling
     color: $primary-font-colour;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,27 +16,35 @@
 }
 
 body{
+    // Prevent scrolling horizontally
     overflow-x: hidden;
 }
 
 body.scroll-lock{
+    // Prevent scrolling
     overflow: hidden;
 
     @media screen and (min-width: $tablet-landscape-min-width) {
+        // Ignore scroll lock when not on mobile
         overflow: scroll;
     }
 }
 
 html{
+    // Allow for smooth scrolling
     scroll-behavior: smooth;
 }
 
-.parallax{    
-    background-image: linear-gradient(150deg, rgb(54, 175, 153) 0%, red 200%);
+.parallax{
+    // Set background colour
+    background-image: linear-gradient(150deg, #555 0%,#0cbfe9 200%);
 
+    // Sizing
     height: 100vh;
     width: 100vw;
     display: block;
+
+    // Positioning
     position: fixed;
     top: 0;
     z-index: -1;

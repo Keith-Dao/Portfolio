@@ -2,8 +2,13 @@
 @import '../Main Styles/breakpoints';
 
 #landing-page{
+    // Sizing
     height: 100vh;
     width: 100vw;
+
+    // Appearance
     background: red; // Change this later
+
+    // Positioning
     z-index: 1;
 }

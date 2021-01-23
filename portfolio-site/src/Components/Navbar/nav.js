@@ -13,7 +13,7 @@ const NavBar = (props) => {
     return (
     <nav id="main-navbar" className={showNav ? 'show' : ''}>
         <label id="nav-hamburger-wrapper"> 
-            <input type="checkbox" id="nav-hamburger" onChange={toggleNavVisibility}></input>
+            <button id="nav-hamburger" onClick={toggleNavVisibility}></button>
         </label>
         <div id="nav-links">
             {props.sections.map((section) => 

@@ -2,164 +2,243 @@
 @import '../Main Styles/breakpoints';
 
 nav{
+    // Positioning
     position: sticky;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 2rem;
     top: 0;
     z-index: 1;
 
+    // Sizing
+    width: 100%;
+    height: 2rem;
+    
+    // Content alignment
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // Font 
+    text-align: center;
+
+    // Hamburger menu
     & label#nav-hamburger-wrapper{
+        // Cursor
         cursor: pointer;
+        
+        // Sizing
         height: 1.3rem;
         width: 1rem;
         display: block;
-        z-index: 2;
-
+        
+        // Positioning
+        z-index: 2; // Keep button at forefront
         position: absolute;
-        right: 0.5rem;
+        right: 1rem;
         top: 0.5rem;
         
-        &::before, & input::before, & input::after {
+        // Hamburger lines
+        &::before, & button::before, & button::after {
+            // Sizing
             content: "";
             width: 100%;
             height: 0.2rem;
             display: block;
-            border-radius: 4rem;
-            visibility: visible;
-            position: absolute;
-            cursor: pointer;
 
+            // Appearance
+            border-radius: 4rem;
             background-color: $primary-nav-font-colour;
 
+            // Positioning
+            position: absolute;
+            
+            // Cursor
+            cursor: pointer;
+
+            // Animation
             transition: transform 500ms ease-in-out,
                         opacity 500ms ease-in-out;
         }
-
-        & input{
+        
+        // Hamburger button
+        & button{
+            // Sizing 
             width: 100%;
-            visibility: hidden;
 
+            // Appearance
+            // Remove browser default
+            background: none;
+            color: transparent;
+            border: none;
+
+            &:focus{
+                outline: none; // Remove default highlighting on focus
+            }
+            
+
+            // Middle hamburger line positioning
             &::before{
                 top: 0.5rem;
             }
-
+            
+            // Bottom hamburger line positioning
             &::after{ 
                 top: 1rem;
             }
         }
     }
 
+    // Navigation links
     & div#nav-links{
-        visibility: hidden;
-        opacity: 0;
-        background-color: $primary-colour-glass;
+        // Sizing
         height: 100vh;
         width: 100vw;
+
+        // Positioning
         position: fixed;
         top: 0;
-        display: flex;
+
+        // Content alignment
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
+        // Appearance
+        background-color: $primary-colour-glass;
+
+        // Animation
         $animation-time: 500ms;
         transition: opacity $animation-time ease-in-out, 
                     visibility $animation-time ease-in-out;
 
+        // Links
         & a{
+            // Sizing
             width: 60%;
-            
         }
+
+        // Buttons
         & button{
+            // Sizing
             width: 100%;
+
+            // Positioning
             margin: 0 auto;
+
+            // Appearance
             padding: 0.625rem;
-            font-size: 1rem;
             border-style: none;
-            cursor: pointer;
             background-color: transparent;
+
+            // Cursor
+            cursor: pointer;
+
+            // Font
+            font-size: 1rem;
             color: $primary-nav-font-colour;
             font-weight: bold;
         }
     }
 
+    // Navbar is being shown
     &.show{
         & div#nav-links{
-            visibility: visible;
-            opacity: 1;
+            // Show links
+            display: flex;
         }
 
-        & label#nav-hamburger-wrapper::before{
-            transform: translate(0, 0.5rem) rotate(45deg) ;
+        & label#nav-hamburger-wrapper{
+            // Positioning
+            position: fixed; // Move button to top right
+
+            &::before{
+                transform: translate(0, 0.5rem) rotate(45deg); // Rotate to make part of the cross
+            }
         }
 
-        & input#nav-hamburger::after{
-            transform: translate(0, -0.5rem) rotate(-45deg);
+        & button#nav-hamburger::after{
+            transform: translate(0, -0.5rem) rotate(-45deg); // Rotate to make other part of the cross
         }
 
-        & input#nav-hamburger::before{
-            opacity: 0;
+        & button#nav-hamburger::before{
+            opacity: 0; // Hide middle line
         }
     }
 
     @media screen and (min-width: $tablet-landscape-min-width) {
+        // Positioning
         float: left;
+
+        // Sizing
         width: clamp(3rem, 10%, 30rem);
         height: 100vh;
-        text-align: center;
+
+        // Appearance
         background-color: $primary-colour-glass;
-        justify-content: center;
         
-
+        // Hamburger menu button
         & label#nav-hamburger-wrapper{
-            display: none;
-        }
-        
-        & div{
-            position: relative;
-            width: 100%;
+            display: none; // Hide button
         }
 
+        // Navigation links
         & div#nav-links{
-            visibility: visible;
-            background-color: transparent;
+            // Sizing
             height: auto;
-            opacity: 1;
-            position: relative;
-            display: block;
             width: 100%;
-            
+            display: block;
+
+            // Appearance
+            background-color: transparent;
+    
+            // Positioning
+            position: relative;
+
+            // Links
             & a{
+                // Sizing
                 width: 100%;
             }
-
+            
+            // Buttons
             & button{
+                // Sizing
                 width: 100%;
+
+                // Positioning
+                position: relative;
+
+                // Animation
                 $transition-time: 500ms;
                 transition: background-color $transition-time, 
                             color $transition-time;
-                position: relative;
                 
                 
                 &:hover{
                     background-color: $primary-hover-colour-glass;
                     
+                    // Underline
                     &::after{
                         transform: scaleX(1);
                     }
                 }
-    
+                
+                // Underline
                 &::after{
+                    // Sizing
                     content: '';
-                    position: absolute;
                     width: calc(100% - 1rem);
-                    transform: scaleX(0);
                     height: 0.1rem;
-                    background-color: $primary-nav-font-colour;
+                    transform: scaleX(0);
+
+                    // Positioning
+                    position: absolute;
                     left: 0.5rem;
                     bottom: 0.25rem;
+
+                    // Appearance
+                    background-color: $primary-nav-font-colour;
+
+                    // Animation
                     transition: transform ease-in-out $transition-time;
                 }
             }
