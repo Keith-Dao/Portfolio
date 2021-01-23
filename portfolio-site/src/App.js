@@ -10,7 +10,7 @@ import Content from './Components/Content/content'
 const App = () => {
   const sections = [
     {header: 'landing page'},
-    {header: 'resume',
+    {header: 'view resume',
     link: 'resume.pdf'}, // TODO add the pdf link
     {header: 'projects',
     content: <div>This is where the projects would go.</div>},
