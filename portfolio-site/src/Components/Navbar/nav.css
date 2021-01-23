@@ -68,7 +68,9 @@ nav div#nav-links {
   width: 100vw;
   position: fixed;
   top: 0;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -79,17 +81,22 @@ nav div#nav-links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(51, 51, 51, 0.75);
+  background-color: rgba(51, 51, 51, 0.85);
+  opacity: 0;
+  visibility: hidden;
   -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
 }
 
 nav div#nav-links a {
   width: 60%;
+  height: 7.5%;
+  margin: 5% 0;
 }
 
 nav div#nav-links button {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 0.625rem;
   border-style: none;
@@ -101,9 +108,8 @@ nav div#nav-links button {
 }
 
 nav.show div#nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 nav.show label#nav-hamburger-wrapper {
@@ -139,13 +145,18 @@ nav.show button#nav-hamburger::before {
     width: 100%;
     display: block;
     background-color: transparent;
+    opacity: 1;
+    visibility: visible;
     position: relative;
   }
   nav div#nav-links a {
     width: 100%;
+    height: auto;
+    margin: auto;
   }
   nav div#nav-links button {
     width: 100%;
+    height: auto;
     position: relative;
     -webkit-transition: background-color 500ms, color 500ms;
     transition: background-color 500ms, color 500ms;

@@ -13,7 +13,7 @@ const NavBar = (props) => {
     return (
     <nav id="main-navbar" className={showNav ? 'show' : ''}>
         <label id="nav-hamburger-wrapper"> 
-            <button id="nav-hamburger" onClick={toggleNavVisibility}></button>
+            <button id="nav-hamburger" onClick={toggleNavVisibility} name="nav-button" aria-label="nav-button"></button>
         </label>
         <div id="nav-links">
             {props.sections.map((section) => 
