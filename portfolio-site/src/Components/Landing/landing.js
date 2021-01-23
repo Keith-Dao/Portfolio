@@ -1,10 +1,23 @@
 import React from 'react';
 import './landing.css';
 
-function Landing(){
+const Landing = () => {
     return (
         <div id="landing-page">
-            This is the landing div
+            <div id="title">
+                <h1>
+                    <div>Keith Dao</div>
+                </h1>
+                <h2>
+                    <div>Computer Science Undergraduate</div>
+                </h2>
+            </div>
+            <div id="scroll-btn">
+                <a href="#main-navbar">
+                    <div className="down arrow"></div>
+                    <div className="down arrow"></div>
+                </a>
+            </div>
         </div>
     );
 }
