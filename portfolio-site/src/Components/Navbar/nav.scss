@@ -94,7 +94,7 @@ nav{
 
         // Positioning
         position: fixed;
-        top: 0;
+        top: 100vh;
 
         // Content alignment
         display: flex;
@@ -110,7 +110,7 @@ nav{
         // Animation
         $animation-time: 500ms;
         transition: opacity $animation-time ease-in-out,
-                    visibility $animation-time ease-in-out;
+                    visibility 0 ease-in-out;
 
         // Links
         & a{
@@ -150,6 +150,7 @@ nav{
             // Show links
             opacity: 1;
             visibility: visible;
+            top: 0;
         }
 
         & label#nav-hamburger-wrapper{
@@ -200,6 +201,7 @@ nav{
     
             // Positioning
             position: relative;
+            top: 0;
 
             // Links
             & a{
