@@ -38,6 +38,15 @@
       align-content: center;
 }
 
+#landing-page div#title div.title-wrapper {
+  min-width: 24rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 #landing-page div#title div.title-wrapper h1 {
   font-size: 5rem;
 }
@@ -51,11 +60,6 @@
 }
 
 #landing-page div#title div.title-wrapper:nth-child(2) {
-  width: 100%;
-  position: absolute;
-  left: 50vw;
-  -webkit-transform: translateX(-50vw);
-          transform: translateX(-50vw);
   -webkit-animation: text-highlights 5s ease-in-out infinite;
           animation: text-highlights 5s ease-in-out infinite;
 }

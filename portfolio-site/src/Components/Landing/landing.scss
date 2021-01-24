@@ -37,7 +37,15 @@
         align-content: center;
 
         & div.title-wrapper{
-            
+            // Sizing
+            min-width: 24rem;
+
+            // Positioning
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
             & h1{
                 // Font
                 font-size: 5rem;
@@ -53,18 +61,12 @@
                 color: $primary-hover-colour-glass;
             }
 
+            // Text highlighter
             &:nth-child(2) {
-                width: 100%;
-                // Positioning
-                position: absolute;
-                left: 50vw;
-                transform: translateX(-50vw);
-
                 // Appearance
                 & *{
                     color: $green;
                 }
-
 
                 // Animation
                 animation: text-highlights 5s ease-in-out infinite;
