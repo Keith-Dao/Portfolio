@@ -1,22 +1,20 @@
 import React from 'react';
 import './landing.css';
-import jsxMultiplier from '../Utility/utility';
 
 const Landing = () => {
     return (
         <div id="landing-page">
             <div id="title">
-                {jsxMultiplier(
-                <div className="title-wrapper">
+                {[...Array(2)].map((e, i) => 
+                    <div className="title-wrapper" key={`title-wrapper-${i}`}>
                         <h1>Keith Dao</h1>
                         <h2>Computer Science Undergraduate</h2>
-                </div>, 2)}
+                    </div>)}
             </div>
             <div id="scroll-btn">
                 <a href="#main-navbar">
-                    {jsxMultiplier(
-                        <div className="down arrow"></div>, 4)
-                    }
+                    {[...Array(4)].map((e, i) => 
+                        <div className="down arrow" key={`arrow-${i}`}></div>)}
                 </a>
             </div>
         </div>
