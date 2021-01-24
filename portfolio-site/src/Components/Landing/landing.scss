@@ -78,10 +78,7 @@
             & div.arrow{
                 // Positioning
                 position: absolute;
-
-                // Appearance
-                border: solid white;
-                border-width: 0 0.5rem 0.5rem 0;
+                z-index: 1;
 
                 // Sizing
                 display: inline-block;
@@ -97,23 +94,31 @@
                 & div.down:nth-child(#{$n}){
                     
                     animation: bobbingArrow#{$n} 3s linear infinite;
-
+                
                     $offset: -0.5 - 1 * $n;
+                    // Synchronised bobbing
                     @keyframes bobbingArrow#{$n} {
-                        0% {
+                        0%, 100% {
                             transform: translate(-50vw, #{$offset}rem) rotate(45deg);
+                            border: solid white;
+                            border-width: 0 0.5rem 0.5rem 0;
                         }
                         50% {
+                            border: solid rgba(255, 255, 255, 0.1);
+                            border-width: 0 0.5rem 0.5rem 0;
                             transform: translate(-50vw, #{$offset + 0.5}rem) rotate(45deg);
                         }
-                        100% {
-                            transform: translate(-50vw, #{$offset}rem) rotate(45deg);
+                        #{50 -  2 / $n * 10 + '%'} {
+                            border: solid rgba(255, 255, 255, 0.2);
+                            border-width: 0 0.5rem 0.5rem 0;
+                        }
+                        #{50 + 2 / $n * 10 + '%'} {
+                            border: solid rgba(255, 255, 255, 0.2);
+                            border-width: 0 0.5rem 0.5rem 0;
                         }
                     }
                 }
             }
-
-            
         }
 
     }
