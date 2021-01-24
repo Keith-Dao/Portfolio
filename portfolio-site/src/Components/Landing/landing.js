@@ -6,20 +6,11 @@ const Landing = () => {
     return (
         <div id="landing-page">
             <div id="title">
+                {jsxMultiplier(
                 <div className="title-wrapper">
-                    {jsxMultiplier(
-                        <h1>
-                            Keith Dao
-                        </h1>, 2)
-                    }
-                </div>
-                <div className="title-wrapper">
-                    {jsxMultiplier(
-                        <h2>
-                        Computer Science Undergraduate
-                        </h2>, 2)
-                    }
-                </div>
+                        <h1>Keith Dao</h1>
+                        <h2>Computer Science Undergraduate</h2>
+                </div>, 2)}
             </div>
             <div id="scroll-btn">
                 <a href="#main-navbar">

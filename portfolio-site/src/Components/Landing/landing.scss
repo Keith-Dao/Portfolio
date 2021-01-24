@@ -10,6 +10,7 @@
     background: black; // Change this later
 
     // Positioning
+    position: relative;
     z-index: 1;
 
     // Content Alignment
@@ -36,9 +37,7 @@
         align-content: center;
 
         & div.title-wrapper{
-            // Positioning
-            position: relative;
-
+            
             & h1{
                 // Font
                 font-size: 5rem;
@@ -49,37 +48,38 @@
                 font-size: 2.5rem;
             }
 
-            // This is the inline text item
-            & *:nth-child(1){
+            & *{
                 // Appearance
                 color: $primary-hover-colour-glass;
             }
 
-            @for $n from 1 through 2{
-                &:nth-child(#{$n}) *:nth-child(2) {
-                    // Positioning
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
+            &:nth-child(2) {
+                width: 100%;
+                // Positioning
+                position: absolute;
+                left: 50vw;
+                transform: translateX(-50vw);
 
-                    // Sizing
-                    width: 100%;
-                    height: 6rem;
-    
-                    // Appearance
+                // Appearance
+                & *{
                     color: $green;
+                }
 
-                    // Animation
-                    animation: text-highlight#{$n} 3s ease-in-out infinite;
-                    @keyframes text-highlight#{$n} {
-                        $offset: ($n - 1) * 10; // Offset so they appear to be one
-                        0% {
-                            clip-path: polygon(#{10 - $offset}% 0%, #{20 -$offset}% 0%, #{10 - $offset}% 100%, #{0 -$offset}% 100%);
-                        }
-                        100% {
-                            clip-path: polygon(#{100 - $offset}% 0%, #{110 - $offset}% 0%, #{100 -$offset}% 100%, #{90 - $offset}% 100%);
-                        }
+
+                // Animation
+                animation: text-highlights 5s ease-in-out infinite;
+                @keyframes text-highlights {
+                    0% {
+                        clip-path: polygon(-15% 0%, 0% 0%, -7.5% 100%, -22.5% 100%);
+                    }
+                    50% {
+                        clip-path: polygon(107.5% 0%, 122.5% 0%, 115% 100%, 100% 100%);
+                    }
+                    51% {
+                        clip-path: polygon(100% 0%, 115% 0%, 122.5% 100%, 107.5% 100%);
+                    }
+                    100% {
+                        clip-path: polygon(-22.5% 0%, -7.5% 0%, 0% 100%, -15% 100%);
                     }
                 }
             }
