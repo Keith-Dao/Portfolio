@@ -53,8 +53,7 @@
             // This is the inline text item
             & *:nth-child(1){
                 // Appearance
-                color: transparent;
-                -webkit-text-stroke: 1px white;
+                color: $primary-hover-colour-glass;
             }
 
             @for $n from 1 through 2{
@@ -93,12 +92,11 @@
         // Positioning
         position: relative;
         margin: 0 auto;
-        bottom: 1rem;
+        bottom: 2rem;
 
         // Sizing
         width: 100vw;
         height: 2rem;
-        display: block;
 
         & a{
             // Sizing
@@ -110,50 +108,45 @@
             position: relative;
             margin: 0 auto;
 
-            & div.arrow{
+            & div.arrow.down{
                 // Positioning
                 position: absolute;
                 z-index: 1;
 
                 // Sizing
-                display: inline-block;
+                content: "";
                 width: 100%;
                 height: 100%;
-            }
 
-            & div.down{
-                left: 50vw;
-            }
+                // Appearance
+                border: solid $primary-hover-colour-glass;
+                border-width: 0 0.5rem 0.5rem 0 !important;
+                transform: rotate(45deg);
 
-            @for $n from 1 through 2{
-                & div.down:nth-child(#{$n}){
-                    
-                    animation: bobbingArrow#{$n} 3s linear infinite;
-                
-                    $offset: -0.5 - 1 * $n;
-                    // Synchronised bobbing
-                    @keyframes bobbingArrow#{$n} {
+                // Last two arrows
+                &:nth-child(n + 3) {
+                    // Positioning
+                    top: -1rem;
+                }
+
+                // Every second arrow 
+                &:nth-child(2n) {
+                    border: solid $green;
+                    animation: flashing 3s ease-in-out infinite;
+                    // clip-path: polygon(0% -50%, 150% 100%, 100% 150%, -50% 0%);
+
+                    @keyframes flashing {
                         0%, 100% {
-                            transform: translate(-50vw, #{$offset}rem) rotate(45deg);
-                            border: solid white;
-                            border-width: 0 0.5rem 0.5rem 0;
+                            clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
                         }
-                        50% {
-                            border: solid rgba(255, 255, 255, 0.1);
-                            border-width: 0 0.5rem 0.5rem 0;
-                            transform: translate(-50vw, #{$offset + 0.5}rem) rotate(45deg);
-                        }
-                        #{50 -  2 / $n * 10 + '%'} {
-                            border: solid rgba(255, 255, 255, 0.2);
-                            border-width: 0 0.5rem 0.5rem 0;
-                        }
-                        #{50 + 2 / $n * 10 + '%'} {
-                            border: solid rgba(255, 255, 255, 0.2);
-                            border-width: 0 0.5rem 0.5rem 0;
+                        50% { 
+                            clip-path: polygon(75% -125%, 225% 25%, 175% 75%, 25% -75%);
                         }
                     }
                 }
             }
+
+            
         }
 
     }

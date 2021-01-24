@@ -50,8 +50,7 @@
 }
 
 #landing-page div#title div.title-wrapper *:nth-child(1) {
-  color: transparent;
-  -webkit-text-stroke: 1px white;
+  color: rgba(85, 85, 85, 0.75);
 }
 
 #landing-page div#title div.title-wrapper:nth-child(1) *:nth-child(2) {
@@ -127,10 +126,9 @@
 #landing-page div#scroll-btn {
   position: relative;
   margin: 0 auto;
-  bottom: 1rem;
+  bottom: 2rem;
   width: 100vw;
   height: 2rem;
-  display: block;
 }
 
 #landing-page div#scroll-btn a {
@@ -141,117 +139,47 @@
   margin: 0 auto;
 }
 
-#landing-page div#scroll-btn a div.arrow {
+#landing-page div#scroll-btn a div.arrow.down {
   position: absolute;
   z-index: 1;
-  display: inline-block;
+  content: "";
   width: 100%;
   height: 100%;
+  border: solid rgba(85, 85, 85, 0.75);
+  border-width: 0 0.5rem 0.5rem 0 !important;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
-#landing-page div#scroll-btn a div.down {
-  left: 50vw;
+#landing-page div#scroll-btn a div.arrow.down:nth-child(n + 3) {
+  top: -1rem;
 }
 
-#landing-page div#scroll-btn a div.down:nth-child(1) {
-  -webkit-animation: bobbingArrow1 3s linear infinite;
-          animation: bobbingArrow1 3s linear infinite;
+#landing-page div#scroll-btn a div.arrow.down:nth-child(2n) {
+  border: solid #32dd62;
+  -webkit-animation: flashing 3s ease-in-out infinite;
+          animation: flashing 3s ease-in-out infinite;
 }
 
-@-webkit-keyframes bobbingArrow1 {
+@-webkit-keyframes flashing {
   0%, 100% {
-    -webkit-transform: translate(-50vw, -1.5rem) rotate(45deg);
-            transform: translate(-50vw, -1.5rem) rotate(45deg);
-    border: solid white;
-    border-width: 0 0.5rem 0.5rem 0;
+    -webkit-clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
+            clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
   }
   50% {
-    border: solid rgba(255, 255, 255, 0.1);
-    border-width: 0 0.5rem 0.5rem 0;
-    -webkit-transform: translate(-50vw, -1rem) rotate(45deg);
-            transform: translate(-50vw, -1rem) rotate(45deg);
-  }
-  30% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-  70% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
+    -webkit-clip-path: polygon(75% -125%, 225% 25%, 175% 75%, 25% -75%);
+            clip-path: polygon(75% -125%, 225% 25%, 175% 75%, 25% -75%);
   }
 }
 
-@keyframes bobbingArrow1 {
+@keyframes flashing {
   0%, 100% {
-    -webkit-transform: translate(-50vw, -1.5rem) rotate(45deg);
-            transform: translate(-50vw, -1.5rem) rotate(45deg);
-    border: solid white;
-    border-width: 0 0.5rem 0.5rem 0;
+    -webkit-clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
+            clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
   }
   50% {
-    border: solid rgba(255, 255, 255, 0.1);
-    border-width: 0 0.5rem 0.5rem 0;
-    -webkit-transform: translate(-50vw, -1rem) rotate(45deg);
-            transform: translate(-50vw, -1rem) rotate(45deg);
-  }
-  30% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-  70% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-}
-
-#landing-page div#scroll-btn a div.down:nth-child(2) {
-  -webkit-animation: bobbingArrow2 3s linear infinite;
-          animation: bobbingArrow2 3s linear infinite;
-}
-
-@-webkit-keyframes bobbingArrow2 {
-  0%, 100% {
-    -webkit-transform: translate(-50vw, -2.5rem) rotate(45deg);
-            transform: translate(-50vw, -2.5rem) rotate(45deg);
-    border: solid white;
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-  50% {
-    border: solid rgba(255, 255, 255, 0.1);
-    border-width: 0 0.5rem 0.5rem 0;
-    -webkit-transform: translate(-50vw, -2rem) rotate(45deg);
-            transform: translate(-50vw, -2rem) rotate(45deg);
-  }
-  40% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-  60% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-}
-
-@keyframes bobbingArrow2 {
-  0%, 100% {
-    -webkit-transform: translate(-50vw, -2.5rem) rotate(45deg);
-            transform: translate(-50vw, -2.5rem) rotate(45deg);
-    border: solid white;
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-  50% {
-    border: solid rgba(255, 255, 255, 0.1);
-    border-width: 0 0.5rem 0.5rem 0;
-    -webkit-transform: translate(-50vw, -2rem) rotate(45deg);
-            transform: translate(-50vw, -2rem) rotate(45deg);
-  }
-  40% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
-  }
-  60% {
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 0 0.5rem 0.5rem 0;
+    -webkit-clip-path: polygon(75% -125%, 225% 25%, 175% 75%, 25% -75%);
+            clip-path: polygon(75% -125%, 225% 25%, 175% 75%, 25% -75%);
   }
 }
 /*# sourceMappingURL=landing.css.map */

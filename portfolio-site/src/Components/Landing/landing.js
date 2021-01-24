@@ -26,6 +26,8 @@ const Landing = () => {
                 <a href="#main-navbar">
                     <div className="down arrow"></div>
                     <div className="down arrow"></div>
+                    <div className="down arrow"></div>
+                    <div className="down arrow"></div>
                 </a>
             </div>
         </div>
