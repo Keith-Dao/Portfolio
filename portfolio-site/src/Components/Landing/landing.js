@@ -5,12 +5,22 @@ const Landing = () => {
     return (
         <div id="landing-page">
             <div id="title">
-                <h1>
-                    <div>Keith Dao</div>
-                </h1>
-                <h2>
-                    <div>Computer Science Undergraduate</div>
-                </h2>
+                <div className="title-wrapper">
+                    <h1>
+                        Keith Dao
+                    </h1>
+                    <h1>
+                        Keith Dao
+                    </h1>
+                </div>
+                <div className="title-wrapper">
+                    <h2>
+                        Computer Science Undergraduate
+                    </h2>
+                    <h2>
+                        Computer Science Undergraduate
+                    </h2>
+                </div>
             </div>
             <div id="scroll-btn">
                 <a href="#main-navbar">
