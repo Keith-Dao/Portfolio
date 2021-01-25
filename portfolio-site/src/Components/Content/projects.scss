@@ -59,17 +59,21 @@ div#project-wrapper{
                     // Animation
                     transition: transform 250ms linear;
                 }
-
+                
+                // Move indicator when the check box is toggled
                 .toggle-state:checked ~ .toggle-indicator {
                     transform: translateX(50%);
                   }
             }
 
-
-
             // Layout description text
             & div.label-text{
+                // Sizing
                 width: 6rem;
+
+                // Font
+                line-height: 1;
+                font-weight: 500;
             }
         }
     }

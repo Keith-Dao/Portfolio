@@ -54,5 +54,7 @@ div#project-wrapper div#layout-selector label div.toggle .toggle-state:checked ~
 
 div#project-wrapper div#layout-selector label div.label-text {
   width: 6rem;
+  line-height: 1;
+  font-weight: 500;
 }
 /*# sourceMappingURL=projects.css.map */
