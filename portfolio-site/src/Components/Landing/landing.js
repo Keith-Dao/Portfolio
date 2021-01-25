@@ -12,7 +12,7 @@ const Landing = () => {
                     </div>)}
             </div>
             <div id="scroll-btn">
-                <a href="#main-navbar">
+                <a href="#main-navbar" aria-label="Jump to content">
                     {[...Array(4)].map((e, i) => 
                         <div className="down arrow" key={`arrow-${i}`}></div>)}
                 </a>
