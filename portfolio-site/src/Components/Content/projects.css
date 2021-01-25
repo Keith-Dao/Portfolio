@@ -1,0 +1,58 @@
+div#project-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+div#project-wrapper div#layout-selector {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+}
+
+div#project-wrapper div#layout-selector label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+div#project-wrapper div#layout-selector label input[type=checkbox] {
+  display: none;
+}
+
+div#project-wrapper div#layout-selector label div.toggle {
+  width: 2rem;
+  height: 1rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+div#project-wrapper div#layout-selector label div.toggle div.toggle-indicator {
+  height: inherit;
+  width: inherit;
+  border-radius: inherit;
+  background: grey;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: -webkit-transform 250ms linear;
+  transition: -webkit-transform 250ms linear;
+  transition: transform 250ms linear;
+  transition: transform 250ms linear, -webkit-transform 250ms linear;
+}
+
+div#project-wrapper div#layout-selector label div.toggle .toggle-state:checked ~ .toggle-indicator {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+div#project-wrapper div#layout-selector label div.label-text {
+  width: 6rem;
+}
+/*# sourceMappingURL=projects.css.map */

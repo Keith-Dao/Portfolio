@@ -18,6 +18,7 @@
     .section-wrapper {
         $gradient-angle: 135deg;
         // Positioning
+        position: relative;
         z-index: 2;
         margin: 1rem 10% 0 10%;
 
@@ -40,14 +41,12 @@
             // Background
             background-image: linear-gradient($gradient-angle, rgba(255, 255, 255, 0.5), transparent);
             
-            .section-title{
-                // Sizing
-                padding: 0 3%;
-                
+            .section-title{                
                 // Font
                 color: $primary-colour;
                 font-weight: bold;
                 font-size: 1.6rem;
+                text-align: left;
             }
     
         }

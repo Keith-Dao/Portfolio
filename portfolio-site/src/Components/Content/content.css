@@ -8,6 +8,7 @@
 }
 
 #content .section-wrapper {
+  position: relative;
   z-index: 2;
   margin: 1rem 10% 0 10%;
   border-radius: 0.3rem;
@@ -25,10 +26,10 @@
 }
 
 #content .section-wrapper .section .section-title {
-  padding: 0 3%;
   color: #333;
   font-weight: bold;
   font-size: 1.6rem;
+  text-align: left;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,19 +1,23 @@
 import React from 'react';
+import { useState } from 'react'; 
 import './App.css';
 import './Components/Main Styles/main.css';
 // React components
 import Landing from './Components/Landing/landing'
 import NavBar from './Components/Navbar/nav';
 import Footer from './Components/Footer/footer';
-import Content from './Components/Content/content'
+import Content from './Components/Content/content';
+import Project from './Components/Content/projects';
 
 const App = () => {
+  const [showSlideShow, toggleSlideShow] = useState(true);
+
   const sections = [
     {header: 'landing page'},
     {header: 'view resume',
     link: 'resume.pdf'}, // TODO add the pdf link
     {header: 'projects',
-    content: <div>This is where the projects would go.</div>},
+    content: <Project showSlideShow={showSlideShow} toggleSlideShow={toggleSlideShow} projects={[]}/>},
     {header: 'about me',
     content: <div>This is where info about me would go.</div>},
     {header: 'social',

@@ -1,0 +1,76 @@
+div#project-wrapper{
+    // Sizing
+    width: 100%;
+    height: 100%;
+
+    & div#layout-selector{
+        // Positioning
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+
+        & label{
+            // Content Alignment
+            display: flex;
+            justify-content: space-between;
+
+            // Cursor
+            cursor: pointer;
+            
+            // Checkbox
+            & input[type=checkbox]{
+                // Appearance
+                display: none;
+            }
+
+            // Toggle
+            & div.toggle{
+                // Sizing
+                width: 2rem;
+                height: 1rem;
+
+                // Border
+                border: 1px solid white;
+                border-radius: 1rem;
+
+                // Appearance
+                overflow: hidden;
+
+                // Positioning
+                position: relative;
+
+                // Indicator
+                & div.toggle-indicator{
+                    // Sizing
+                    height: inherit;
+                    width: inherit;
+                   
+                    // Border
+                    border-radius: inherit;
+
+                    // Appearance
+                    background: grey;
+
+                    // Positioning
+                    position: absolute;
+                    top: 0;
+                    transform: translateX(-50%);
+
+                    // Animation
+                    transition: transform 250ms linear;
+                }
+
+                .toggle-state:checked ~ .toggle-indicator {
+                    transform: translateX(50%);
+                  }
+            }
+
+
+
+            // Layout description text
+            & div.label-text{
+                width: 6rem;
+            }
+        }
+    }
+}
