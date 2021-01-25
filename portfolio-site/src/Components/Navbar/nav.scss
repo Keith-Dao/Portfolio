@@ -139,7 +139,7 @@ nav{
 
             // Font
             font-size: 1rem;
-            color: $primary-nav-font-colour;
+            color: $green;
             font-weight: bold;
         }
     }
@@ -229,8 +229,12 @@ nav{
                 
                 
                 &:hover{
+                    // Background
                     background-color: $primary-hover-colour-glass;
                     
+                    // Font
+                    color: $green;
+
                     // Underline
                     &::after{
                         transform: scaleX(1);
@@ -251,7 +255,7 @@ nav{
                     bottom: 0.25rem;
 
                     // Appearance
-                    background-color: $primary-nav-font-colour;
+                    background-color: $green;
 
                     // Animation
                     transition: transform ease-in-out $transition-time;
