@@ -59,7 +59,7 @@
 }
 
 #landing-page div#title div.title-wrapper * {
-  color: rgba(85, 85, 85, 0.75);
+  color: #6f6f6f;
 }
 
 #landing-page div#title div.title-wrapper:nth-child(2) {
@@ -131,7 +131,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  border: solid rgba(85, 85, 85, 0.75);
+  border: solid #555;
   border-width: 0 0.5rem 0.5rem 0 !important;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);

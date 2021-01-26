@@ -63,7 +63,7 @@ $animation-duration: 5s;
 
             & *{
                 // Appearance
-                color: $primary-hover-colour-glass;
+                color: rgb(111, 111, 111);
             }
 
             // Text highlighter
@@ -125,7 +125,7 @@ $animation-duration: 5s;
                 height: 100%;
 
                 // Appearance
-                border: solid $primary-hover-colour-glass;
+                border: solid $primary-hover-colour;
                 border-width: 0 0.5rem 0.5rem 0 !important;
                 transform: rotate(45deg);
 
