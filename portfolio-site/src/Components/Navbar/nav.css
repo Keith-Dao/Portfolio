@@ -1,6 +1,5 @@
 nav {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
@@ -133,7 +132,10 @@ nav.show button#nav-hamburger::before {
 
 @media screen and (min-width: 768px) {
   nav {
+    position: -webkit-sticky;
+    position: sticky;
     float: left;
+    top: 0rem;
     width: clamp(3rem, 10%, 30rem);
     height: 100vh;
     background-color: rgba(51, 51, 51, 0.75);

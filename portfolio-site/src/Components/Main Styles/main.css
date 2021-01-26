@@ -10,6 +10,7 @@
 
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 body.scroll-lock {
@@ -34,5 +35,22 @@ html {
   position: fixed;
   top: 0;
   z-index: -1;
+  float: left;
+}
+
+div.App {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  div.App {
+    overflow: initial;
+  }
+}
+
+div#contents-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
 }
 /*# sourceMappingURL=main.css.map */

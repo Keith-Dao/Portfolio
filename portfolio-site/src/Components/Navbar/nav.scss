@@ -3,7 +3,7 @@
 
 nav{
     // Positioning
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1;
 
@@ -173,7 +173,9 @@ nav{
 
     @media screen and (min-width: $tablet-landscape-min-width) {
         // Positioning
+        position: sticky;
         float: left;
+        top: 0rem;
 
         // Sizing
         width: clamp(3rem, 10%, 30rem);

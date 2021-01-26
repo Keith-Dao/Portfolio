@@ -1,13 +1,10 @@
 footer {
-  position: relative;
-  bottom: 100%;
-  clear: both;
+  clear: left;
 }
 
 footer .footer-content {
-  position: absolute;
-  margin-bottom: -100%;
-  width: 100%;
+  bottom: 0;
+  width: 100vw;
   background-color: red;
   height: 3.5rem;
 }

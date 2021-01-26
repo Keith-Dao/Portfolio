@@ -27,9 +27,11 @@ const App = () => {
   return (
     <div className="App">
       <Landing />
-      <div className="parallax"></div>
-      <NavBar sections={sections}/>
-      <Content sections={sections}/>
+      <div id="contents-wrapper">
+        <div className="parallax"></div>
+        <NavBar sections={sections}/>
+        <Content sections={sections}/>
+      </div>
       <Footer />
     </div>
   )

@@ -18,6 +18,8 @@
 body{
     // Prevent scrolling horizontally
     overflow-x: hidden;
+
+    position: relative;
 }
 
 body.scroll-lock{
@@ -48,4 +50,21 @@ html{
     position: fixed;
     top: 0;
     z-index: -1;
+    float: left;
+}
+
+div.App{
+    // Prevent horizontal scrolling
+    overflow: hidden;
+
+    @media screen and (min-width: $tablet-landscape-min-width) {
+        overflow: initial;
+    }
+}
+
+div#contents-wrapper{
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    //padding-top: 100vh;
 }
