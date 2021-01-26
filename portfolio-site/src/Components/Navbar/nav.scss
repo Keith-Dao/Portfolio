@@ -154,7 +154,7 @@ nav{
 
             & button{
                 // Appearance
-                color: $green;
+                color: $accent-colour;
             }
         }
 
@@ -240,12 +240,12 @@ nav{
                     background-color: $primary-hover-colour-glass;
                     
                     // Font
-                    color: $green;
+                    color: $accent-colour;
 
                     // Underline
                     &::after{
                         // Appearance
-                        background-color: $green;
+                        background-color: $accent-colour;
                         transform: scaleX(1);
                     }
                 }

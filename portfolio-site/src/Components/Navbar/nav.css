@@ -80,7 +80,7 @@ nav div#nav-links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(51, 51, 51, 0.85);
+  background-color: #333333d9;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 500ms ease-in-out, visibility 0 ease-in-out;
@@ -142,7 +142,7 @@ nav.show button#nav-hamburger::before {
     top: 0rem;
     width: clamp(3rem, 10%, 30rem);
     height: 100vh;
-    background-color: rgba(51, 51, 51, 0.75);
+    background-color: #333333bf;
   }
   nav label#nav-hamburger-wrapper {
     display: none;
@@ -170,7 +170,7 @@ nav.show button#nav-hamburger::before {
     transition: background-color ease-in-out 500ms, color ease-in-out 500ms;
   }
   nav div#nav-links button:hover {
-    background-color: rgba(85, 85, 85, 0.75);
+    background-color: #555555bf;
     color: #32dd62;
   }
   nav div#nav-links button:hover::after {

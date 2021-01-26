@@ -18,7 +18,7 @@ div#contents-wrapper {
   z-index: 1;
   margin: 1rem 10% 0 10%;
   border-radius: 0.3rem;
-  background-image: linear-gradient(135deg, rgba(221, 221, 221, 0.5), rgba(255, 255, 255, 0.3));
+  background-image: linear-gradient(135deg, #dddddd80, rgba(255, 255, 255, 0.3));
   padding: 2px;
 }
 

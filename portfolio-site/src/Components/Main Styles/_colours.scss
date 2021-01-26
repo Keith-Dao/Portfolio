@@ -1,11 +1,15 @@
+// Colour palette
 $primary-colour: #333;
 $primary-hover-colour: #555;
+$secondary-colour: #ddd;
+$accent-colour: #32dd62;
 
-$primary-colour-glass: rgba(51, 51, 51, 0.75);
-$primary-colour-darker-glass: rgba(51, 51, 51, 0.85);
-$primary-hover-colour-glass: rgba(85, 85, 85, 0.75);
-$border-colour-glass: rgba(221, 221, 221, 0.5);
-$green: rgb(50, 221, 98);
+// Glass colours
+$primary-colour-glass: #333333bf;
+$primary-colour-darker-glass: #333333d9;
+$primary-hover-colour-glass: #555555bf;
+$border-colour-glass: #dddddd80;
 
+// Font colours
 $primary-font-colour: #333;
 $primary-nav-font-colour: #fff;
