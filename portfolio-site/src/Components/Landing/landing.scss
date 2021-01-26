@@ -10,7 +10,7 @@ $animation-duration: 5s;
     max-width: 100%;
 
     // Appearance
-    background: black; // Change this later
+    background: $secondary-colour;
 
     // Positioning
     position: absolute;
@@ -22,9 +22,6 @@ $animation-duration: 5s;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
-
-    // Font
-    color: #bbb;
 
     // Title
     & div#title{
@@ -42,13 +39,38 @@ $animation-duration: 5s;
 
         & div.title-wrapper{
             // Sizing
-            width: clamp(0, 20rem, 100%);
+            width: clamp(0%, 24rem, 100%);
 
             // Positioning
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            // Appearance
+            background-size: 300%;
+            background-clip: text;
+
+            // Animation
+            animation: text-highlights $animation-duration ease-in-out infinite;
+            @keyframes text-highlights {
+                0% {
+                    background-image: linear-gradient(135deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
+                    background-position: 100% 0%;
+                }
+                50% {
+                    background-image: linear-gradient(135deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
+                    background-position: 10% 0%;
+                }
+                51% {
+                    background-image: linear-gradient(45deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
+                    background-position: 10% 0%;
+                }
+                100% {
+                    background-image: linear-gradient(45deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
+                    background-position: 100% 0%;
+                }
+            }
 
             & h1{
                 // Font
@@ -63,32 +85,8 @@ $animation-duration: 5s;
 
             & *{
                 // Appearance
-                color: rgb(111, 111, 111);
-            }
-
-            // Text highlighter
-            &:nth-child(2) {
-                // Appearance
-                & *{
-                    color: $green;
-                }
-
-                // Animation
-                animation: text-highlights $animation-duration ease-in-out infinite;
-                @keyframes text-highlights {
-                    0% {
-                        clip-path: polygon(-15% 0%, 0% 0%, -7.5% 100%, -22.5% 100%);
-                    }
-                    50% {
-                        clip-path: polygon(107.5% 0%, 122.5% 0%, 115% 100%, 100% 100%);
-                    }
-                    51% {
-                        clip-path: polygon(100% 0%, 115% 0%, 122.5% 100%, 107.5% 100%);
-                    }
-                    100% {
-                        clip-path: polygon(-22.5% 0%, -7.5% 0%, 0% 100%, -15% 100%);
-                    }
-                }
+                // color: $primary-font-colour;
+                color: transparent;
             }
         }
     }
@@ -125,7 +123,7 @@ $animation-duration: 5s;
                 height: 100%;
 
                 // Appearance
-                border: solid $primary-hover-colour;
+                border: solid $primary-font-colour;
                 border-width: 0 0.5rem 0.5rem 0 !important;
                 transform: rotate(45deg);
 
@@ -138,7 +136,7 @@ $animation-duration: 5s;
                 // Every second arrow 
                 &:nth-child(2n) {
                     // Appearance
-                    border: solid $green;
+                    border: solid $accent-colour;
 
                     // Animation
                     animation: flashing $animation-duration ease-in-out infinite;

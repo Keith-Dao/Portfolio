@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100vw;
   max-width: 100%;
-  background: black;
+  background: #ddd;
   position: absolute;
   top: 0;
   z-index: 1;
@@ -18,7 +18,6 @@
           justify-content: space-evenly;
   -ms-flex-line-pack: center;
       align-content: center;
-  color: #bbb;
 }
 
 #landing-page div#title {
@@ -41,12 +40,54 @@
 }
 
 #landing-page div#title div.title-wrapper {
-  width: clamp(0, 20rem, 100%);
+  width: clamp(0%, 24rem, 100%);
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  background-size: 300%;
+  background-clip: text;
+  -webkit-animation: text-highlights 5s ease-in-out infinite;
+          animation: text-highlights 5s ease-in-out infinite;
+}
+
+@-webkit-keyframes text-highlights {
+  0% {
+    background-image: linear-gradient(135deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 100% 0%;
+  }
+  50% {
+    background-image: linear-gradient(135deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 10% 0%;
+  }
+  51% {
+    background-image: linear-gradient(45deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 10% 0%;
+  }
+  100% {
+    background-image: linear-gradient(45deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes text-highlights {
+  0% {
+    background-image: linear-gradient(135deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 100% 0%;
+  }
+  50% {
+    background-image: linear-gradient(135deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 10% 0%;
+  }
+  51% {
+    background-image: linear-gradient(45deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 10% 0%;
+  }
+  100% {
+    background-image: linear-gradient(45deg, #333 50%, #32dd62 50%, #32dd62 55%, #333 55%);
+    background-position: 100% 0%;
+  }
 }
 
 #landing-page div#title div.title-wrapper h1 {
@@ -59,54 +100,7 @@
 }
 
 #landing-page div#title div.title-wrapper * {
-  color: #6f6f6f;
-}
-
-#landing-page div#title div.title-wrapper:nth-child(2) {
-  -webkit-animation: text-highlights 5s ease-in-out infinite;
-          animation: text-highlights 5s ease-in-out infinite;
-}
-
-#landing-page div#title div.title-wrapper:nth-child(2) * {
-  color: #32dd62;
-}
-
-@-webkit-keyframes text-highlights {
-  0% {
-    -webkit-clip-path: polygon(-15% 0%, 0% 0%, -7.5% 100%, -22.5% 100%);
-            clip-path: polygon(-15% 0%, 0% 0%, -7.5% 100%, -22.5% 100%);
-  }
-  50% {
-    -webkit-clip-path: polygon(107.5% 0%, 122.5% 0%, 115% 100%, 100% 100%);
-            clip-path: polygon(107.5% 0%, 122.5% 0%, 115% 100%, 100% 100%);
-  }
-  51% {
-    -webkit-clip-path: polygon(100% 0%, 115% 0%, 122.5% 100%, 107.5% 100%);
-            clip-path: polygon(100% 0%, 115% 0%, 122.5% 100%, 107.5% 100%);
-  }
-  100% {
-    -webkit-clip-path: polygon(-22.5% 0%, -7.5% 0%, 0% 100%, -15% 100%);
-            clip-path: polygon(-22.5% 0%, -7.5% 0%, 0% 100%, -15% 100%);
-  }
-}
-
-@keyframes text-highlights {
-  0% {
-    -webkit-clip-path: polygon(-15% 0%, 0% 0%, -7.5% 100%, -22.5% 100%);
-            clip-path: polygon(-15% 0%, 0% 0%, -7.5% 100%, -22.5% 100%);
-  }
-  50% {
-    -webkit-clip-path: polygon(107.5% 0%, 122.5% 0%, 115% 100%, 100% 100%);
-            clip-path: polygon(107.5% 0%, 122.5% 0%, 115% 100%, 100% 100%);
-  }
-  51% {
-    -webkit-clip-path: polygon(100% 0%, 115% 0%, 122.5% 100%, 107.5% 100%);
-            clip-path: polygon(100% 0%, 115% 0%, 122.5% 100%, 107.5% 100%);
-  }
-  100% {
-    -webkit-clip-path: polygon(-22.5% 0%, -7.5% 0%, 0% 100%, -15% 100%);
-            clip-path: polygon(-22.5% 0%, -7.5% 0%, 0% 100%, -15% 100%);
-  }
+  color: transparent;
 }
 
 #landing-page div#scroll-btn {
@@ -131,7 +125,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  border: solid #555;
+  border: solid #333;
   border-width: 0 0.5rem 0.5rem 0 !important;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
