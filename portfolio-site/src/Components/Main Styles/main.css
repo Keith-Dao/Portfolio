@@ -8,11 +8,6 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
-  overflow-x: hidden;
-  position: relative;
-}
-
 body.scroll-lock {
   overflow: hidden;
 }
@@ -31,26 +26,11 @@ html {
   background-image: linear-gradient(150deg, #555 0%, #0cbfe9 350%);
   height: 100vh;
   width: 100vw;
+  max-width: 100%;
   display: block;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   z-index: -1;
-  float: left;
-}
-
-div.App {
-  overflow: hidden;
-}
-
-@media screen and (min-width: 768px) {
-  div.App {
-    overflow: initial;
-  }
-}
-
-div#contents-wrapper {
-  width: 100vw;
-  min-height: 100vh;
-  position: relative;
 }
 /*# sourceMappingURL=main.css.map */

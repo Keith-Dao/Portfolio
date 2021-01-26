@@ -5,6 +5,7 @@
     // Sizing
     height: 100vh;
     width: 100vw;
+    max-width: 100%;
 
     // Appearance
     background: black; // Change this later
@@ -26,7 +27,7 @@
     // Title
     & div#title{
         // Sizing
-        width: 100vw;
+        width: 100%;
 
         // Flexbox
         flex-grow: 2;
@@ -98,7 +99,7 @@
         bottom: 2rem;
 
         // Sizing
-        width: 100vw;
+        width: 100%;
         height: 2rem;
 
         & a{

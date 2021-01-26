@@ -15,13 +15,6 @@
     sans-serif;
 }
 
-body{
-    // Prevent scrolling horizontally
-    overflow-x: hidden;
-
-    position: relative;
-}
-
 body.scroll-lock{
     // Prevent scrolling
     overflow: hidden;
@@ -44,27 +37,11 @@ html{
     // Sizing
     height: 100vh;
     width: 100vw;
+    max-width: 100%;
     display: block;
 
     // Positioning
-    position: fixed;
+    position: sticky;
     top: 0;
-    z-index: -1;
-    float: left;
-}
-
-div.App{
-    // Prevent horizontal scrolling
-    overflow: hidden;
-
-    @media screen and (min-width: $tablet-landscape-min-width) {
-        overflow: initial;
-    }
-}
-
-div#contents-wrapper{
-    width: 100vw;
-    min-height: 100vh;
-    position: relative;
-    //padding-top: 100vh;
+    z-index: -1;    
 }

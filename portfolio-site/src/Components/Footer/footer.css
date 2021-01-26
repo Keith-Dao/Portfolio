@@ -5,6 +5,7 @@ footer {
 footer .footer-content {
   bottom: 0;
   width: 100vw;
+  max-width: 100%;
   background-color: red;
   height: 3.5rem;
 }
