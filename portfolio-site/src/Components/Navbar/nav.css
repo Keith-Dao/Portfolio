@@ -34,7 +34,7 @@ nav label#nav-hamburger-wrapper::before, nav label#nav-hamburger-wrapper button:
   height: 0.2rem;
   display: block;
   border-radius: 4rem;
-  background-color: #fff;
+  background-color: #333;
   position: absolute;
   cursor: pointer;
   -webkit-transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
@@ -55,11 +55,11 @@ nav label#nav-hamburger-wrapper button:focus {
 }
 
 nav label#nav-hamburger-wrapper button::before {
-  top: 0.5rem;
+  top: 0.3rem;
 }
 
 nav label#nav-hamburger-wrapper button::after {
-  top: 1rem;
+  top: 0.6rem;
 }
 
 nav div#nav-links {
@@ -118,13 +118,13 @@ nav.show label#nav-hamburger-wrapper {
 }
 
 nav.show label#nav-hamburger-wrapper::before {
-  -webkit-transform: translate(0, 0.5rem) rotate(45deg);
-          transform: translate(0, 0.5rem) rotate(45deg);
+  -webkit-transform: translate(0, 0.3rem) rotate(45deg);
+          transform: translate(0, 0.3rem) rotate(45deg);
 }
 
 nav.show button#nav-hamburger::after {
-  -webkit-transform: translate(0, -0.5rem) rotate(-45deg);
-          transform: translate(0, -0.5rem) rotate(-45deg);
+  -webkit-transform: translate(0, -0.3rem) rotate(-45deg);
+          transform: translate(0, -0.3rem) rotate(-45deg);
 }
 
 nav.show button#nav-hamburger::before {

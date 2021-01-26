@@ -45,7 +45,7 @@ nav{
 
             // Appearance
             border-radius: 4rem;
-            background-color: $primary-nav-font-colour;
+            background-color: $primary-font-colour;
 
             // Positioning
             position: absolute;
@@ -76,12 +76,12 @@ nav{
 
             // Middle hamburger line positioning
             &::before{
-                top: 0.5rem;
+                top: 0.3rem;
             }
             
             // Bottom hamburger line positioning
             &::after{ 
-                top: 1rem;
+                top: 0.6rem;
             }
         }
     }
@@ -159,12 +159,12 @@ nav{
             position: fixed; // Move button to top right
 
             &::before{
-                transform: translate(0, 0.5rem) rotate(45deg); // Rotate to make part of the cross
+                transform: translate(0, 0.3rem) rotate(45deg); // Rotate to make part of the cross
             }
         }
 
         & button#nav-hamburger::after{
-            transform: translate(0, -0.5rem) rotate(-45deg); // Rotate to make other part of the cross
+            transform: translate(0, -0.3rem) rotate(-45deg); // Rotate to make other part of the cross
         }
 
         & button#nav-hamburger::before{
