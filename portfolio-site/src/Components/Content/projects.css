@@ -26,21 +26,21 @@ div#project-wrapper div#layout-selector label input[type=checkbox] {
 div#project-wrapper div#layout-selector label div.toggle {
   width: 2rem;
   height: 1rem;
-  border: 1px solid white;
+  border: 0.2rem solid #333;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
 }
 
 div#project-wrapper div#layout-selector label div.toggle div.toggle-indicator {
-  height: inherit;
-  width: inherit;
-  border-radius: inherit;
-  background: grey;
+  width: 1.6rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  background: #ddd;
   position: absolute;
   top: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-1rem);
+          transform: translateX(-1rem);
   -webkit-transition: -webkit-transform 250ms linear;
   transition: -webkit-transform 250ms linear;
   transition: transform 250ms linear;
@@ -48,13 +48,14 @@ div#project-wrapper div#layout-selector label div.toggle div.toggle-indicator {
 }
 
 div#project-wrapper div#layout-selector label div.toggle .toggle-state:checked ~ .toggle-indicator {
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
 }
 
 div#project-wrapper div#layout-selector label div.label-text {
   width: 6rem;
   line-height: 1;
   font-weight: 500;
+  color: #333;
 }
 /*# sourceMappingURL=projects.css.map */

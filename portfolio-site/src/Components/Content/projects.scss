@@ -1,3 +1,5 @@
+@import '../Main Styles/colours';
+
 div#project-wrapper{
     // Sizing
     width: 100%;
@@ -25,12 +27,15 @@ div#project-wrapper{
 
             // Toggle
             & div.toggle{
+                $toggle-height: 2;
+                $toggle-margin: 0.2;
+                $translate-x: $toggle-height - $toggle-margin * 2 - ($toggle-height / 2 - $toggle-margin * 2);
                 // Sizing
-                width: 2rem;
-                height: 1rem;
+                width: #{$toggle-height}rem;
+                height: #{$toggle-height / 2}rem;
 
                 // Border
-                border: 1px solid white;
+                border: #{$toggle-margin}rem solid $primary-font-colour;
                 border-radius: 1rem;
 
                 // Appearance
@@ -42,19 +47,19 @@ div#project-wrapper{
                 // Indicator
                 & div.toggle-indicator{
                     // Sizing
-                    height: inherit;
-                    width: inherit;
+                    width: #{$toggle-height - $toggle-margin * 2}rem;
+                    height: #{$toggle-height / 2 - $toggle-margin * 2}rem;
                    
                     // Border
-                    border-radius: inherit;
+                    border-radius: #{($toggle-height / 2 - $toggle-margin * 2) / 2}rem;
 
                     // Appearance
-                    background: grey;
+                    background: $primary-nav-font-colour;
 
                     // Positioning
                     position: absolute;
                     top: 0;
-                    transform: translateX(-50%);
+                    transform: translateX(-#{$translate-x}rem);
 
                     // Animation
                     transition: transform 250ms linear;
@@ -62,7 +67,7 @@ div#project-wrapper{
                 
                 // Move indicator when the check box is toggled
                 .toggle-state:checked ~ .toggle-indicator {
-                    transform: translateX(50%);
+                    transform: translateX(#{$translate-x}rem);
                   }
             }
 
@@ -74,6 +79,7 @@ div#project-wrapper{
                 // Font
                 line-height: 1;
                 font-weight: 500;
+                color: $primary-font-colour;
             }
         }
     }
