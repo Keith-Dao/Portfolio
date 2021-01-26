@@ -35,7 +35,7 @@ nav label#nav-hamburger-wrapper::before, nav label#nav-hamburger-wrapper button:
   height: 0.2rem;
   display: block;
   border-radius: 4rem;
-  background-color: #fff;
+  background-color: #ddd;
   position: absolute;
   cursor: pointer;
   -webkit-transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
@@ -160,7 +160,7 @@ nav.show button#nav-hamburger::before {
     width: 100%;
     height: auto;
     position: relative;
-    color: #fff;
+    color: #ddd;
     -webkit-transition: background-color ease-in-out 500ms, color ease-in-out 500ms;
     transition: background-color ease-in-out 500ms, color ease-in-out 500ms;
   }
@@ -182,7 +182,7 @@ nav.show button#nav-hamburger::before {
     position: absolute;
     left: 0.5rem;
     bottom: 0.25rem;
-    background-color: #fff;
+    background-color: #ddd;
     -webkit-transition: background ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
     transition: background ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
     transition: transform ease-in-out 500ms, background ease-in-out 500ms;
