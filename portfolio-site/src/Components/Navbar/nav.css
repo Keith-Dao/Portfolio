@@ -99,10 +99,11 @@ nav div#nav-links button {
   margin: 0 auto;
   padding: 0.625rem;
   border-style: none;
-  background-color: transparent;
+  background-color: #32dd62;
+  background-clip: text;
   cursor: pointer;
   font-size: 1rem;
-  color: #fff;
+  color: transparent;
   font-weight: bold;
 }
 
@@ -110,10 +111,6 @@ nav.show div#nav-links {
   opacity: 1;
   visibility: visible;
   top: 0;
-}
-
-nav.show div#nav-links button {
-  color: #32dd62;
 }
 
 nav.show label#nav-hamburger-wrapper {
@@ -166,11 +163,12 @@ nav.show button#nav-hamburger::before {
     width: 100%;
     height: auto;
     position: relative;
-    -webkit-transition: background-color ease-in-out 500ms, color ease-in-out 500ms;
-    transition: background-color ease-in-out 500ms, color ease-in-out 500ms;
+    background: transparent;
+    color: #fff;
+    -webkit-transition: color ease-in-out 500ms;
+    transition: color ease-in-out 500ms;
   }
   nav div#nav-links button:hover {
-    background-color: #555555bf;
     color: #32dd62;
   }
   nav div#nav-links button:hover::after {

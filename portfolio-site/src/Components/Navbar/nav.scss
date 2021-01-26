@@ -132,14 +132,15 @@ nav{
             // Appearance
             padding: 0.625rem;
             border-style: none;
-            background-color: transparent;
+            background-color: $accent-colour;
+            background-clip: text;
 
             // Cursor
             cursor: pointer;
 
             // Font
             font-size: 1rem;
-            color: $primary-nav-font-colour;
+            color: transparent;
             font-weight: bold;
         }
     }
@@ -151,11 +152,6 @@ nav{
             opacity: 1;
             visibility: visible;
             top: 0; // Move nav on screen
-
-            & button{
-                // Appearance
-                color: $accent-colour;
-            }
         }
 
         & label#nav-hamburger-wrapper{
@@ -229,16 +225,15 @@ nav{
                 // Positioning
                 position: relative;
 
+                // Appearance
+                background: transparent;
+                color: $primary-nav-font-colour;
+
                 // Animation
                 $transition-time: 500ms;
-                transition: background-color ease-in-out $transition-time, 
-                            color ease-in-out $transition-time;
+                transition: color ease-in-out $transition-time;
                 
-                
-                &:hover{
-                    // Background
-                    background-color: $primary-hover-colour-glass;
-                    
+                &:hover{                  
                     // Font
                     color: $accent-colour;
 
