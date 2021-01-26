@@ -41,7 +41,7 @@
 }
 
 #landing-page div#title div.title-wrapper {
-  min-width: 20rem;
+  width: clamp(0, 20rem, 100%);
   position: absolute;
   top: 50%;
   left: 50%;

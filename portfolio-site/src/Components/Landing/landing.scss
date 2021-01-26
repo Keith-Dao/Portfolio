@@ -40,7 +40,7 @@
 
         & div.title-wrapper{
             // Sizing
-            min-width: 20rem;
+            width: clamp(0, 20rem, 100%);
 
             // Positioning
             position: absolute;
