@@ -160,14 +160,16 @@ nav.show button#nav-hamburger::before {
     width: 100%;
     height: auto;
     position: relative;
-    -webkit-transition: background-color 500ms, color 500ms;
-    transition: background-color 500ms, color 500ms;
+    color: #fff;
+    -webkit-transition: background-color ease-in-out 500ms, color ease-in-out 500ms;
+    transition: background-color ease-in-out 500ms, color ease-in-out 500ms;
   }
   nav div#nav-links button:hover {
     background-color: rgba(85, 85, 85, 0.75);
     color: #32dd62;
   }
   nav div#nav-links button:hover::after {
+    background-color: #32dd62;
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
   }
@@ -180,11 +182,11 @@ nav.show button#nav-hamburger::before {
     position: absolute;
     left: 0.5rem;
     bottom: 0.25rem;
-    background-color: #32dd62;
-    -webkit-transition: -webkit-transform ease-in-out 500ms;
-    transition: -webkit-transform ease-in-out 500ms;
-    transition: transform ease-in-out 500ms;
-    transition: transform ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
+    background-color: #fff;
+    -webkit-transition: background ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
+    transition: background ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
+    transition: transform ease-in-out 500ms, background ease-in-out 500ms;
+    transition: transform ease-in-out 500ms, background ease-in-out 500ms, -webkit-transform ease-in-out 500ms;
   }
 }
 /*# sourceMappingURL=nav.css.map */
