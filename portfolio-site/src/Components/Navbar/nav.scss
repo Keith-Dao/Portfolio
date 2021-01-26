@@ -139,7 +139,7 @@ nav{
 
             // Font
             font-size: 1rem;
-            color: $green;
+            color: $primary-nav-font-colour;
             font-weight: bold;
         }
     }
@@ -151,6 +151,11 @@ nav{
             opacity: 1;
             visibility: visible;
             top: 0; // Move nav on screen
+
+            & button{
+                // Appearance
+                color: $green;
+            }
         }
 
         & label#nav-hamburger-wrapper{
@@ -223,9 +228,6 @@ nav{
 
                 // Positioning
                 position: relative;
-
-                // Appearance
-                color: $primary-nav-font-colour;
 
                 // Animation
                 $transition-time: 500ms;
