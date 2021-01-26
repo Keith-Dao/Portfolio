@@ -27,12 +27,13 @@ div#project-wrapper{
 
             // Toggle
             & div.toggle{
-                $toggle-height: 2;
-                $toggle-margin: 0.2;
-                $translate-x: $toggle-height - $toggle-margin * 2 - ($toggle-height / 2 - $toggle-margin * 2);
+                $toggle-width: 2; // In rems
+                $toggle-margin: 0.1; // In rems
+                $indicator-width: $toggle-width / 2 - $toggle-margin * 2;
+                $translate-x: $toggle-width - ($toggle-margin * 2 + $indicator-width);
                 // Sizing
-                width: #{$toggle-height}rem;
-                height: #{$toggle-height / 2}rem;
+                width: #{$toggle-width}rem;
+                height: #{$toggle-width / 2}rem;
 
                 // Border
                 border: #{$toggle-margin}rem solid $primary-font-colour;
@@ -47,19 +48,19 @@ div#project-wrapper{
                 // Indicator
                 & div.toggle-indicator{
                     // Sizing
-                    width: #{$toggle-height - $toggle-margin * 2}rem;
-                    height: #{$toggle-height / 2 - $toggle-margin * 2}rem;
+                    width: #{$indicator-width}rem;
+                    height: #{$indicator-width}rem;
                    
                     // Border
-                    border-radius: #{($toggle-height / 2 - $toggle-margin * 2) / 2}rem;
+                    border-radius: 50%;
 
                     // Appearance
-                    background: $primary-nav-font-colour;
+                    background: $primary-font-colour;
 
                     // Positioning
                     position: absolute;
                     top: 0;
-                    transform: translateX(-#{$translate-x}rem);
+                    transform: translate(0, 0);
 
                     // Animation
                     transition: transform 250ms linear;
@@ -67,8 +68,9 @@ div#project-wrapper{
                 
                 // Move indicator when the check box is toggled
                 .toggle-state:checked ~ .toggle-indicator {
-                    transform: translateX(#{$translate-x}rem);
-                  }
+                    // Positioning
+                    transform: translate(#{$translate-x}rem, 0);
+                }
             }
 
             // Layout description text
