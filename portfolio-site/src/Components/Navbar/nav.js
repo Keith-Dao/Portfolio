@@ -6,8 +6,10 @@ const NavBar = (props) => {
     const [showNav, toggleNav] = useState(false);
 
     const toggleNavVisibility = () => {
-        showNav ? document.body.classList.remove('scroll-lock') : document.body.classList.add('scroll-lock');
-        toggleNav((prev) => !prev);
+        if (window.innerWidth < 768) {
+            showNav ? document.body.classList.remove('scroll-lock') : document.body.classList.add('scroll-lock');
+            toggleNav((prev) => !prev);
+        }
     }
 
     return (
@@ -17,7 +19,7 @@ const NavBar = (props) => {
         </label>
         <div id="nav-links">
             {props.sections.map((section) => 
-                <a href={section.link != null ? section.link : `#${section.header.replace(' ', () => '-')}`} key={section.header}> 
+                <a href={section.link != null ? section.link : `#${section.header.replace(' ', () => '-')}`} target={section.link ? "_blank" : ""} key={section.header}> 
                     <button key={section.header} type="button" onClick={toggleNavVisibility}>
                         {section.header.replace(/\b\w/g, l => l.toUpperCase())}
                     </button>
