@@ -143,8 +143,8 @@
 
 #landing-page div#scroll-btn a div.arrow.down:nth-child(2n) {
   border: solid #32dd62;
-  -webkit-animation: flashing 3s ease-in-out infinite;
-          animation: flashing 3s ease-in-out infinite;
+  -webkit-animation: flashing 5s ease-in-out infinite;
+          animation: flashing 5s ease-in-out infinite;
 }
 
 @-webkit-keyframes flashing {

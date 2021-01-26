@@ -1,6 +1,8 @@
 @import '../Main Styles/colours';
 @import '../Main Styles/breakpoints';
 
+$animation-duration: 5s;
+
 #landing-page{
     // Sizing
     height: 100vh;
@@ -72,7 +74,7 @@
                 }
 
                 // Animation
-                animation: text-highlights 5s ease-in-out infinite;
+                animation: text-highlights $animation-duration ease-in-out infinite;
                 @keyframes text-highlights {
                     0% {
                         clip-path: polygon(-15% 0%, 0% 0%, -7.5% 100%, -22.5% 100%);
@@ -139,7 +141,7 @@
                     border: solid $green;
 
                     // Animation
-                    animation: flashing 3s ease-in-out infinite;
+                    animation: flashing $animation-duration ease-in-out infinite;
                     @keyframes flashing {
                         0%, 100% {
                             clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
