@@ -39,7 +39,7 @@
 }
 
 #landing-page div#title div.title-wrapper {
-  min-width: 24rem;
+  min-width: 20rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -49,10 +49,11 @@
 
 #landing-page div#title div.title-wrapper h1 {
   font-size: 5rem;
+  line-height: 1;
 }
 
 #landing-page div#title div.title-wrapper h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 #landing-page div#title div.title-wrapper * {
