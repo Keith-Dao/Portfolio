@@ -34,10 +34,8 @@ const Project = (props) => {
     // Setup timer on startup
     useEffect(() => {
         if (props.showSlideShow) {
-            console.log("starting timer")
             startSlideShowTimer();
             return () => {
-                console.log("timer stopped")
                 clearInterval(slideShowInterval);
             };
         }
@@ -56,7 +54,9 @@ const Project = (props) => {
             </div>
             <div id="slideshow-wrapper" className={props.showSlideShow ? "" : "hide"}>
                 <div id="slideshow-controller">
-                    <div id="slideshow-back"></div>
+                    <div className="slideshow-arrow back" onClick={() => {
+                        switchSlides(() => slideIndex - 1 < 0 ? props.projects.length - 1: slideIndex - 1);
+                    }}></div>
                     <div id="slideshow-description-wrapper">
                         <div id="slideshow-title">
                             {props.projects[slideIndex].name}
@@ -65,13 +65,15 @@ const Project = (props) => {
                             {props.projects[slideIndex].description}
                         </div>
                         <a id="slideshow-link" href={props.projects[slideIndex].link} target="_blank" rel="noreferrer">
-                            Click to view project.
+                            Click to view project
                         </a>
                     </div>
-                    <div id="slideshow-forward"></div>
+                    <div className="slideshow-arrow forward" onClick={() => {
+                        switchSlides((slideIndex + 1) % props.projects.length);
+                    }}></div>
                     <div id="slideshow-jumper-wrapper">
                         {props.projects.map((project, index) => {
-                            return <div className="slideshow-jumper" key={project.name} onClick={() => {
+                            return <div className={index === slideIndex ? "slideshow-jumper slide-active" : "slideshow-jumper"} key={project.name} onClick={() => {
                                 switchSlides(index);
                             }}></div>
                         })}
