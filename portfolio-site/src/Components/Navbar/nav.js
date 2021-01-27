@@ -4,9 +4,10 @@ import './nav.css';
 
 const NavBar = (props) => {
     const [showNav, toggleNav] = useState(false);
+    const min_tablet_landscape_width = 768; // In pixels
 
     const toggleNavVisibility = () => {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < min_tablet_landscape_width) {
             showNav ? document.body.classList.remove('scroll-lock') : document.body.classList.add('scroll-lock');
             toggleNav((prev) => !prev);
         }
