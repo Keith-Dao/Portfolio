@@ -17,7 +17,14 @@ const App = () => {
     {header: 'view resume',
     link: 'resume.pdf'}, // TODO add the pdf link
     {header: 'projects',
-    content: <Project showSlideShow={showSlideShow} toggleSlideShow={toggleSlideShow} projects={[]}/>},
+    content: <Project showSlideShow={showSlideShow} toggleSlideShow={toggleSlideShow} projects={[
+      {name: "test",
+      description: "This is just for testing purposes",
+      link: "https://www.google.com"}, 
+      {name: "second",
+      description: "this is tests for the second project",
+      link: "https://www.youtube.com"}
+    ]}/>},
     {header: 'about me',
     content: <div>This is where info about me would go.</div>},
     {header: 'social',

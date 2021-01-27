@@ -1,12 +1,14 @@
 div#project-wrapper {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 div#project-wrapper div#layout-selector {
   position: absolute;
-  top: 1rem;
+  top: -1.2rem;
   right: 0.5rem;
+  z-index: 1;
 }
 
 div#project-wrapper div#layout-selector label {
@@ -41,10 +43,10 @@ div#project-wrapper div#layout-selector label div.toggle div.toggle-indicator {
   top: 0;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  -webkit-transition: -webkit-transform 250ms linear;
-  transition: -webkit-transform 250ms linear;
-  transition: transform 250ms linear;
-  transition: transform 250ms linear, -webkit-transform 250ms linear;
+  -webkit-transition: -webkit-transform 500ms linear;
+  transition: -webkit-transform 500ms linear;
+  transition: transform 500ms linear;
+  transition: transform 500ms linear, -webkit-transform 500ms linear;
 }
 
 div#project-wrapper div#layout-selector label div.toggle .toggle-state:checked ~ .toggle-indicator {
@@ -57,5 +59,35 @@ div#project-wrapper div#layout-selector label div.label-text {
   line-height: 1;
   font-weight: 500;
   color: #333;
+}
+
+div#project-wrapper div.hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+div#project-wrapper div#slideshow-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 15rem;
+  opacity: 1;
+  visibility: visible;
+  background: red;
+  -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+}
+
+div#project-wrapper div#grid-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  opacity: 1;
+  visibility: visible;
+  background: blue;
+  -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
 }
 /*# sourceMappingURL=projects.css.map */

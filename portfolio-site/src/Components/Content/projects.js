@@ -4,6 +4,11 @@ import './projects.css';
 const Project = (props) => {
     const [slideIndex, setSlideIndex] = useState(0);
 
+    // Reset slide
+    const resetSlides = () => {
+        setSlideIndex(0);
+    }
+
     // Slide changer
     const switchSlides = (index) => {
         setSlideIndex(index);
@@ -11,6 +16,9 @@ const Project = (props) => {
 
     // Toggle between slide show and grid
     const toggleLayout = () => {
+        if (!props.showSlideShow) {
+            resetSlides();
+        }
         props.toggleSlideShow((prev) => !prev);
     }
 
@@ -22,18 +30,17 @@ const Project = (props) => {
             switchSlides((slideIndex + 1) % props.projects.length);
         }, slideShowDuration)
     }
-
-    // Stop automatic slide timer
-    const stopSlideShowTimer = () => {
-        clearInterval(slideShowInterval);
-    }
     
     // Setup timer on startup
     useEffect(() => {
-        startSlideShowTimer();
-        return () => {
-            clearInterval(slideShowInterval);
-        };
+        if (props.showSlideShow) {
+            console.log("starting timer")
+            startSlideShowTimer();
+            return () => {
+                console.log("timer stopped")
+                clearInterval(slideShowInterval);
+            };
+        }
     });
 
     return (
@@ -48,7 +55,28 @@ const Project = (props) => {
                 </label>
             </div>
             <div id="slideshow-wrapper" className={props.showSlideShow ? "" : "hide"}>
-
+                <div id="slideshow-controller">
+                    <div id="slideshow-back"></div>
+                    <div id="slideshow-description-wrapper">
+                        <div id="slideshow-title">
+                            {props.projects[slideIndex].name}
+                        </div>
+                        <div id="slideshow-description">
+                            {props.projects[slideIndex].description}
+                        </div>
+                        <a id="slideshow-link" href={props.projects[slideIndex].link} target="_blank">
+                            Click to view project.
+                        </a>
+                    </div>
+                    <div id="slideshow-forward"></div>
+                    <div id="slideshow-jumper-wrapper">
+                        {props.projects.map((project, index) => {
+                            return <div className="slideshow-jumper" key={project.name} onClick={() => {
+                                switchSlides(index);
+                            }}></div>
+                        })}
+                    </div>
+                </div>
             </div>
             <div id="grid-wrapper" className={props.showSlideShow ? "hide" : ""}></div>
         </div>
