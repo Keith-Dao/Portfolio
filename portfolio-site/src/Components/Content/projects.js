@@ -64,7 +64,7 @@ const Project = (props) => {
                         <div id="slideshow-description">
                             {props.projects[slideIndex].description}
                         </div>
-                        <a id="slideshow-link" href={props.projects[slideIndex].link} target="_blank">
+                        <a id="slideshow-link" href={props.projects[slideIndex].link} target="_blank" rel="noreferrer">
                             Click to view project.
                         </a>
                     </div>
