@@ -52,8 +52,9 @@ const Project = (props) => {
                     <div className="label-text">{props.showSlideShow ? "Slide Show" : "Grid"}</div>
                 </label>
             </div>
-            <div id="slideshow-wrapper" className={props.showSlideShow ? "" : "hide"}>
-                <div id="slideshow-controller">
+            <div id="slideshow-wrapper" className={props.showSlideShow ? "" : "hide"} style={{backgroundImage:`url(${props.projects[slideIndex].image})`}}>
+                <img src={props.projects[slideIndex].image} alt="project screenshot"/>
+                <div id="slideshow-controller" className={props.projects[slideIndex].theme}>
                     <div className="slideshow-arrow back" onClick={() => {
                         switchSlides(() => slideIndex - 1 < 0 ? props.projects.length - 1: slideIndex - 1);
                     }}></div>

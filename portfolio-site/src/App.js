@@ -9,6 +9,9 @@ import Footer from './Components/Footer/footer';
 import Content from './Components/Content/content';
 import Project from './Components/Content/projects';
 
+import picture from './Components/Content/images/test.png';
+import picture2 from './Components/Content/images/test2.png';
+
 const App = () => {
   const [showSlideShow, toggleSlideShow] = useState(true);
 
@@ -20,10 +23,14 @@ const App = () => {
     content: <Project showSlideShow={showSlideShow} toggleSlideShow={toggleSlideShow} projects={[
       {name: "test",
       description: "This is just for testing purposes",
-      link: "https://www.google.com"}, 
+      link: "https://www.google.com",
+      image: picture,
+      theme: "light"}, 
       {name: "second",
       description: "this is tests for the second project",
-      link: "https://www.youtube.com"}
+      link: "https://www.youtube.com",
+      image: picture2,
+      theme: "dark"}
     ]}/>},
     {header: 'about me',
     content: <div>This is where info about me would go.</div>},

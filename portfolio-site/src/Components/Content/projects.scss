@@ -114,15 +114,22 @@ div#project-wrapper{
         // Appearance
         opacity: 1;
         visibility: visible;
-        background: red;
+
+        // Background
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        // Image
+        & > img{
+            vertical-align: top;
+            width: 100%; /* max width */
+            opacity: 0;  /* make it transparent */
+        }
 
         // Controller
         & div#slideshow-controller{
             // Sizing
             width: 30%;
-
-            // Appearance
-            //background: green;
 
             // Positioning
             position: absolute;
@@ -133,21 +140,91 @@ div#project-wrapper{
             text-align: left;
             padding: 0.3rem;
 
+            // Light theme for overlay
+            &.light{
+                // Font
+                color: $secondary-colour;
+
+                // Button
+                & div#slideshow-description-wrapper a#slideshow-link {
+                    border: 0.2rem solid $secondary-colour;
+
+                    &:hover{
+                        // Appearance
+                        background: $secondary-colour;
+                        color: $primary-colour;
+                        mix-blend-mode: screen;
+                    }
+                }
+
+                // Arrow controls
+                & div.slideshow-arrow{
+                    border-color: $secondary-colour;
+
+                }
+
+                // Jumpers
+                & div.slideshow-jumper{
+                    border: 0.2rem solid $secondary-colour;
+                    background: transparent;
+
+                    // On current slide
+                    &.slide-active{
+                        background: $secondary-colour;
+                    }
+                }
+            }
+
+            // Dark theme for overlay
+            &.dark{
+                // Font
+                color: $primary-font-colour;
+
+                // Button
+                & div#slideshow-description-wrapper a#slideshow-link {
+                    border: 0.2rem solid $primary-font-colour;
+
+                    &:hover{
+                        background: $primary-colour;
+                        color: $secondary-colour;
+                        mix-blend-mode: multiply;
+                    }
+                }
+
+                // Controls
+                & div.slideshow-arrow{
+                    border-color: $primary-colour;
+                }
+
+                // Jumpers
+                & div.slideshow-jumper{
+                    border: 0.2rem solid $primary-colour;
+                    background: transparent;
+
+                    // On current slide
+                    &.slide-active{
+                        background: $primary-colour;
+                    }
+                }
+            }
+
             // Description container
             & div#slideshow-description-wrapper{     
                 // Font
-                color: $primary-colour;
+                color: inherit;
                 
                 // Project title            
                 & div#slideshow-title{
                     // Appearance
                     font-size: 3rem;
                     font-weight: bold;
+                    color: inherit;
                 }
 
                 // Project description
                 & div#slideshow-description{
-
+                    // Appearance 
+                    color: inherit;
                 }
 
                 // Project link
@@ -156,24 +233,14 @@ div#project-wrapper{
                     text-decoration: none;
                     text-transform: uppercase;
                     font-weight: 500;
-                    color: $secondary-colour;
+                    color: inherit;
 
                     // Sizing
                     padding: 0.5rem;
 
-                    // Appearance
-                    border: 0.2rem solid $secondary-colour;
-
                     // Positioning
                     display: inline-block;
                     margin-top: 0.75rem;
-
-                    &:hover{
-                        // Appearance
-                        background: $secondary-colour;
-                        color: $primary-colour;
-                        mix-blend-mode: screen;
-                    }
                 }
             }
 
@@ -202,18 +269,12 @@ div#project-wrapper{
                     // Appearance
                     display: block;
                     border-radius: 50%;
-                    border: 0.2rem solid $secondary-colour;
 
                     // Positioning
                     margin: 0.25rem;
 
                     // Cursor
                     cursor: pointer;
-
-                    // On current slide
-                    &.slide-active{
-                        background: $secondary-colour;
-                    }
                 }
 
             }
@@ -225,7 +286,7 @@ div#project-wrapper{
                 width: 2rem;
 
                 // Appearance
-                border: 0.3rem solid $secondary-colour;
+                border: 0.3rem solid;
                 border-top: 0;
                 border-left: 0;
 
