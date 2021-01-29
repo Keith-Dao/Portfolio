@@ -10,6 +10,7 @@ div#project-wrapper {
 	// Positioning
 	position: relative;
 
+	// Layout Selector
 	& div#layout-selector {
 		// Positioning
 		position: absolute;
@@ -118,6 +119,10 @@ div#project-wrapper {
 		// Background
 		background-size: contain;
 		background-repeat: no-repeat;
+
+		// Animation
+		transition: opacity $transition-duration ease-in-out,
+			visibility $transition-duration ease-in-out, background 500ms ease-in-out;
 
 		// Image
 		& > img {
@@ -311,10 +316,6 @@ div#project-wrapper {
 				transform: translateY(-50%) rotate(-45deg);
 			}
 		}
-
-		// Animation
-		transition: opacity $transition-duration ease-in-out,
-			visibility $transition-duration ease-in-out;
 	}
 
 	// Grid

@@ -77,8 +77,8 @@ div#project-wrapper div#slideshow-wrapper {
   visibility: visible;
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
-  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+  -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out, background 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out, background 500ms ease-in-out;
 }
 
 div#project-wrapper div#slideshow-wrapper > img {

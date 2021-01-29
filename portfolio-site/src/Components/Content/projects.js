@@ -43,6 +43,7 @@ const Project = (props) => {
 
 	return (
 		<div id="project-wrapper">
+			{/* Layout Selector */}
 			<div id="layout-selector">
 				<label>
 					<div className="toggle">
@@ -58,6 +59,7 @@ const Project = (props) => {
 					</div>
 				</label>
 			</div>
+			{/* Slide Show */}
 			<div
 				id="slideshow-wrapper"
 				className={props.showSlideShow ? "" : "hide"}
@@ -115,6 +117,7 @@ const Project = (props) => {
 					</div>
 				</div>
 			</div>
+			{/* Grid */}
 			<div
 				id="grid-wrapper"
 				className={props.showSlideShow ? "hide" : ""}
