@@ -47,7 +47,7 @@ nav {
 
 			// Appearance
 			border-radius: 4rem;
-			background-color: $primary-font-colour;
+			background-color: $primary-colour;
 
 			// Positioning
 			position: absolute;
@@ -56,7 +56,8 @@ nav {
 			cursor: pointer;
 
 			// Animation
-			transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+			transition: transform 500ms ease-in-out, opacity 500ms ease-in-out,
+				background-color 500ms ease-in-out;
 		}
 
 		// Hamburger button
@@ -154,20 +155,24 @@ nav {
 		}
 
 		& label#nav-hamburger-wrapper {
-			// Positioning
-			position: fixed; // Move button to top right
+			&::before,
+			& button::before,
+			& button::after {
+				// Appearance
+				background-color: $secondary-colour; // Allow for contrast from backdrop
+			}
 
 			&::before {
 				transform: translate(0, 0.3rem) rotate(45deg); // Rotate to make part of the cross
 			}
-		}
 
-		& button#nav-hamburger::after {
-			transform: translate(0, -0.3rem) rotate(-45deg); // Rotate to make other part of the cross
-		}
+			& button#nav-hamburger::before {
+				opacity: 0; // Hide middle line
+			}
 
-		& button#nav-hamburger::before {
-			opacity: 0; // Hide middle line
+			& button#nav-hamburger::after {
+				transform: translate(0, -0.3rem) rotate(-45deg); // Rotate to make other part of the cross
+			}
 		}
 	}
 

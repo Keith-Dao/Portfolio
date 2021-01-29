@@ -39,10 +39,10 @@ nav label#nav-hamburger-wrapper button::after {
   background-color: #333;
   position: absolute;
   cursor: pointer;
-  -webkit-transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
-  transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
-  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
-  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  -webkit-transition: opacity 500ms ease-in-out, background-color 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, background-color 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out, background-color 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out, background-color 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
 
 nav label#nav-hamburger-wrapper button {
@@ -115,8 +115,10 @@ nav.show div#nav-links {
   top: 0;
 }
 
-nav.show label#nav-hamburger-wrapper {
-  position: fixed;
+nav.show label#nav-hamburger-wrapper::before,
+nav.show label#nav-hamburger-wrapper button::before,
+nav.show label#nav-hamburger-wrapper button::after {
+  background-color: #eee;
 }
 
 nav.show label#nav-hamburger-wrapper::before {
@@ -124,13 +126,13 @@ nav.show label#nav-hamburger-wrapper::before {
           transform: translate(0, 0.3rem) rotate(45deg);
 }
 
-nav.show button#nav-hamburger::after {
-  -webkit-transform: translate(0, -0.3rem) rotate(-45deg);
-          transform: translate(0, -0.3rem) rotate(-45deg);
+nav.show label#nav-hamburger-wrapper button#nav-hamburger::before {
+  opacity: 0;
 }
 
-nav.show button#nav-hamburger::before {
-  opacity: 0;
+nav.show label#nav-hamburger-wrapper button#nav-hamburger::after {
+  -webkit-transform: translate(0, -0.3rem) rotate(-45deg);
+          transform: translate(0, -0.3rem) rotate(-45deg);
 }
 
 @media screen and (min-width: 768px) {
