@@ -56,7 +56,7 @@ const Project = (props) => {
                 <img src={props.projects[slideIndex].image} alt="project screenshot"/>
                 <div id="slideshow-controller" className={props.projects[slideIndex].theme}>
                     <div className="slideshow-arrow back" onClick={() => {
-                        switchSlides(() => slideIndex - 1 < 0 ? props.projects.length - 1: slideIndex - 1);
+                        switchSlides((slideIndex - 1 + props.projects.length) % props.projects.length);
                     }}></div>
                     <div id="slideshow-description-wrapper">
                         <div id="slideshow-title">
