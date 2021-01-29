@@ -189,12 +189,76 @@ div#project-wrapper div#slideshow-wrapper div#slideshow-controller div.slideshow
 
 div#project-wrapper div#grid-wrapper {
   width: 100%;
-  height: 100%;
-  min-height: 100px;
   opacity: 1;
   visibility: visible;
-  background: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: flex-start;
+          flex-flow: flex-start;
+  text-align: left;
   -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+}
+
+div#project-wrapper div#grid-wrapper div.project-wrapper {
+  width: 21rem;
+  -ms-flex-preferred-size: 21rem;
+      flex-basis: 21rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background: #333333bf;
+  color: #eee;
+  margin: 0.5rem;
+}
+
+div#project-wrapper div#grid-wrapper div.project-wrapper div.project-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: inherit;
+  margin-left: 5%;
+}
+
+div#project-wrapper div#grid-wrapper div.project-wrapper div.project-title h2 {
+  color: inherit;
+}
+
+div#project-wrapper div#grid-wrapper div.project-wrapper img {
+  width: 100%;
+}
+
+div#project-wrapper div#grid-wrapper div.project-wrapper div.project-description {
+  margin-left: 5%;
+  color: inherit;
+}
+
+div#project-wrapper div#grid-wrapper div.project-wrapper a {
+  display: inline-block;
+  position: relative;
+  margin: 0.5rem;
+  padding: 0.3rem 10%;
+  text-decoration: none;
+  color: inherit;
+  background: #333;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+div#project-wrapper div#grid-wrapper div.grid-placeholder {
+  width: 21rem;
+  -ms-flex-preferred-size: 21rem;
+      flex-basis: 21rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 1px;
+  margin: 0.5rem;
 }
 /*# sourceMappingURL=projects.css.map */

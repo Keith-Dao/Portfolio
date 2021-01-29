@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./projects.css";
 
 const Project = (props) => {
+	// Slideshow
 	const [slideIndex, setSlideIndex] = useState(0);
 
 	// Reset slide
@@ -40,6 +41,9 @@ const Project = (props) => {
 			};
 		}
 	});
+
+	// Grid
+	const grid_item_width = 5;
 
 	return (
 		<div id="project-wrapper">
@@ -115,10 +119,29 @@ const Project = (props) => {
 				</div>
 			</div>
 			{/* Grid */}
-			<div
-				id="grid-wrapper"
-				className={props.showSlideShow ? "hide" : ""}
-			></div>
+			<div id="grid-wrapper" className={props.showSlideShow ? "hide" : ""}>
+				{props.projects.map((project, index) => {
+					return (
+						<div key={`project-${index}`} className="project-wrapper">
+							<div className="project-title">
+								<h2>{project.name}</h2>
+							</div>
+							<img
+								className="project-image"
+								src={project.image}
+								alt={`${project.name} screenshot`}
+							/>
+							<div className="project-description">{project.description}</div>
+							<a className="project-link" href={project.link}>
+								Click to view project
+							</a>
+						</div>
+					);
+				})}
+				{[...Array(grid_item_width - 1)].map((e, i) => {
+					return <div className="grid-placeholder" key={`placeholder-${i}`} />;
+				})}
+			</div>
 		</div>
 	);
 };

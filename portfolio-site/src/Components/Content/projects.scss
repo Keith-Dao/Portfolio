@@ -274,18 +274,104 @@ div#project-wrapper {
 
 	// Grid
 	& div#grid-wrapper {
+		$item-width: 21rem;
+
 		// Sizing
 		width: 100%;
-		height: 100%;
-		min-height: 100px;
 
 		// Appearance
 		opacity: 1;
 		visibility: visible;
-		background: blue;
+
+		// Content Alignment
+		display: flex;
+		flex-wrap: wrap;
+		flex-flow: flex-start;
+
+		// Text Appearance
+		text-align: left;
 
 		// Animation
 		transition: opacity $transition-duration ease-in-out,
 			visibility $transition-duration ease-in-out;
+
+		// Project wrapper
+		& div.project-wrapper {
+			// Sizing
+			width: $item-width;
+			flex-basis: $item-width;
+			flex-grow: 1;
+
+			// Content Alignment
+			padding: 0.5rem;
+
+			// Appearance
+			border-radius: 2rem;
+			background: $primary-colour-glass;
+
+			// Font
+			color: $secondary-colour;
+
+			// Positioning
+			margin: 0.5rem;
+
+			// Project title
+			& div.project-title {
+				// Font
+				font-size: 1.5rem;
+				font-weight: 500;
+				color: inherit;
+
+				// Positioning
+				margin-left: 5%;
+
+				& h2 {
+					color: inherit;
+				}
+			}
+
+			// Project image
+			& img {
+				width: 100%;
+			}
+
+			// Project description
+			& div.project-description {
+				// Positioning
+				margin-left: 5%;
+
+				// Font
+				color: inherit;
+			}
+
+			// Project link
+			& a {
+				// Positioning
+				display: inline-block;
+				position: relative;
+				margin: 0.5rem;
+
+				// Sizing
+				padding: 0.3rem 10%;
+
+				// Appearance
+				text-decoration: none;
+				color: inherit;
+				background: $primary-colour;
+				text-transform: uppercase;
+				text-align: center;
+			}
+		}
+
+		& div.grid-placeholder {
+			// Sizing
+			width: $item-width;
+			flex-basis: $item-width;
+			flex-grow: 1;
+			height: 1px;
+
+			// Positioning
+			margin: 0.5rem;
+		}
 	}
 }
