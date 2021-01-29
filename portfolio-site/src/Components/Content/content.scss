@@ -1,70 +1,76 @@
-@import '../Main Styles/colours';
-@import '../Main Styles/breakpoints';
+@import "../Main Styles/colours";
+@import "../Main Styles/breakpoints";
 
-div#contents-wrapper{
-    // Sizing
-    width: 100vw;
-    max-width: 100%;
+div#contents-wrapper {
+	// Sizing
+	width: 100vw;
+	max-width: 100%;
 }
 
-#content{
-    // Sizing
-    width: 100vw;
-    max-width: 100%;
-    min-height: 100vh;
-    display: block;
+#content {
+	// Sizing
+	width: 100vw;
+	max-width: 100%;
+	min-height: 100vh;
+	display: block;
 
-    // Appearance
-    padding-bottom: 3.5em;
-    //padding-top: 100vh;
-    
-    // Positioning
-    position: relative;
-    z-index: 0;
+	// Appearance
+	padding-bottom: 3.5em;
+	//padding-top: 100vh;
 
-    // Sections
-    .section-wrapper {
-        $gradient-angle: 135deg;
-        // Positioning
-        position: relative;
-        z-index: 1;
-        margin: 1rem 10% 0 10%;
+	// Positioning
+	position: relative;
+	z-index: 0;
 
-        // Border
-        border-radius: 0.3rem;
-        background-image: linear-gradient($gradient-angle, $border-colour-glass, rgba(255, 255, 255,0.3));
-        padding: 2px;
+	// Sections
+	.section-wrapper {
+		$gradient-angle: 135deg;
+		// Positioning
+		position: relative;
+		z-index: 1;
+		margin: 1rem 10% 0 10%;
 
-        // Section content
-        .section{
-            // Border
-            border-radius: 0.3rem;
+		// Border
+		border-radius: 0.3rem;
+		background-image: linear-gradient(
+			$gradient-angle,
+			$border-colour-glass,
+			rgba(255, 255, 255, 0.3)
+		);
+		padding: 2px;
 
-            // Sizing
-            padding: 0.5rem 1.5rem;
-            width: 100%;
-            min-height: 3rem;
-            min-height: 50vh; // TODO remove at later date when there is content
-    
-            // Background
-            background-image: linear-gradient($gradient-angle, rgba(255, 255, 255, 0.5), transparent);
-            
-            .section-title{                
-                // Font
-                color: $primary-colour;
-                font-weight: bold;
-                font-size: 1.6rem;
-                text-align: left;
-            }
-    
-        }
+		// Section content
+		.section {
+			// Border
+			border-radius: 0.3rem;
 
-        @media screen and (min-width: $tablet-landscape-min-width) {
-            // Positioning
-            & {
-                margin: 1.6rem 5% 0 15%; // Adjust section margin
-            }
-        }
-    }
-    
+			// Sizing
+			padding: 0.5rem 1.5rem;
+			width: 100%;
+			min-height: 3rem;
+			min-height: 50vh; // TODO remove at later date when there is content
+
+			// Background
+			background-image: linear-gradient(
+				$gradient-angle,
+				rgba(255, 255, 255, 0.5),
+				transparent
+			);
+
+			.section-title {
+				// Font
+				color: $primary-colour;
+				font-weight: bold;
+				font-size: 1.6rem;
+				text-align: left;
+			}
+		}
+
+		@media screen and (min-width: $tablet-landscape-min-width) {
+			// Positioning
+			& {
+				margin: 1.6rem 5% 0 15%; // Adjust section margin
+			}
+		}
+	}
 }

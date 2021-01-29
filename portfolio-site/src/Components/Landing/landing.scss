@@ -1,158 +1,180 @@
-@import '../Main Styles/colours';
-@import '../Main Styles/breakpoints';
+@import "../Main Styles/colours";
+@import "../Main Styles/breakpoints";
 
 $animation-duration: 5s;
 
-#landing-page{
-    // Sizing
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
+#landing-page {
+	// Sizing
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
 
-    // Appearance
-    background: $secondary-colour;
+	// Appearance
+	background: $secondary-colour;
 
-    // Positioning
-    position: absolute;
-    top: 0;
-    z-index: 1;
+	// Positioning
+	position: absolute;
+	top: 0;
+	z-index: 1;
 
-    // Content Alignment
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: center;
+	// Content Alignment
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content: center;
 
-    // Title
-    & div#title{
-        // Sizing
-        width: 100%;
+	// Title
+	& div#title {
+		// Sizing
+		width: 100%;
 
-        // Flexbox
-        flex-grow: 2;
+		// Flexbox
+		flex-grow: 2;
 
-        // Content Alignment
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
+		// Content Alignment
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
 
-        & div.title-wrapper{
-            // Sizing
-            width: clamp(0%, 24rem, 100%);
+		& div.title-wrapper {
+			// Sizing
+			width: clamp(0%, 24rem, 100%);
 
-            // Positioning
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+			// Positioning
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 
-            // Appearance
-            background-size: 300%;
-            background-clip: text;
+			// Appearance
+			background-size: 300%;
+			background-clip: text;
 
-            // Animation
-            animation: text-highlights $animation-duration ease-in-out infinite;
-            @keyframes text-highlights {
-                0% {
-                    background-image: linear-gradient(135deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
-                    background-position: 100% 0%;
-                }
-                50% {
-                    background-image: linear-gradient(135deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
-                    background-position: 10% 0%;
-                }
-                51% {
-                    background-image: linear-gradient(45deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
-                    background-position: 10% 0%;
-                }
-                100% {
-                    background-image: linear-gradient(45deg, $primary-font-colour 50%, $accent-colour 50%, $accent-colour 55%, $primary-font-colour 55%);
-                    background-position: 100% 0%;
-                }
-            }
+			// Animation
+			animation: text-highlights $animation-duration ease-in-out infinite;
+			@keyframes text-highlights {
+				0% {
+					background-image: linear-gradient(
+						135deg,
+						$primary-font-colour 50%,
+						$accent-colour 50%,
+						$accent-colour 55%,
+						$primary-font-colour 55%
+					);
+					background-position: 100% 0%;
+				}
+				50% {
+					background-image: linear-gradient(
+						135deg,
+						$primary-font-colour 50%,
+						$accent-colour 50%,
+						$accent-colour 55%,
+						$primary-font-colour 55%
+					);
+					background-position: 10% 0%;
+				}
+				51% {
+					background-image: linear-gradient(
+						45deg,
+						$primary-font-colour 50%,
+						$accent-colour 50%,
+						$accent-colour 55%,
+						$primary-font-colour 55%
+					);
+					background-position: 10% 0%;
+				}
+				100% {
+					background-image: linear-gradient(
+						45deg,
+						$primary-font-colour 50%,
+						$accent-colour 50%,
+						$accent-colour 55%,
+						$primary-font-colour 55%
+					);
+					background-position: 100% 0%;
+				}
+			}
 
-            & h1{
-                // Font
-                font-size: 5rem;
-                line-height: 1;
-            }
+			& h1 {
+				// Font
+				font-size: 5rem;
+				line-height: 1;
+			}
 
-            & h2{
-                // Font
-                font-size: 1.5rem;
-            }
+			& h2 {
+				// Font
+				font-size: 1.5rem;
+			}
 
-            & *{
-                // Appearance
-                // color: $primary-font-colour;
-                color: transparent;
-            }
-        }
-    }
+			& * {
+				// Appearance
+				// color: $primary-font-colour;
+				color: transparent;
+			}
+		}
+	}
 
-    // Scroll button
-    & div#scroll-btn{
-        // Positioning
-        position: relative;
-        margin: 0 auto;
-        bottom: 2rem;
+	// Scroll button
+	& div#scroll-btn {
+		// Positioning
+		position: relative;
+		margin: 0 auto;
+		bottom: 2rem;
 
-        // Sizing
-        width: 100%;
-        height: 2rem;
+		// Sizing
+		width: 100%;
+		height: 2rem;
 
-        & a{
-            // Sizing
-            height: 2rem;
-            width: 2rem;
-            display: block;
-            
-            // Positioning
-            position: relative;
-            margin: 0 auto;
+		& a {
+			// Sizing
+			height: 2rem;
+			width: 2rem;
+			display: block;
 
-            & div.arrow.down{
-                // Positioning
-                position: absolute;
-                z-index: 1;
+			// Positioning
+			position: relative;
+			margin: 0 auto;
 
-                // Sizing
-                content: "";
-                width: 100%;
-                height: 100%;
+			& div.arrow.down {
+				// Positioning
+				position: absolute;
+				z-index: 1;
 
-                // Appearance
-                border: solid $primary-font-colour;
-                border-width: 0 0.5rem 0.5rem 0 !important;
-                transform: rotate(45deg);
+				// Sizing
+				content: "";
+				width: 100%;
+				height: 100%;
 
-                // Last two arrows
-                &:nth-child(n + 3) {
-                    // Positioning
-                    top: -1rem;
-                }
+				// Appearance
+				border: solid $primary-font-colour;
+				border-width: 0 0.5rem 0.5rem 0 !important;
+				transform: rotate(45deg);
 
-                // Every second arrow 
-                &:nth-child(2n) {
-                    // Appearance
-                    border: solid $accent-colour;
+				// Last two arrows
+				&:nth-child(n + 3) {
+					// Positioning
+					top: -1rem;
+				}
 
-                    // Animation
-                    animation: flashing $animation-duration ease-in-out infinite;
-                    @keyframes flashing {
-                        0%, 100% {
-                            clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
-                        }
-                        50% { 
-                            clip-path: polygon(75% -125%, 225% 25%, 175% 75%, 25% -75%);
-                        }
-                    }
-                }
-            }
+				// Every second arrow
+				&:nth-child(2n) {
+					// Appearance
+					border: solid $accent-colour;
 
-            
-        }
-
-    }
+					// Animation
+					animation: flashing $animation-duration ease-in-out infinite;
+					@keyframes flashing {
+						0%,
+						100% {
+							clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
+						}
+						50% {
+							clip-path: polygon(75% -125%, 225% 25%, 175% 75%, 25% -75%);
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,339 +1,336 @@
-@import '../Main Styles/colours';
-@import '../Main Styles/breakpoints';
+@import "../Main Styles/colours";
+@import "../Main Styles/breakpoints";
 
-div#project-wrapper{
-    $transition-duration: 500ms;
-    // Sizing
-    width: 100%;
-    height: 100%;
+div#project-wrapper {
+	$transition-duration: 500ms;
+	// Sizing
+	width: 100%;
+	height: 100%;
 
-    // Positioning
-    position: relative;
+	// Positioning
+	position: relative;
 
-    & div#layout-selector{
-        // Positioning
-        position: absolute;
-        top: -1.2rem;
-        right: 0.5rem;
-        z-index: 1;
+	& div#layout-selector {
+		// Positioning
+		position: absolute;
+		top: -1.2rem;
+		right: 0.5rem;
+		z-index: 1;
 
-        & label{
-            // Content Alignment
-            display: flex;
-            justify-content: space-between;
+		& label {
+			// Content Alignment
+			display: flex;
+			justify-content: space-between;
 
-            // Cursor
-            cursor: pointer;
-            
-            // Checkbox
-            & input[type=checkbox]{
-                // Appearance
-                display: none;
-            }
+			// Cursor
+			cursor: pointer;
 
-            // Toggle
-            & div.toggle{
-                $toggle-width: 2; // In rems
-                $toggle-margin: 0.1; // In rems
-                $indicator-width: $toggle-width / 2 - $toggle-margin * 2;
-                $translate-x: $toggle-width - ($toggle-margin * 2 + $indicator-width);
-                // Sizing
-                width: #{$toggle-width}rem;
-                height: #{$toggle-width / 2}rem;
+			// Checkbox
+			& input[type="checkbox"] {
+				// Appearance
+				display: none;
+			}
 
-                // Border
-                border: #{$toggle-margin}rem solid $primary-font-colour;
-                border-radius: 1rem;
+			// Toggle
+			& div.toggle {
+				$toggle-width: 2; // In rems
+				$toggle-margin: 0.1; // In rems
+				$indicator-width: $toggle-width / 2 - $toggle-margin * 2;
+				$translate-x: $toggle-width - ($toggle-margin * 2 + $indicator-width);
+				// Sizing
+				width: #{$toggle-width}rem;
+				height: #{$toggle-width / 2}rem;
 
-                // Appearance
-                overflow: hidden;
+				// Border
+				border: #{$toggle-margin}rem solid $primary-font-colour;
+				border-radius: 1rem;
 
-                // Positioning
-                position: relative;
+				// Appearance
+				overflow: hidden;
 
-                // Indicator
-                & div.toggle-indicator{
-                    // Sizing
-                    width: #{$indicator-width}rem;
-                    height: #{$indicator-width}rem;
-                   
-                    // Border
-                    border-radius: 50%;
+				// Positioning
+				position: relative;
 
-                    // Appearance
-                    background: $primary-font-colour;
+				// Indicator
+				& div.toggle-indicator {
+					// Sizing
+					width: #{$indicator-width}rem;
+					height: #{$indicator-width}rem;
 
-                    // Positioning
-                    position: absolute;
-                    top: 0;
-                    transform: translate(0, 0);
+					// Border
+					border-radius: 50%;
 
-                    // Animation
-                    transition: transform $transition-duration linear;
-                }
-                
-                // Move indicator when the check box is toggled
-                .toggle-state:checked ~ .toggle-indicator {
-                    // Positioning
-                    transform: translate(#{$translate-x}rem, 0);
-                }
-            }
+					// Appearance
+					background: $primary-font-colour;
 
-            // Layout description text
-            & div.label-text{
-                // Sizing
-                width: 6rem;
+					// Positioning
+					position: absolute;
+					top: 0;
+					transform: translate(0, 0);
 
-                // Font
-                line-height: 1;
-                font-weight: 500;
-                color: $primary-font-colour;
-            }
-        }
-    }
+					// Animation
+					transition: transform $transition-duration linear;
+				}
 
-    // Hide container
-    & div.hide{
-        // Appearance
-        opacity: 0 !important;
-        visibility: hidden !important;
-        
-        // Positioning
-        position: absolute;
-        top: 0;
-        z-index: 2;
-    }
+				// Move indicator when the check box is toggled
+				.toggle-state:checked ~ .toggle-indicator {
+					// Positioning
+					transform: translate(#{$translate-x}rem, 0);
+				}
+			}
 
-    // Slide show
-    & div#slideshow-wrapper{
-        // Sizing
-        width: 100%;
-        height: 100%;
-        min-height: 15rem; 
+			// Layout description text
+			& div.label-text {
+				// Sizing
+				width: 6rem;
 
-        // Appearance
-        opacity: 1;
-        visibility: visible;
+				// Font
+				line-height: 1;
+				font-weight: 500;
+				color: $primary-font-colour;
+			}
+		}
+	}
 
-        // Background
-        background-size: contain;
-        background-repeat: no-repeat;
+	// Hide container
+	& div.hide {
+		// Appearance
+		opacity: 0 !important;
+		visibility: hidden !important;
 
-        // Image
-        & > img{
-            vertical-align: top;
-            width: 100%; /* max width */
-            opacity: 0;  /* make it transparent */
-        }
+		// Positioning
+		position: absolute;
+		top: 0;
+		z-index: 2;
+	}
 
-        // Controller
-        & div#slideshow-controller{
-            // Sizing
-            width: 30%;
+	// Slide show
+	& div#slideshow-wrapper {
+		// Sizing
+		width: 100%;
+		height: 100%;
+		min-height: 15rem;
 
-            // Positioning
-            position: absolute;
-            bottom: 2rem;
-            right: 2rem;
+		// Appearance
+		opacity: 1;
+		visibility: visible;
 
-            // Text appearance
-            text-align: left;
-            padding: 0.3rem;
+		// Background
+		background-size: contain;
+		background-repeat: no-repeat;
 
-            // Light theme for overlay
-            &.light{
-                // Font
-                color: $secondary-colour;
+		// Image
+		& > img {
+			vertical-align: top;
+			width: 100%; /* max width */
+			opacity: 0; /* make it transparent */
+		}
 
-                // Button
-                & div#slideshow-description-wrapper a#slideshow-link {
-                    border: 0.2rem solid $secondary-colour;
+		// Controller
+		& div#slideshow-controller {
+			// Sizing
+			width: 30%;
 
-                    &:hover{
-                        // Appearance
-                        background: $secondary-colour;
-                        color: $primary-colour;
-                        mix-blend-mode: screen;
-                    }
-                }
+			// Positioning
+			position: absolute;
+			bottom: 2rem;
+			right: 2rem;
 
-                // Arrow controls
-                & div.slideshow-arrow{
-                    border-color: $secondary-colour;
+			// Text appearance
+			text-align: left;
+			padding: 0.3rem;
 
-                }
+			// Light theme for overlay
+			&.light {
+				// Font
+				color: $secondary-colour;
 
-                // Jumpers
-                & div.slideshow-jumper{
-                    border: 0.2rem solid $secondary-colour;
-                    background: transparent;
+				// Button
+				& div#slideshow-description-wrapper a#slideshow-link {
+					border: 0.2rem solid $secondary-colour;
 
-                    // On current slide
-                    &.slide-active{
-                        background: $secondary-colour;
-                    }
-                }
-            }
+					&:hover {
+						// Appearance
+						background: $secondary-colour;
+						color: $primary-colour;
+						mix-blend-mode: screen;
+					}
+				}
 
-            // Dark theme for overlay
-            &.dark{
-                // Font
-                color: $primary-font-colour;
+				// Arrow controls
+				& div.slideshow-arrow {
+					border-color: $secondary-colour;
+				}
 
-                // Button
-                & div#slideshow-description-wrapper a#slideshow-link {
-                    border: 0.2rem solid $primary-font-colour;
+				// Jumpers
+				& div.slideshow-jumper {
+					border: 0.2rem solid $secondary-colour;
+					background: transparent;
 
-                    &:hover{
-                        background: $primary-colour;
-                        color: $secondary-colour;
-                        mix-blend-mode: multiply;
-                    }
-                }
+					// On current slide
+					&.slide-active {
+						background: $secondary-colour;
+					}
+				}
+			}
 
-                // Controls
-                & div.slideshow-arrow{
-                    border-color: $primary-colour;
-                }
+			// Dark theme for overlay
+			&.dark {
+				// Font
+				color: $primary-font-colour;
 
-                // Jumpers
-                & div.slideshow-jumper{
-                    border: 0.2rem solid $primary-colour;
-                    background: transparent;
+				// Button
+				& div#slideshow-description-wrapper a#slideshow-link {
+					border: 0.2rem solid $primary-font-colour;
 
-                    // On current slide
-                    &.slide-active{
-                        background: $primary-colour;
-                    }
-                }
-            }
+					&:hover {
+						background: $primary-colour;
+						color: $secondary-colour;
+						mix-blend-mode: multiply;
+					}
+				}
 
-            // Description container
-            & div#slideshow-description-wrapper{     
-                // Font
-                color: inherit;
-                
-                // Project title            
-                & div#slideshow-title{
-                    // Appearance
-                    font-size: 3rem;
-                    font-weight: bold;
-                    color: inherit;
-                }
+				// Controls
+				& div.slideshow-arrow {
+					border-color: $primary-colour;
+				}
 
-                // Project description
-                & div#slideshow-description{
-                    // Appearance 
-                    color: inherit;
-                }
+				// Jumpers
+				& div.slideshow-jumper {
+					border: 0.2rem solid $primary-colour;
+					background: transparent;
 
-                // Project link
-                & a#slideshow-link{
-                    // Text
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    font-weight: 500;
-                    color: inherit;
+					// On current slide
+					&.slide-active {
+						background: $primary-colour;
+					}
+				}
+			}
 
-                    // Sizing
-                    padding: 0.5rem;
+			// Description container
+			& div#slideshow-description-wrapper {
+				// Font
+				color: inherit;
 
-                    // Positioning
-                    display: inline-block;
-                    margin-top: 0.75rem;
-                }
-            }
+				// Project title
+				& div#slideshow-title {
+					// Appearance
+					font-size: 3rem;
+					font-weight: bold;
+					color: inherit;
+				}
 
-            // Slide show jumper wrapper
-            & div#slideshow-jumper-wrapper{
-                // Sizing
-                width: 50%;
-                height: 2rem;
+				// Project description
+				& div#slideshow-description {
+					// Appearance
+					color: inherit;
+				}
 
-                // Positioning
-                position: absolute;
-                bottom: -2rem;
-                left: 50%;
-                transform: translate(-50%, 0);
+				// Project link
+				& a#slideshow-link {
+					// Text
+					text-decoration: none;
+					text-transform: uppercase;
+					font-weight: 500;
+					color: inherit;
 
-                // Item alignment
-                display: flex;
-                justify-content: center;
+					// Sizing
+					padding: 0.5rem;
 
-                // Slide show jumper
-                & div.slideshow-jumper{
-                    // Sizing: 
-                    height: 1rem;
-                    width: 1rem;
+					// Positioning
+					display: inline-block;
+					margin-top: 0.75rem;
+				}
+			}
 
-                    // Appearance
-                    display: block;
-                    border-radius: 50%;
+			// Slide show jumper wrapper
+			& div#slideshow-jumper-wrapper {
+				// Sizing
+				width: 50%;
+				height: 2rem;
 
-                    // Positioning
-                    margin: 0.25rem;
+				// Positioning
+				position: absolute;
+				bottom: -2rem;
+				left: 50%;
+				transform: translate(-50%, 0);
 
-                    // Cursor
-                    cursor: pointer;
-                }
+				// Item alignment
+				display: flex;
+				justify-content: center;
 
-            }
+				// Slide show jumper
+				& div.slideshow-jumper {
+					// Sizing:
+					height: 1rem;
+					width: 1rem;
 
-            // Slide show arrows
-            & div.slideshow-arrow{
-                // Sizing
-                height: 2rem;
-                width: 2rem;
+					// Appearance
+					display: block;
+					border-radius: 50%;
 
-                // Appearance
-                border: 0.3rem solid;
-                border-top: 0;
-                border-left: 0;
+					// Positioning
+					margin: 0.25rem;
 
-                // Positioning
-                position: absolute;
+					// Cursor
+					cursor: pointer;
+				}
+			}
 
-                // Cursor
-                cursor: pointer;
-            }
+			// Slide show arrows
+			& div.slideshow-arrow {
+				// Sizing
+				height: 2rem;
+				width: 2rem;
 
-            // Back arrow
-            & div.slideshow-arrow.back{
-                // Positioning
-                left: -2rem;
-                top: 50%;
-                transform: translateY(-50%) rotate(135deg);
-            }
+				// Appearance
+				border: 0.3rem solid;
+				border-top: 0;
+				border-left: 0;
 
-            // Forward arrow
-            & div.slideshow-arrow.forward{
-                // Positioning
-                right: -1rem;
-                top: 50%;
-                transform: translateY(-50%) rotate(-45deg);
-            }
+				// Positioning
+				position: absolute;
 
-        }
+				// Cursor
+				cursor: pointer;
+			}
 
-        // Animation
-        transition: opacity $transition-duration ease-in-out,
-                    visibility $transition-duration ease-in-out;
-    }
+			// Back arrow
+			& div.slideshow-arrow.back {
+				// Positioning
+				left: -2rem;
+				top: 50%;
+				transform: translateY(-50%) rotate(135deg);
+			}
 
-    // Grid 
-    & div#grid-wrapper{
-        // Sizing
-        width: 100%;
-        height: 100%;
-        min-height: 100px;
+			// Forward arrow
+			& div.slideshow-arrow.forward {
+				// Positioning
+				right: -1rem;
+				top: 50%;
+				transform: translateY(-50%) rotate(-45deg);
+			}
+		}
 
-        // Appearance
-        opacity: 1;
-        visibility: visible;
-        background: blue;
+		// Animation
+		transition: opacity $transition-duration ease-in-out,
+			visibility $transition-duration ease-in-out;
+	}
 
-        // Animation
-        transition: opacity $transition-duration ease-in-out,
-                    visibility $transition-duration ease-in-out;
-    }
+	// Grid
+	& div#grid-wrapper {
+		// Sizing
+		width: 100%;
+		height: 100%;
+		min-height: 100px;
+
+		// Appearance
+		opacity: 1;
+		visibility: visible;
+		background: blue;
+
+		// Animation
+		transition: opacity $transition-duration ease-in-out,
+			visibility $transition-duration ease-in-out;
+	}
 }

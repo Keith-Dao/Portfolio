@@ -1,14 +1,14 @@
-footer{
-    // position: absolute;
-    // bottom: 0;
-    clear: left;
+footer {
+	// position: absolute;
+	// bottom: 0;
+	clear: left;
 
-    & .footer-content{
-        // position: absolute;
-        bottom: 0;
-        width: 100vw;
-        max-width: 100%;
-        background-color: white;
-        height: 3.5rem;
-    }
+	& .footer-content {
+		// position: absolute;
+		bottom: 0;
+		width: 100vw;
+		max-width: 100%;
+		background-color: white;
+		height: 3.5rem;
+	}
 }

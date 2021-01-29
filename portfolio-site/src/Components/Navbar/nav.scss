@@ -1,271 +1,270 @@
-@import '../Main Styles/colours';
-@import '../Main Styles/breakpoints';
+@import "../Main Styles/colours";
+@import "../Main Styles/breakpoints";
 
-nav{
-    // Positioning
-    position: fixed;
-    top: 0;
-    z-index: 1;
+nav {
+	// Positioning
+	position: fixed;
+	top: 0;
+	z-index: 1;
 
-    // Sizing
-    width: 100%;
-    height: 2rem;
-    
-    // Content alignment
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	// Sizing
+	width: 100%;
+	height: 2rem;
 
-    // Font 
-    text-align: center;
+	// Content alignment
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
-    // Hamburger menu
-    & label#nav-hamburger-wrapper{
-        // Cursor
-        cursor: pointer;
-        
-        // Sizing
-        height: 1.3rem;
-        width: 1rem;
-        display: block;
-        
-        // Positioning
-        z-index: 2; // Keep button at forefront
-        position: absolute;
-        right: 0.5rem;
-        top: 0.5rem;
-        
-        // Hamburger lines
-        &::before, & button::before, & button::after {
-            // Sizing
-            content: "";
-            width: 100%;
-            height: 0.2rem;
-            display: block;
+	// Font
+	text-align: center;
 
-            // Appearance
-            border-radius: 4rem;
-            background-color: $primary-font-colour;
+	// Hamburger menu
+	& label#nav-hamburger-wrapper {
+		// Cursor
+		cursor: pointer;
 
-            // Positioning
-            position: absolute;
-            
-            // Cursor
-            cursor: pointer;
+		// Sizing
+		height: 1.3rem;
+		width: 1rem;
+		display: block;
 
-            // Animation
-            transition: transform 500ms ease-in-out,
-                        opacity 500ms ease-in-out;
-        }
-        
-        // Hamburger button
-        & button{
-            // Sizing 
-            width: 100%;
+		// Positioning
+		z-index: 2; // Keep button at forefront
+		position: absolute;
+		right: 0.5rem;
+		top: 0.5rem;
 
-            // Appearance
-            // Remove browser default
-            background: none;
-            color: transparent;
-            border: none;
+		// Hamburger lines
+		&::before,
+		& button::before,
+		& button::after {
+			// Sizing
+			content: "";
+			width: 100%;
+			height: 0.2rem;
+			display: block;
 
-            &:focus{
-                outline: none; // Remove default highlighting on focus
-            }
-            
+			// Appearance
+			border-radius: 4rem;
+			background-color: $primary-font-colour;
 
-            // Middle hamburger line positioning
-            &::before{
-                top: 0.3rem;
-            }
-            
-            // Bottom hamburger line positioning
-            &::after{ 
-                top: 0.6rem;
-            }
-        }
-    }
+			// Positioning
+			position: absolute;
 
-    // Navigation links
-    & div#nav-links{
-        // Sizing
-        height: 100vh;
-        width: 100vw;
+			// Cursor
+			cursor: pointer;
 
-        // Positioning
-        position: fixed;
-        top: 100vh; // Keep nav off screen to prevent popping on screen change
+			// Animation
+			transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+		}
 
-        // Content alignment
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+		// Hamburger button
+		& button {
+			// Sizing
+			width: 100%;
 
-        // Appearance
-        background-color: $primary-colour-darker-glass;
-        opacity: 0;
-        visibility: hidden;
+			// Appearance
+			// Remove browser default
+			background: none;
+			color: transparent;
+			border: none;
 
-        // Animation
-        $animation-time: 500ms;
-        transition: opacity $animation-time ease-in-out,
-                    visibility 0 ease-in-out;
+			&:focus {
+				outline: none; // Remove default highlighting on focus
+			}
 
-        // Links
-        & a{
-            // Sizing
-            width: 60%;
-            height: 7.5%;
-            margin: 5% 0;
-        }
+			// Middle hamburger line positioning
+			&::before {
+				top: 0.3rem;
+			}
 
-        // Buttons
-        & button{
-            // Sizing
-            width: 100%;
-            height: 100%;
+			// Bottom hamburger line positioning
+			&::after {
+				top: 0.6rem;
+			}
+		}
+	}
 
-            // Positioning
-            margin: 0 auto;
+	// Navigation links
+	& div#nav-links {
+		// Sizing
+		height: 100vh;
+		width: 100vw;
 
-            // Appearance
-            padding: 0.625rem;
-            border-style: none;
-            background-color: $accent-colour;
-            background-clip: text;
+		// Positioning
+		position: fixed;
+		top: 100vh; // Keep nav off screen to prevent popping on screen change
 
-            // Cursor
-            cursor: pointer;
+		// Content alignment
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
-            // Font
-            font-size: 1rem;
-            color: transparent;
-            font-weight: bold;
-        }
-    }
+		// Appearance
+		background-color: $primary-colour-darker-glass;
+		opacity: 0;
+		visibility: hidden;
 
-    // Navbar is being shown
-    &.show{
-        & div#nav-links{
-            // Show links
-            opacity: 1;
-            visibility: visible;
-            top: 0; // Move nav on screen
-        }
+		// Animation
+		$animation-time: 500ms;
+		transition: opacity $animation-time ease-in-out, visibility 0 ease-in-out;
 
-        & label#nav-hamburger-wrapper{
-            // Positioning
-            position: fixed; // Move button to top right
+		// Links
+		& a {
+			// Sizing
+			width: 60%;
+			height: 7.5%;
+			margin: 5% 0;
+		}
 
-            &::before{
-                transform: translate(0, 0.3rem) rotate(45deg); // Rotate to make part of the cross
-            }
-        }
+		// Buttons
+		& button {
+			// Sizing
+			width: 100%;
+			height: 100%;
 
-        & button#nav-hamburger::after{
-            transform: translate(0, -0.3rem) rotate(-45deg); // Rotate to make other part of the cross
-        }
+			// Positioning
+			margin: 0 auto;
 
-        & button#nav-hamburger::before{
-            opacity: 0; // Hide middle line
-        }
-    }
+			// Appearance
+			padding: 0.625rem;
+			border-style: none;
+			background-color: $accent-colour;
+			background-clip: text;
 
-    @media screen and (min-width: $tablet-landscape-min-width) {
-        // Positioning
-        position: sticky;
-        float: left;
-        top: 0rem;
+			// Cursor
+			cursor: pointer;
 
-        // Sizing
-        width: clamp(3rem, 10%, 30rem);
-        height: 100vh;
+			// Font
+			font-size: 1rem;
+			color: transparent;
+			font-weight: bold;
+		}
+	}
 
-        // Appearance
-        background-color: $primary-colour-glass;
-        
-        // Hamburger menu button
-        & label#nav-hamburger-wrapper{
-            display: none; // Hide button
-        }
+	// Navbar is being shown
+	&.show {
+		& div#nav-links {
+			// Show links
+			opacity: 1;
+			visibility: visible;
+			top: 0; // Move nav on screen
+		}
 
-        // Navigation links
-        & div#nav-links{
-            // Sizing
-            height: auto;
-            width: 100%;
-            display: block;
+		& label#nav-hamburger-wrapper {
+			// Positioning
+			position: fixed; // Move button to top right
 
-            // Appearance
-            background-color: transparent;
-            opacity: 1;
-            visibility: visible;
-    
-            // Positioning
-            position: relative;
-            top: 0; // Move nav on screen
+			&::before {
+				transform: translate(0, 0.3rem) rotate(45deg); // Rotate to make part of the cross
+			}
+		}
 
-            // Links
-            & a{
-                // Sizing
-                width: 100%;
-                height: auto;
+		& button#nav-hamburger::after {
+			transform: translate(0, -0.3rem) rotate(-45deg); // Rotate to make other part of the cross
+		}
 
-                // Positioning
-                margin: auto;
-            }
-            
-            // Buttons
-            & button{
-                // Sizing
-                width: 100%;
-                height: auto;
+		& button#nav-hamburger::before {
+			opacity: 0; // Hide middle line
+		}
+	}
 
-                // Positioning
-                position: relative;
+	@media screen and (min-width: $tablet-landscape-min-width) {
+		// Positioning
+		position: sticky;
+		float: left;
+		top: 0rem;
 
-                // Appearance
-                background: transparent;
-                color: $primary-nav-font-colour;
+		// Sizing
+		width: clamp(3rem, 10%, 30rem);
+		height: 100vh;
 
-                // Animation
-                $transition-time: 500ms;
-                transition: color ease-in-out $transition-time;
-                
-                &:hover{                  
-                    // Font
-                    color: $accent-colour;
+		// Appearance
+		background-color: $primary-colour-glass;
 
-                    // Underline
-                    &::after{
-                        // Appearance
-                        background-color: $accent-colour;
-                        transform: scaleX(1);
-                    }
-                }
-                
-                // Underline
-                &::after{
-                    // Sizing
-                    content: '';
-                    width: calc(100% - 1rem);
-                    height: 0.1rem;
-                    transform: scaleX(0);
+		// Hamburger menu button
+		& label#nav-hamburger-wrapper {
+			display: none; // Hide button
+		}
 
-                    // Positioning
-                    position: absolute;
-                    left: 0.5rem;
-                    bottom: 0.25rem;
+		// Navigation links
+		& div#nav-links {
+			// Sizing
+			height: auto;
+			width: 100%;
+			display: block;
 
-                    // Appearance
-                    background-color: $primary-nav-font-colour;
+			// Appearance
+			background-color: transparent;
+			opacity: 1;
+			visibility: visible;
 
-                    // Animation
-                    transition: transform ease-in-out $transition-time,
-                                background ease-in-out $transition-time;
-                }
-            }
-        }
-    }
+			// Positioning
+			position: relative;
+			top: 0; // Move nav on screen
+
+			// Links
+			& a {
+				// Sizing
+				width: 100%;
+				height: auto;
+
+				// Positioning
+				margin: auto;
+			}
+
+			// Buttons
+			& button {
+				// Sizing
+				width: 100%;
+				height: auto;
+
+				// Positioning
+				position: relative;
+
+				// Appearance
+				background: transparent;
+				color: $primary-nav-font-colour;
+
+				// Animation
+				$transition-time: 500ms;
+				transition: color ease-in-out $transition-time;
+
+				&:hover {
+					// Font
+					color: $accent-colour;
+
+					// Underline
+					&::after {
+						// Appearance
+						background-color: $accent-colour;
+						transform: scaleX(1);
+					}
+				}
+
+				// Underline
+				&::after {
+					// Sizing
+					content: "";
+					width: calc(100% - 1rem);
+					height: 0.1rem;
+					transform: scaleX(0);
+
+					// Positioning
+					position: absolute;
+					left: 0.5rem;
+					bottom: 0.25rem;
+
+					// Appearance
+					background-color: $primary-nav-font-colour;
+
+					// Animation
+					transition: transform ease-in-out $transition-time,
+						background ease-in-out $transition-time;
+				}
+			}
+		}
+	}
 }
