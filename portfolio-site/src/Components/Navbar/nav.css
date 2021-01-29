@@ -28,7 +28,9 @@ nav label#nav-hamburger-wrapper {
   top: 0.5rem;
 }
 
-nav label#nav-hamburger-wrapper::before, nav label#nav-hamburger-wrapper button::before, nav label#nav-hamburger-wrapper button::after {
+nav label#nav-hamburger-wrapper::before,
+nav label#nav-hamburger-wrapper button::before,
+nav label#nav-hamburger-wrapper button::after {
   content: "";
   width: 100%;
   height: 0.2rem;
@@ -37,10 +39,10 @@ nav label#nav-hamburger-wrapper::before, nav label#nav-hamburger-wrapper button:
   background-color: #333;
   position: absolute;
   cursor: pointer;
-  -webkit-transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
-  transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
-  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
-  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  -webkit-transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
 
 nav label#nav-hamburger-wrapper button {
@@ -177,7 +179,7 @@ nav.show button#nav-hamburger::before {
             transform: scaleX(1);
   }
   nav div#nav-links button::after {
-    content: '';
+    content: "";
     width: calc(100% - 1rem);
     height: 0.1rem;
     -webkit-transform: scaleX(0);

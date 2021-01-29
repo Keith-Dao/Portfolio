@@ -142,7 +142,8 @@
 }
 
 @-webkit-keyframes flashing {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
             clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
   }
@@ -153,7 +154,8 @@
 }
 
 @keyframes flashing {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
             clip-path: polygon(-75% 25%, 75% 175%, 25% 225%, -125% 75%);
   }
