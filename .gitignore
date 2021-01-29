@@ -1,2 +1,3 @@
 # Ignore /eslintcache
 .eslintcache
+settings.json
