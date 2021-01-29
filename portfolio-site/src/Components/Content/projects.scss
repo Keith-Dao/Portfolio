@@ -139,78 +139,15 @@ div#project-wrapper {
 			// Positioning
 			position: absolute;
 			bottom: 2rem;
-			right: 2rem;
+			right: 3rem;
 
 			// Text appearance
 			text-align: left;
 			padding: 0.3rem;
 
-			// Light theme for overlay
-			&.light {
-				// Font
-				color: $secondary-colour;
-
-				// Button
-				& div#slideshow-description-wrapper a#slideshow-link {
-					border: 0.2rem solid $secondary-colour;
-
-					&:hover {
-						// Appearance
-						background: $secondary-colour;
-						color: $primary-colour;
-						mix-blend-mode: screen;
-					}
-				}
-
-				// Arrow controls
-				& div.slideshow-arrow {
-					border-color: $secondary-colour;
-				}
-
-				// Jumpers
-				& div.slideshow-jumper {
-					border: 0.2rem solid $secondary-colour;
-					background: transparent;
-
-					// On current slide
-					&.slide-active {
-						background: $secondary-colour;
-					}
-				}
-			}
-
-			// Dark theme for overlay
-			&.dark {
-				// Font
-				color: $primary-font-colour;
-
-				// Button
-				& div#slideshow-description-wrapper a#slideshow-link {
-					border: 0.2rem solid $primary-font-colour;
-
-					&:hover {
-						background: $primary-colour;
-						color: $secondary-colour;
-						mix-blend-mode: multiply;
-					}
-				}
-
-				// Controls
-				& div.slideshow-arrow {
-					border-color: $primary-colour;
-				}
-
-				// Jumpers
-				& div.slideshow-jumper {
-					border: 0.2rem solid $primary-colour;
-					background: transparent;
-
-					// On current slide
-					&.slide-active {
-						background: $primary-colour;
-					}
-				}
-			}
+			// Appearance
+			color: $secondary-colour;
+			mix-blend-mode: difference;
 
 			// Description container
 			& div#slideshow-description-wrapper {
@@ -239,12 +176,21 @@ div#project-wrapper {
 					font-weight: 500;
 					color: inherit;
 
+					// Appearance
+					border: 0.2rem solid white;
+					background: transparent;
+
 					// Sizing
 					padding: 0.5rem;
 
 					// Positioning
 					display: inline-block;
 					margin-top: 0.75rem;
+
+					&:hover {
+						color: black;
+						background: white;
+					}
 				}
 			}
 
@@ -273,12 +219,19 @@ div#project-wrapper {
 					// Appearance
 					display: block;
 					border-radius: 50%;
+					border: 0.2rem solid white;
+					background: transparent;
 
 					// Positioning
 					margin: 0.25rem;
 
 					// Cursor
 					cursor: pointer;
+
+					// On current slide
+					&.slide-active {
+						background: white;
+					}
 				}
 			}
 
@@ -289,9 +242,10 @@ div#project-wrapper {
 				width: 2rem;
 
 				// Appearance
-				border: 0.3rem solid;
+				border: 0.3rem solid white;
 				border-top: 0;
 				border-left: 0;
+				mix-blend-mode: difference;
 
 				// Positioning
 				position: absolute;
@@ -311,7 +265,7 @@ div#project-wrapper {
 			// Forward arrow
 			& div.slideshow-arrow.forward {
 				// Positioning
-				right: -1rem;
+				right: -2rem;
 				top: 50%;
 				transform: translateY(-50%) rotate(-45deg);
 			}

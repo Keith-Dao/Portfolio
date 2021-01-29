@@ -30,14 +30,12 @@ const App = () => {
 							description: "This is just for testing purposes",
 							link: "https://www.google.com",
 							image: picture,
-							theme: "light",
 						},
 						{
 							name: "second",
 							description: "this is tests for the second project",
 							link: "https://www.youtube.com",
 							image: picture2,
-							theme: "dark",
 						},
 					]}
 				/>

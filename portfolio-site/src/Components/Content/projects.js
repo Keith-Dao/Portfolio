@@ -66,10 +66,7 @@ const Project = (props) => {
 				style={{ backgroundImage: `url(${props.projects[slideIndex].image})` }}
 			>
 				<img src={props.projects[slideIndex].image} alt="project screenshot" />
-				<div
-					id="slideshow-controller"
-					className={props.projects[slideIndex].theme}
-				>
+				<div id="slideshow-controller">
 					<div
 						className="slideshow-arrow back"
 						onClick={() => {
