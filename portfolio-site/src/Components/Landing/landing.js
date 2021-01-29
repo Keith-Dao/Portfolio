@@ -2,6 +2,7 @@ import React from "react";
 import "./landing.css";
 
 const Landing = () => {
+	const num_arrows = 2;
 	return (
 		<div id="landing-page">
 			<div id="title">
@@ -13,7 +14,7 @@ const Landing = () => {
 			</div>
 			<div id="scroll-btn">
 				<a href="#main-navbar" aria-label="Jump to content">
-					{[...Array(4)].map((e, i) => (
+					{[...Array(num_arrows * 2)].map((e, i) => (
 						<div className="down arrow" key={`arrow-${i}`} />
 					))}
 				</a>
