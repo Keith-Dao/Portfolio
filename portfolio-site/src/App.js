@@ -37,6 +37,12 @@ const App = () => {
 							link: "https://www.youtube.com",
 							image: picture2,
 						},
+						{
+							name: "third",
+							description: "this is tests for the third project",
+							link: "https://www.youtube.com",
+							image: picture2,
+						},
 					]}
 				/>
 			),
