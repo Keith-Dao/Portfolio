@@ -57,7 +57,7 @@ const App = () => {
 		<div className="App">
 			<Landing />
 			<div id="contents-wrapper">
-				<div className="parallax"></div>
+				<div className="parallax" />
 				<NavBar sections={sections} />
 				<Content sections={sections} />
 			</div>

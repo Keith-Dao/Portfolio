@@ -50,8 +50,8 @@ const Project = (props) => {
 							type="checkbox"
 							className="toggle-state"
 							onClick={toggleLayout}
-						></input>
-						<div className="toggle-indicator"></div>
+						/>
+						<div className="toggle-indicator" />
 					</div>
 					<div className="label-text">
 						{props.showSlideShow ? "Slide Show" : "Grid"}
@@ -109,7 +109,7 @@ const Project = (props) => {
 									onClick={() => {
 										switchSlides(index);
 									}}
-								></div>
+								/>
 							);
 						})}
 					</div>

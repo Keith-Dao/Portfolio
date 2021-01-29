@@ -23,7 +23,7 @@ const NavBar = (props) => {
 					onClick={toggleNavVisibility}
 					name="nav-button"
 					aria-label="nav-button"
-				></button>
+				/>
 			</label>
 			<div id="nav-links">
 				{props.sections.map((section) => (
