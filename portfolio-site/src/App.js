@@ -26,20 +26,23 @@ const App = () => {
 					toggleSlideShow={toggleSlideShow}
 					projects={[
 						{
-							name: "test",
-							description: "This is just for testing purposes",
+							name: "Placeholder project 1",
+							description:
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
 							link: "https://www.google.com",
 							image: picture,
 						},
 						{
-							name: "second",
-							description: "this is tests for the second project",
+							name: "Placeholder project 2",
+							description:
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
 							link: "https://www.youtube.com",
 							image: picture2,
 						},
 						{
-							name: "third",
-							description: "this is tests for the third project",
+							name: "Placeholder project 3",
+							description:
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
 							link: "https://www.youtube.com",
 							image: picture2,
 						},
