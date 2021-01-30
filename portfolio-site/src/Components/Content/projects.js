@@ -34,34 +34,40 @@ const SlideShow = (props) => {
 		>
 			<img src={props.projects[slideIndex].image} alt="project screenshot" />
 			<div id="slideshow-controller">
-				<div
-					className="slideshow-arrow back"
-					onClick={() => {
-						setSlideIndex(
-							(slideIndex - 1 + props.projects.length) % props.projects.length
-						);
-					}}
-				/>
+				<div className="slideshow-arrow-wrapper">
+					<div
+						className="slideshow-arrow back"
+						onClick={() => {
+							setSlideIndex(
+								(slideIndex - 1 + props.projects.length) % props.projects.length
+							);
+						}}
+					/>
+				</div>
 				<div id="slideshow-description-wrapper">
 					<div id="slideshow-title">{props.projects[slideIndex].name}</div>
 					<div id="slideshow-description">
 						{props.projects[slideIndex].description}
 					</div>
-					<a
-						id="slideshow-link"
-						href={props.projects[slideIndex].link}
-						target="_blank"
-						rel="noreferrer"
-					>
-						Click to view project
-					</a>
+					<div id="slideshow-link-wrapper">
+						<a
+							id="slideshow-link"
+							href={props.projects[slideIndex].link}
+							target="_blank"
+							rel="noreferrer"
+						>
+							Click to view project
+						</a>
+					</div>
 				</div>
-				<div
-					className="slideshow-arrow forward"
-					onClick={() => {
-						setSlideIndex((slideIndex + 1) % props.projects.length);
-					}}
-				/>
+				<div className="slideshow-arrow-wrapper">
+					<div
+						className="slideshow-arrow forward"
+						onClick={() => {
+							setSlideIndex((slideIndex + 1) % props.projects.length);
+						}}
+					/>
+				</div>
 				<div id="slideshow-jumper-wrapper">
 					{props.projects.map((project, index) => {
 						return (
