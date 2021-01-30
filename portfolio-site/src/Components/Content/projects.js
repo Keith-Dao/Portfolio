@@ -33,7 +33,10 @@ const SlideShow = (props) => {
 			style={{ backgroundImage: `url(${props.projects[slideIndex].image})` }}
 		>
 			<img src={props.projects[slideIndex].image} alt="project screenshot" />
-			<div id="slideshow-controller">
+			<div
+				id="slideshow-controller"
+				className={props.projects[slideIndex].theme}
+			>
 				<div className="slideshow-arrow-wrapper">
 					<div
 						className="slideshow-arrow back"

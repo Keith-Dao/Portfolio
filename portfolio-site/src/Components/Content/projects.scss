@@ -287,15 +287,35 @@ div#project-wrapper {
 
 				// Appearance
 				color: $secondary-colour;
-				mix-blend-mode: exclusion;
+				border-color: $secondary-colour;
+				&.dark {
+					color: $primary-font-colour;
+					border-color: $primary-font-colour;
+
+					// Dark link
+					&
+						div#slideshow-description-wrapper
+						div#slideshow-link-wrapper
+						a#slideshow-link:hover {
+						color: $secondary-colour;
+						background: $primary-font-colour;
+						border-color: $primary-font-colour;
+					}
+
+					// Active jumper
+					& div#slideshow-jumper-wrapper div.slideshow-jumper.slide-active {
+						background: $primary-font-colour;
+					}
+				}
 
 				// Description container
 				& div#slideshow-description-wrapper {
 					// Sizing
 					width: 100%;
 
-					// Font
+					// Appearance
 					color: inherit;
+					border-color: inherit;
 
 					// Project title
 					& div#slideshow-title {
@@ -312,6 +332,9 @@ div#project-wrapper {
 						// Content Alignment
 						display: block;
 
+						// Appearance
+						border-color: inherit;
+
 						// Project link
 						& a#slideshow-link {
 							// Positioning
@@ -319,12 +342,13 @@ div#project-wrapper {
 							margin-top: 0.75rem;
 
 							// Appearance
-							border: 0.2rem solid white;
+							border: 0.2rem solid;
+							border-color: inherit;
 
 							&:hover {
-								// Invert transparency filter
-								color: black;
-								background: white;
+								color: $primary-font-colour;
+								background: $secondary-colour;
+								border-color: $secondary-colour;
 							}
 						}
 					}
@@ -339,24 +363,31 @@ div#project-wrapper {
 					left: 50%;
 					transform: translate(-50%, 0);
 
+					// Appearance
+					border-color: inherit;
+
 					// Slide show jumper
 					& div.slideshow-jumper {
 						// Appearance
-						border-color: white;
+						border-color: inherit;
 
 						// On current slide
 						&.slide-active {
-							background: white;
+							background-color: $secondary-colour;
 						}
 					}
 				}
 
 				// Slide show arrow wrapper
 				& div.slideshow-arrow-wrapper {
+					// Appearance
+					border-color: inherit;
+
 					// Slide show arrows
 					& div.slideshow-arrow {
 						// Appearance
-						border: 0.3rem solid white;
+						border: 0.3rem solid;
+						border-color: inherit;
 						border-top: 0;
 						border-left: 0;
 

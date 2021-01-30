@@ -204,11 +204,26 @@ div#project-wrapper div#slideshow-wrapper div#slideshow-controller div.slideshow
     right: 3rem;
     margin-bottom: 0;
     color: #eee;
-    mix-blend-mode: exclusion;
+    border-color: #eee;
+  }
+  div#project-wrapper div#slideshow-wrapper div#slideshow-controller.dark {
+    color: #333;
+    border-color: #333;
+  }
+  div#project-wrapper div#slideshow-wrapper div#slideshow-controller.dark div#slideshow-description-wrapper
+div#slideshow-link-wrapper
+a#slideshow-link:hover {
+    color: #eee;
+    background: #333;
+    border-color: #333;
+  }
+  div#project-wrapper div#slideshow-wrapper div#slideshow-controller.dark div#slideshow-jumper-wrapper div.slideshow-jumper.slide-active {
+    background: #333;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-description-wrapper {
     width: 100%;
     color: inherit;
+    border-color: inherit;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-description-wrapper div#slideshow-title {
     font-size: 3rem;
@@ -217,30 +232,38 @@ div#project-wrapper div#slideshow-wrapper div#slideshow-controller div.slideshow
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-description-wrapper div#slideshow-link-wrapper {
     display: block;
+    border-color: inherit;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-description-wrapper div#slideshow-link-wrapper a#slideshow-link {
     display: inline-block;
     margin-top: 0.75rem;
-    border: 0.2rem solid white;
+    border: 0.2rem solid;
+    border-color: inherit;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-description-wrapper div#slideshow-link-wrapper a#slideshow-link:hover {
-    color: black;
-    background: white;
+    color: #333;
+    background: #eee;
+    border-color: #eee;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-jumper-wrapper {
     width: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
+    border-color: inherit;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-jumper-wrapper div.slideshow-jumper {
-    border-color: white;
+    border-color: inherit;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-jumper-wrapper div.slideshow-jumper.slide-active {
-    background: white;
+    background-color: #eee;
+  }
+  div#project-wrapper div#slideshow-wrapper div#slideshow-controller div.slideshow-arrow-wrapper {
+    border-color: inherit;
   }
   div#project-wrapper div#slideshow-wrapper div#slideshow-controller div.slideshow-arrow-wrapper div.slideshow-arrow {
-    border: 0.3rem solid white;
+    border: 0.3rem solid;
+    border-color: inherit;
     border-top: 0;
     border-left: 0;
     cursor: pointer;

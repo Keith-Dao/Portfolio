@@ -38,6 +38,7 @@ const App = () => {
 								"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
 							link: "https://www.youtube.com",
 							image: picture2,
+							theme: "dark",
 						},
 						{
 							name: "Placeholder project 3",
@@ -45,6 +46,7 @@ const App = () => {
 								"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
 							link: "https://www.youtube.com",
 							image: picture2,
+							theme: "dark",
 						},
 					]}
 				/>
