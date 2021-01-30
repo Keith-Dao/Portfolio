@@ -239,10 +239,19 @@ div#project-wrapper div#grid-wrapper div.project-wrapper div.project-description
   color: inherit;
 }
 
-div#project-wrapper div#grid-wrapper div.project-wrapper a {
-  display: inline-block;
-  position: relative;
+div#project-wrapper div#grid-wrapper div.project-wrapper div.project-link-wrapper {
   margin: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: inherit;
+}
+
+div#project-wrapper div#grid-wrapper div.project-wrapper div.project-link-wrapper a {
+  position: relative;
   padding: 0.3rem 10%;
   text-decoration: none;
   color: inherit;

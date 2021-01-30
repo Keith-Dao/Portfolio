@@ -101,9 +101,11 @@ const Grid = (props) => {
 							alt={`${project.name} screenshot`}
 						/>
 						<div className="project-description">{project.description}</div>
-						<a className="project-link" href={project.link}>
-							Click to view project
-						</a>
+						<div className="project-link-wrapper">
+							<a className="project-link" href={project.link}>
+								Click to view project
+							</a>
+						</div>
 					</div>
 				);
 			})}

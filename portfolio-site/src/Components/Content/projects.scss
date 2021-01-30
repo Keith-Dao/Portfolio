@@ -345,21 +345,31 @@ div#project-wrapper {
 			}
 
 			// Project link
-			& a {
+			& div.project-link-wrapper {
 				// Positioning
-				display: inline-block;
-				position: relative;
 				margin: 0.5rem;
 
-				// Sizing
-				padding: 0.3rem 10%;
+				// Content Alignment
+				display: flex;
+				justify-content: center;
 
-				// Appearance
-				text-decoration: none;
+				// Font
 				color: inherit;
-				background: $primary-colour;
-				text-transform: uppercase;
-				text-align: center;
+
+				& a {
+					// Positioning
+					position: relative;
+
+					// Sizing
+					padding: 0.3rem 10%;
+
+					// Appearance
+					text-decoration: none;
+					color: inherit;
+					background: $primary-colour;
+					text-transform: uppercase;
+					text-align: center;
+				}
 			}
 		}
 
