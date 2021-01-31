@@ -73,6 +73,7 @@ div#project-wrapper div#layout-selector label div.label-text {
 }
 
 div#project-wrapper div.hide {
+  width: 100%;
   opacity: 0 !important;
   visibility: hidden !important;
   position: absolute;
