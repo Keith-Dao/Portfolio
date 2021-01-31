@@ -444,7 +444,7 @@ div#project-wrapper {
 
 	// Grid
 	& div#grid-wrapper {
-		$item-width: 21rem;
+		$item-width: 18rem;
 
 		// Sizing
 		width: 100%;
@@ -487,16 +487,29 @@ div#project-wrapper {
 			// Project title
 			& div.project-title {
 				// Font
-				font-size: 1.5rem;
+				font-size: 1.2rem;
 				font-weight: 500;
 				color: inherit;
+				text-align: center;
 
 				// Positioning
-				margin-left: 5%;
 				margin-bottom: 0.5rem;
 
 				& h2 {
 					color: inherit;
+				}
+
+				@media screen and (min-width: $large-phone-min-width) {
+					// Font
+					font-size: 1.5rem;
+				}
+
+				@media screen and (min-width: $tablet-landscape-min-width) {
+					// Font
+					text-align: left;
+
+					// Positioning
+					margin-left: 5%;
 				}
 			}
 
