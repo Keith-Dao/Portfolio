@@ -172,6 +172,9 @@ div#project-wrapper {
 				// Sizing
 				flex-grow: 1;
 
+				// Content Alignment
+				padding: 0 0.5rem;
+
 				// Project title
 				& div#slideshow-title {
 					// Appearance
@@ -257,7 +260,7 @@ div#project-wrapper {
 
 			// Slide show arrow wrapper
 			& div.slideshow-arrow-wrapper {
-				$arrow-dimensions: 2rem;
+				$arrow-dimensions: 1rem;
 				// Sizing
 				width: $arrow-dimensions;
 
@@ -274,7 +277,7 @@ div#project-wrapper {
 					position: absolute;
 
 					// Appearance
-					border: 0.3rem solid $primary-font-colour;
+					border: 0.2rem solid $primary-font-colour;
 					border-top: 0;
 					border-left: 0;
 

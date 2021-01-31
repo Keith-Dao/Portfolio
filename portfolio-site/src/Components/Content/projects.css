@@ -121,6 +121,7 @@ div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  padding: 0 0.5rem;
 }
 
 div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-description-wrapper div#slideshow-title {
@@ -186,15 +187,15 @@ div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow
 }
 
 div#project-wrapper div#slideshow-wrapper div#slideshow-controller div.slideshow-arrow-wrapper {
-  width: 2rem;
+  width: 1rem;
   position: relative;
 }
 
 div#project-wrapper div#slideshow-wrapper div#slideshow-controller div.slideshow-arrow-wrapper div.slideshow-arrow {
-  height: 2rem;
-  width: 2rem;
+  height: 1rem;
+  width: 1rem;
   position: absolute;
-  border: 0.3rem solid #333;
+  border: 0.2rem solid #333;
   border-top: 0;
   border-left: 0;
 }
