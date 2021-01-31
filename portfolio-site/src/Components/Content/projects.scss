@@ -117,23 +117,19 @@ div#project-wrapper {
 	& div.hide {
 		// Sizing
 		width: 100%;
+		max-height: 0 !important;
 
 		// Appearance
 		opacity: 0 !important;
 		visibility: hidden !important;
-
-		// Positioning
-		position: absolute;
-		z-index: 2;
-		top: 1rem;
-
-		@media screen and (min-width: $large-phone-min-width) {
-			top: 0;
-		}
+		transform: scale(0, 0);
 	}
 
 	// Slide show
 	& div#slideshow-wrapper {
+		// Sizing
+		max-height: 100vh;
+
 		// Appearance
 		opacity: 1;
 		visibility: visible;
@@ -142,9 +138,18 @@ div#project-wrapper {
 		background-size: contain;
 		background-repeat: no-repeat;
 
+		// Positioning
+		position: relative;
+		margin: 0 auto;
+		display: block;
+
 		// Animation
+		transform-origin: top;
 		transition: opacity $transition-duration ease-in-out,
-			visibility $transition-duration ease-in-out, background 500ms ease-in-out;
+			visibility $transition-duration ease-in-out,
+			max-height $transition-duration ease-in-out,
+			transform $transition-duration ease-in-out,
+			background $transition-duration ease-in-out;
 
 		// Image
 		& > img {
@@ -454,6 +459,7 @@ div#project-wrapper {
 
 		// Sizing
 		width: 100%;
+		max-height: 1000vh;
 
 		// Appearance
 		opacity: 1;
@@ -467,7 +473,10 @@ div#project-wrapper {
 		text-align: left;
 
 		// Animation
+		transform-origin: top;
 		transition: opacity $transition-duration ease-in-out,
+			max-height $transition-duration ease-in-out,
+			transform $transition-duration ease-in-out,
 			visibility $transition-duration ease-in-out;
 
 		// Project wrapper
