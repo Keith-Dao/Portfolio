@@ -10,7 +10,6 @@ const Landing = () => {
 					<h1>Keith Dao</h1>
 					<h2>Computer Science Undergraduate</h2>
 				</div>
-				)
 			</div>
 			<div id="scroll-btn">
 				<a href="#main-navbar" aria-label="Jump to content">
