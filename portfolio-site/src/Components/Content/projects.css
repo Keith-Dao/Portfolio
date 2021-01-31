@@ -399,6 +399,6 @@ div#project-wrapper div#grid-wrapper div.grid-placeholder {
       -ms-flex-positive: 1;
           flex-grow: 1;
   height: 1px;
-  margin: 0.5rem;
+  margin: 0 0.5rem;
 }
 /*# sourceMappingURL=projects.css.map */
