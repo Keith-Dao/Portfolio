@@ -4,20 +4,13 @@ div#project-wrapper {
   position: relative;
 }
 
-div#project-wrapper div#layout-selector {
-  position: absolute;
-  top: -1.2rem;
-  right: 0.5rem;
-  z-index: 1;
-}
-
 div#project-wrapper div#layout-selector label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
 }
 
@@ -55,18 +48,42 @@ div#project-wrapper div#layout-selector label div.toggle .toggle-state:checked ~
 }
 
 div#project-wrapper div#layout-selector label div.label-text {
-  width: 6rem;
   line-height: 1;
   font-weight: 500;
   color: #333;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 425px) {
+  div#project-wrapper div#layout-selector {
+    position: absolute;
+    top: -1.2rem;
+    right: 0.5rem;
+    z-index: 1;
+  }
+  div#project-wrapper div#layout-selector label {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  div#project-wrapper div#layout-selector div.label-text {
+    width: 6rem;
+    margin-left: 0;
+  }
 }
 
 div#project-wrapper div.hide {
   opacity: 0 !important;
   visibility: hidden !important;
   position: absolute;
-  top: 0;
   z-index: 2;
+  top: 1rem;
+}
+
+@media screen and (min-width: 425px) {
+  div#project-wrapper div.hide {
+    top: 0;
+  }
 }
 
 div#project-wrapper div#slideshow-wrapper {

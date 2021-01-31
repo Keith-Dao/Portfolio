@@ -12,16 +12,11 @@ div#project-wrapper {
 
 	// Layout Selector
 	& div#layout-selector {
-		// Positioning
-		position: absolute;
-		top: -1.2rem;
-		right: 0.5rem;
-		z-index: 1;
-
+		// Text
 		& label {
 			// Content Alignment
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 
 			// Cursor
 			cursor: pointer;
@@ -82,13 +77,38 @@ div#project-wrapper {
 
 			// Layout description text
 			& div.label-text {
-				// Sizing
-				width: 6rem;
-
 				// Font
 				line-height: 1;
 				font-weight: 500;
 				color: $primary-font-colour;
+
+				// Positioning
+				margin-left: 1rem;
+			}
+		}
+
+		@media screen and (min-width: $large-phone-min-width) {
+			& {
+				// Positioning
+				position: absolute;
+				top: -1.2rem;
+				right: 0.5rem;
+				z-index: 1;
+			}
+
+			// Text
+			& label {
+				// Content Alignment
+				justify-content: space-between;
+			}
+
+			// Layout description text
+			& div.label-text {
+				// Sizing
+				width: 6rem;
+
+				// Positioning
+				margin-left: 0;
 			}
 		}
 	}
@@ -101,8 +121,12 @@ div#project-wrapper {
 
 		// Positioning
 		position: absolute;
-		top: 0;
 		z-index: 2;
+		top: 1rem;
+
+		@media screen and (min-width: $large-phone-min-width) {
+			top: 0;
+		}
 	}
 
 	// Slide show
