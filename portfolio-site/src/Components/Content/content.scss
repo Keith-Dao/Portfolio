@@ -36,7 +36,6 @@ div#contents-wrapper {
 			$border-colour-glass,
 			rgba(255, 255, 255, 0.3)
 		);
-		padding: 2px;
 
 		// Section content
 		.section {
@@ -47,7 +46,6 @@ div#contents-wrapper {
 			padding: 0.5rem;
 			width: 100%;
 			min-height: 3rem;
-			min-height: 50vh; // TODO remove at later date when there is content
 
 			// Background
 			background-image: linear-gradient(
@@ -55,6 +53,10 @@ div#contents-wrapper {
 				rgba(255, 255, 255, 0.5),
 				transparent
 			);
+
+			// Content Alignment
+			display: flex;
+			flex-direction: column;
 
 			.section-title {
 				// Font
