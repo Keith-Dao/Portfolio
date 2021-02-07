@@ -4,7 +4,7 @@ import "./education.css";
 // Education list
 const education = [
 	{
-		name: "High School",
+		name: "Secondary Education",
 		location: "Mansfield State High School",
 		years: "2014 - 2018",
 	},
