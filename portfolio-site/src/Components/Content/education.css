@@ -34,4 +34,13 @@ div#education-wrapper div.course-wrapper div.info-wrapper {
   text-align: left;
   padding-left: 1rem;
 }
+
+div#education-wrapper div.course-wrapper div.info-wrapper h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+div#education-wrapper div.course-wrapper div.info-wrapper h2 {
+  font-size: 1rem;
+}
 /*# sourceMappingURL=education.css.map */
