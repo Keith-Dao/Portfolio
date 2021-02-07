@@ -10,6 +10,10 @@ div#education-wrapper div.course-wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   border-top: 0.1rem solid #333;
@@ -17,6 +21,15 @@ div#education-wrapper div.course-wrapper {
 
 div#education-wrapper div.course-wrapper:first-of-type {
   border-top: none;
+}
+
+@media screen and (min-width: 768px) {
+  div#education-wrapper div.course-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 div#education-wrapper div.course-wrapper img.course-image {
@@ -28,11 +41,19 @@ div#education-wrapper div.course-wrapper img.course-image {
 
 div#education-wrapper div.course-wrapper div.info-wrapper {
   height: 100%;
+  max-width: 80%;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 80%;
           flex: 1 1 80%;
-  text-align: left;
+  text-align: center;
   padding-left: 1rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  div#education-wrapper div.course-wrapper div.info-wrapper {
+    text-align: left;
+  }
 }
 
 div#education-wrapper div.course-wrapper div.info-wrapper h1 {

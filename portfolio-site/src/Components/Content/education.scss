@@ -1,4 +1,5 @@
 @import "../Main Styles/colours";
+@import "../Main Styles/breakpoints";
 
 div#education-wrapper {
 	// Sizing
@@ -12,6 +13,7 @@ div#education-wrapper {
 		// Content Alignment
 		display: flex;
 		justify-content: space-between;
+		flex-direction: column;
 		padding-top: 1rem;
 		padding-bottom: 0.5rem;
 
@@ -19,6 +21,11 @@ div#education-wrapper {
 		border-top: 0.1rem solid $primary-colour;
 		&:first-of-type {
 			border-top: none;
+		}
+
+		@media screen and (min-width: $tablet-landscape-min-width) {
+			// Content Alignment
+			flex-direction: row;
 		}
 
 		// Image
@@ -32,11 +39,20 @@ div#education-wrapper {
 		& div.info-wrapper {
 			// Sizing
 			height: 100%;
+			max-width: 80%;
 			flex: 1 1 80%;
 
 			// Text
-			text-align: left;
+			text-align: center;
 			padding-left: 1rem;
+
+			// Positioning
+			margin: 0 auto;
+
+			@media screen and (min-width: $tablet-landscape-min-width) {
+				// Text
+				text-align: left;
+			}
 
 			& h1 {
 				// Font
