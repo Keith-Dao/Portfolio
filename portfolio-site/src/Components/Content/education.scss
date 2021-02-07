@@ -1,0 +1,42 @@
+@import "../Main Styles/colours";
+
+div#education-wrapper {
+	// Sizing
+	width: 100%;
+
+	// Course Wrappers
+	& div.course-wrapper {
+		// Sizing
+		width: 100%;
+
+		// Content Alignment
+		display: flex;
+		justify-content: space-between;
+		padding-top: 1rem;
+		padding-bottom: 0.5rem;
+
+		// Border
+		border-top: 0.1rem solid $primary-colour;
+		&:first-of-type {
+			border-top: none;
+		}
+
+		// Image
+		& img.course-image {
+			// Sizing
+			height: 100%;
+			flex: 1 1 20%;
+		}
+
+		// Description
+		& div.info-wrapper {
+			// Sizing
+			height: 100%;
+			flex: 1 1 80%;
+
+			// Text
+			text-align: left;
+			padding-left: 1rem;
+		}
+	}
+}

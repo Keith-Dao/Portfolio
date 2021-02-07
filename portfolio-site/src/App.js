@@ -8,7 +8,9 @@ import NavBar from "./Components/Navbar/nav";
 import Footer from "./Components/Footer/footer";
 import Content from "./Components/Content/content";
 import Project from "./Components/Content/projects";
+import Education from "./Components/Content/education";
 
+// Pictures
 import picture from "./Components/Content/images/test.png";
 import picture2 from "./Components/Content/images/test2.png";
 
@@ -53,8 +55,8 @@ const App = () => {
 			),
 		},
 		{
-			header: "about me",
-			content: <div>This is where info about me would go.</div>,
+			header: "education",
+			content: <Education />,
 		},
 		{
 			header: "social",

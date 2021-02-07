@@ -1,0 +1,37 @@
+div#education-wrapper {
+  width: 100%;
+}
+
+div#education-wrapper div.course-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-top: 0.1rem solid #333;
+}
+
+div#education-wrapper div.course-wrapper:first-of-type {
+  border-top: none;
+}
+
+div#education-wrapper div.course-wrapper img.course-image {
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+}
+
+div#education-wrapper div.course-wrapper div.info-wrapper {
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
+  text-align: left;
+  padding-left: 1rem;
+}
+/*# sourceMappingURL=education.css.map */
