@@ -164,6 +164,7 @@ div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow
   -ms-flex-line-pack: center;
       align-content: center;
   color: inherit;
+  text-align: center;
 }
 
 div#project-wrapper div#slideshow-wrapper div#slideshow-controller div#slideshow-description-wrapper div#slideshow-link-wrapper a#slideshow-link {
