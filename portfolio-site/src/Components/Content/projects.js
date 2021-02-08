@@ -1,6 +1,36 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./projects.css";
 
+// Pictures
+import picture from "./images/test.png";
+import picture2 from "./images/test2.png";
+
+const projects = [
+	{
+		name: "Placeholder project 1",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
+		link: "https://www.google.com",
+		image: picture,
+	},
+	{
+		name: "Placeholder project 2",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
+		link: "https://www.youtube.com",
+		image: picture2,
+		theme: "dark",
+	},
+	{
+		name: "Placeholder project 3",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
+		link: "https://www.youtube.com",
+		image: "",
+		theme: "dark",
+	},
+];
+
 // Layout Selector
 const LayoutSelector = ({ toggleLayout, showSlideShow }) => {
 	return (
@@ -30,7 +60,10 @@ const SlideShow = ({ showSlideShow, projects, setSlideIndex, slideIndex }) => {
 			className={showSlideShow ? "" : "hide"}
 			style={{ backgroundImage: `url(${projects[slideIndex].image})` }}
 		>
-			<img src={projects[slideIndex].image} alt="project screenshot" />
+			<img
+				src={projects[slideIndex].image}
+				alt={`${projects[slideIndex].name} screenshot`}
+			/>
 			<div id="slideshow-controller" className={projects[slideIndex].theme}>
 				<div className="slideshow-arrow-wrapper">
 					<div
@@ -121,9 +154,10 @@ const Grid = ({ showSlideShow, projects }) => {
 };
 
 // Project section
-const Project = ({ showSlideShow, toggleSlideShow, projects }) => {
+const Project = () => {
 	// Slideshow
 	const [slideIndex, setSlideIndex] = useState(0);
+	const [showSlideShow, toggleSlideShow] = useState(true);
 
 	// Toggle between slide show and grid
 	const toggleLayout = () => {
