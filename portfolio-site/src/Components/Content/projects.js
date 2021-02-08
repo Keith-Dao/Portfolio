@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./projects.css";
 
 // Layout Selector
-const LayoutSelector = (props) => {
+const LayoutSelector = ({ toggleLayout, showSlideShow }) => {
 	return (
 		<div id="layout-selector">
 			<label>
@@ -10,12 +10,12 @@ const LayoutSelector = (props) => {
 					<input
 						type="checkbox"
 						className="toggle-state"
-						onClick={props.toggleLayout}
+						onClick={toggleLayout}
 					/>
 					<div className="toggle-indicator" />
 				</div>
 				<div className="label-text">
-					{props.showSlideShow ? "Slide Show" : "Grid"}
+					{showSlideShow ? "Slide Show" : "Grid"}
 				</div>
 			</label>
 		</div>
@@ -23,39 +23,34 @@ const LayoutSelector = (props) => {
 };
 
 // Slide show
-const SlideShow = (props) => {
-	let slideIndex = props.slideIndex;
-	let setSlideIndex = props.setSlideIndex;
+const SlideShow = ({ showSlideShow, projects, setSlideIndex, slideIndex }) => {
 	return (
 		<div
 			id="slideshow-wrapper"
-			className={props.showSlideShow ? "" : "hide"}
-			style={{ backgroundImage: `url(${props.projects[slideIndex].image})` }}
+			className={showSlideShow ? "" : "hide"}
+			style={{ backgroundImage: `url(${projects[slideIndex].image})` }}
 		>
-			<img src={props.projects[slideIndex].image} alt="project screenshot" />
-			<div
-				id="slideshow-controller"
-				className={props.projects[slideIndex].theme}
-			>
+			<img src={projects[slideIndex].image} alt="project screenshot" />
+			<div id="slideshow-controller" className={projects[slideIndex].theme}>
 				<div className="slideshow-arrow-wrapper">
 					<div
 						className="slideshow-arrow back"
 						onClick={() => {
 							setSlideIndex(
-								(slideIndex - 1 + props.projects.length) % props.projects.length
+								(slideIndex - 1 + projects.length) % projects.length
 							);
 						}}
 					/>
 				</div>
 				<div id="slideshow-description-wrapper">
-					<div id="slideshow-title">{props.projects[slideIndex].name}</div>
+					<div id="slideshow-title">{projects[slideIndex].name}</div>
 					<div id="slideshow-description">
-						{props.projects[slideIndex].description}
+						{projects[slideIndex].description}
 					</div>
 					<div id="slideshow-link-wrapper">
 						<a
 							id="slideshow-link"
-							href={props.projects[slideIndex].link}
+							href={projects[slideIndex].link}
 							target="_blank"
 							rel="noreferrer"
 						>
@@ -67,12 +62,12 @@ const SlideShow = (props) => {
 					<div
 						className="slideshow-arrow forward"
 						onClick={() => {
-							setSlideIndex((slideIndex + 1) % props.projects.length);
+							setSlideIndex((slideIndex + 1) % projects.length);
 						}}
 					/>
 				</div>
 				<div id="slideshow-jumper-wrapper">
-					{props.projects.map((project, index) => {
+					{projects.map((project, index) => {
 						return (
 							<div
 								className={
@@ -94,11 +89,11 @@ const SlideShow = (props) => {
 };
 
 // Grid
-const Grid = (props) => {
+const Grid = ({ showSlideShow, projects }) => {
 	const grid_item_width = 5;
 	return (
-		<div id="grid-wrapper" className={props.showSlideShow ? "hide" : ""}>
-			{props.projects.map((project, index) => {
+		<div id="grid-wrapper" className={showSlideShow ? "hide" : ""}>
+			{projects.map((project, index) => {
 				return (
 					<div key={`project-${index}`} className="project-wrapper">
 						<div className="project-title">
@@ -126,16 +121,16 @@ const Grid = (props) => {
 };
 
 // Project section
-const Project = (props) => {
+const Project = ({ showSlideShow, toggleSlideShow, projects }) => {
 	// Slideshow
 	const [slideIndex, setSlideIndex] = useState(0);
 
 	// Toggle between slide show and grid
 	const toggleLayout = () => {
-		if (!props.showSlideShow) {
+		if (!showSlideShow) {
 			setSlideIndex(0);
 		}
-		props.toggleSlideShow((prev) => !prev);
+		toggleSlideShow((prev) => !prev);
 	};
 
 	// Automatic slide changer
@@ -143,13 +138,13 @@ const Project = (props) => {
 	const startSlideShowTimer = () => {
 		const slideShowDuration = 10000; // In milliseconds
 		slideShowInterval = setInterval(() => {
-			setSlideIndex((slideIndex + 1) % props.projects.length);
+			setSlideIndex((slideIndex + 1) % projects.length);
 		}, slideShowDuration);
 	};
 
 	// Setup timer on startup
 	useEffect(() => {
-		if (props.showSlideShow) {
+		if (showSlideShow) {
 			startSlideShowTimer();
 			return () => {
 				clearInterval(slideShowInterval);
@@ -162,17 +157,17 @@ const Project = (props) => {
 			{/* Layout Selector */}
 			<LayoutSelector
 				toggleLayout={toggleLayout}
-				showSlideShow={props.showSlideShow}
+				showSlideShow={showSlideShow}
 			/>
 			{/* Slide Show */}
 			<SlideShow
-				showSlideShow={props.showSlideShow}
-				projects={props.projects}
+				showSlideShow={showSlideShow}
+				projects={projects}
 				setSlideIndex={setSlideIndex}
 				slideIndex={slideIndex}
 			/>
 			{/* Grid */}
-			<Grid showSlideShow={props.showSlideShow} projects={props.projects} />
+			<Grid showSlideShow={showSlideShow} projects={projects} />
 		</div>
 	);
 };

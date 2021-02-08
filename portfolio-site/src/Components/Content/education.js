@@ -16,18 +16,14 @@ const education = [
 ];
 
 // JSX Components
-const Course = (props) => {
+const Course = ({ name, years, location, image }) => {
 	return (
 		<div className="course-wrapper">
-			<img
-				src={props.image}
-				className="course-image"
-				alt={`${props.location} logo`}
-			/>
+			<img src={image} className="course-image" alt={`${location} logo`} />
 			<div className="info-wrapper">
-				<h1 className="course-name">{props.name}</h1>
-				<h2 className="course-location">{props.location}</h2>
-				<p className="course-duration">{props.years}</p>
+				<h1 className="course-name">{name}</h1>
+				<h2 className="course-location">{location}</h2>
+				<p className="course-duration">{years}</p>
 			</div>
 		</div>
 	);

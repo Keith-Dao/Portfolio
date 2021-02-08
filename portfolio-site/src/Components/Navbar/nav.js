@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./nav.css";
 
-const NavBar = (props) => {
+const NavBar = ({ sections }) => {
 	const [showNav, toggleNav] = useState(false);
 	const min_tablet_landscape_width = 768; // In pixels
 
@@ -26,7 +26,7 @@ const NavBar = (props) => {
 				/>
 			</label>
 			<div id="nav-links">
-				{props.sections.map((section) => (
+				{sections.map((section) => (
 					<a
 						href={
 							section.link != null

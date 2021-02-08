@@ -2,10 +2,10 @@ import React from "react";
 import Section from "./section";
 import "./content.css";
 
-const Content = (props) => {
+const Content = ({ sections }) => {
 	return (
 		<div id="content">
-			{props.sections
+			{sections
 				.filter((section) => section.content != null)
 				.map((section) => (
 					<Section
