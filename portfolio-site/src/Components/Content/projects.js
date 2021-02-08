@@ -26,7 +26,7 @@ const projects = [
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vitae nulla rutrum accumsan. Ut in molestie mauris.",
 		link: "https://www.youtube.com",
-		image: "",
+		image: picture2,
 		theme: "dark",
 	},
 ];
@@ -54,17 +54,31 @@ const LayoutSelector = ({ toggleLayout, showSlideShow }) => {
 
 // Slide show
 const SlideShow = ({ showSlideShow, projects, setSlideIndex, slideIndex }) => {
+	const [imageError, setImageError] = useState(false);
+
 	return (
 		<div
 			id="slideshow-wrapper"
 			className={showSlideShow ? "" : "hide"}
-			style={{ backgroundImage: `url(${projects[slideIndex].image})` }}
+			style={{
+				backgroundImage: imageError ? "" : `url(${projects[slideIndex].image})`,
+			}}
 		>
 			<img
 				src={projects[slideIndex].image}
 				alt={`${projects[slideIndex].name} screenshot`}
+				onError={() => {
+					setImageError(true);
+				}}
+				onLoad={() => {
+					setImageError(false);
+				}}
+				className={imageError ? "missing" : ""}
 			/>
-			<div id="slideshow-controller" className={projects[slideIndex].theme}>
+			<div
+				id="slideshow-controller"
+				className={imageError ? "dark" : projects[slideIndex].theme} // Set text to dark if the image is missing
+			>
 				<div className="slideshow-arrow-wrapper">
 					<div
 						className="slideshow-arrow back"

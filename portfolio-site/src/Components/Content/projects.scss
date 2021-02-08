@@ -127,9 +127,6 @@ div#project-wrapper {
 
 	// Slide show
 	& div#slideshow-wrapper {
-		// Sizing
-		max-height: 100vh;
-
 		// Appearance
 		opacity: 1;
 		visibility: visible;
@@ -153,9 +150,36 @@ div#project-wrapper {
 
 		// Image
 		& > img {
-			vertical-align: top;
+			// Sizing
 			width: 100%; /* max width */
+			min-height: 10rem;
+			max-height: 200vh;
+
+			// Content Alignment
+			vertical-align: top;
+
+			// Visibility
 			opacity: 0; /* make it transparent */
+
+			// Image is missing
+			&.missing {
+				// Visibility
+				opacity: 1; // Show alt text
+
+				// Sizing
+				min-height: 1rem;
+
+				@media screen and (min-width: $tablet-landscape-min-width) {
+					& {
+						// Sizing
+						height: 20rem;
+						max-height: 50vh;
+						display: block;
+					}
+				}
+			}
+			transition: min-height linear $transition-duration,
+				max-height linear $transition-duration;
 		}
 
 		// Controller
