@@ -82,6 +82,7 @@ div#project-wrapper div.hide {
 }
 
 div#project-wrapper div#slideshow-wrapper {
+  max-height: 200vh;
   opacity: 1;
   visibility: visible;
   background-size: contain;

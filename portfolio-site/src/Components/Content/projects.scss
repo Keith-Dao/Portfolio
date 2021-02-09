@@ -127,6 +127,10 @@ div#project-wrapper {
 
 	// Slide show
 	& div#slideshow-wrapper {
+		// Sizing
+		$max-height: 200vh;
+		max-height: $max-height;
+
 		// Appearance
 		opacity: 1;
 		visibility: visible;
@@ -153,7 +157,7 @@ div#project-wrapper {
 			// Sizing
 			width: 100%; /* max width */
 			min-height: 10rem;
-			max-height: 200vh;
+			max-height: $max-height;
 
 			// Content Alignment
 			vertical-align: top;
