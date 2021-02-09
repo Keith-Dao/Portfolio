@@ -100,12 +100,10 @@ div#project-wrapper div#slideshow-wrapper {
 
 div#project-wrapper div#slideshow-wrapper > img {
   width: 100%;
-  /* max width */
-  min-height: 10rem;
+  min-height: 30vh;
   max-height: 200vh;
   vertical-align: top;
   opacity: 0;
-  /* make it transparent */
   -webkit-transition: min-height linear 500ms, max-height linear 500ms;
   transition: min-height linear 500ms, max-height linear 500ms;
 }
@@ -113,12 +111,13 @@ div#project-wrapper div#slideshow-wrapper > img {
 div#project-wrapper div#slideshow-wrapper > img.missing {
   opacity: 1;
   min-height: 1rem;
+  max-height: 3rem;
 }
 
 @media screen and (min-width: 768px) {
   div#project-wrapper div#slideshow-wrapper > img.missing {
-    height: 20rem;
-    max-height: 50vh;
+    min-height: 20rem;
+    max-height: 20vh;
     display: block;
   }
 }

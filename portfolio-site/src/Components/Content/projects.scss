@@ -155,15 +155,15 @@ div#project-wrapper {
 		// Image
 		& > img {
 			// Sizing
-			width: 100%; /* max width */
-			min-height: 10rem;
+			width: 100%;
+			min-height: 30vh;
 			max-height: $max-height;
 
 			// Content Alignment
 			vertical-align: top;
 
 			// Visibility
-			opacity: 0; /* make it transparent */
+			opacity: 0;
 
 			// Image is missing
 			&.missing {
@@ -171,13 +171,14 @@ div#project-wrapper {
 				opacity: 1; // Show alt text
 
 				// Sizing
-				min-height: 1rem;
+				min-height: 1rem; // Transition into missing image
+				max-height: 3rem; // Transition out of missing image
 
 				@media screen and (min-width: $tablet-landscape-min-width) {
 					& {
 						// Sizing
-						height: 20rem;
-						max-height: 50vh;
+						min-height: 20rem; // Transition into missing image
+						max-height: 20vh; // Transition out of missing image
 						display: block;
 					}
 				}
