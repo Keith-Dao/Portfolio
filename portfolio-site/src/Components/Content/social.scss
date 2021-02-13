@@ -1,0 +1,23 @@
+@import "../Main Styles/breakpoints";
+
+div#social-wrapper {
+	// Content Alignment
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+
+	@media screen and (min-width: $tablet-landscape-min-width) {
+		flex-direction: row;
+	}
+
+	& div.social-link {
+		& a {
+			& img {
+				// Sizing
+				width: 100%;
+				max-width: 15rem;
+				max-height: 15rem;
+			}
+		}
+	}
+}

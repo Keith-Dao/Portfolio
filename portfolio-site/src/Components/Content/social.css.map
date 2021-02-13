@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,GAAG,AAAA,eAAe,CAAC;EAElB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;EAC7B,cAAc,EAAE,MAAM;CAgBtB;;AAdA,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EANpC,AAAA,GAAG,AAAA,eAAe,CAAC;IAOjB,cAAc,EAAE,GAAG;GAapB;;;AApBD,AAYG,GAZA,AAAA,eAAe,CAUf,GAAG,AAAA,YAAY,CACd,CAAC,CACA,GAAG,CAAC;EAEL,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,KAAK;CACjB",
+    "sources": [
+        "social.scss",
+        "../Main Styles/_breakpoints.scss"
+    ],
+    "names": [],
+    "file": "social.css"
+}

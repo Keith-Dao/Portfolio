@@ -1,4 +1,5 @@
 import React from "react";
+import "./social.css";
 // Pictures
 import github from "./images/github.png";
 import linkedin from "./images/linkedin.png";
