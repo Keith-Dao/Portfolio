@@ -4,7 +4,6 @@ import "./Components/Main Styles/main.css";
 // React components
 import Landing from "./Components/Landing/landing";
 import NavBar from "./Components/Navbar/nav";
-import Footer from "./Components/Footer/footer";
 import Content from "./Components/Content/content";
 import Project from "./Components/Content/projects";
 import Education from "./Components/Content/education";
@@ -36,7 +35,6 @@ const App = () => {
 				<NavBar sections={sections} />
 				<Content sections={sections} />
 			</div>
-			<Footer />
 		</div>
 	);
 };
