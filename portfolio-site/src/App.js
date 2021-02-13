@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/footer";
 import Content from "./Components/Content/content";
 import Project from "./Components/Content/projects";
 import Education from "./Components/Content/education";
+import Social from "./Components/Content/social";
 
 const App = () => {
 	const sections = [
@@ -22,8 +23,8 @@ const App = () => {
 			content: <Education />,
 		},
 		{
-			header: "social",
-			content: <div>This is where the social media links would go.</div>,
+			header: "social media",
+			content: <Social />,
 		},
 	];
 
