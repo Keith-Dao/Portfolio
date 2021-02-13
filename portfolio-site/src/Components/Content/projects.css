@@ -90,8 +90,8 @@ div#project-wrapper div#slideshow-wrapper {
   position: relative;
   margin: 0 auto;
   display: block;
-  -webkit-transform-origin: top;
-          transform-origin: top;
+  -webkit-transform-origin: center;
+          transform-origin: center;
   -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out, max-height 500ms ease-in-out, background 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out, max-height 500ms ease-in-out, background 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out, max-height 500ms ease-in-out, transform 500ms ease-in-out, background 500ms ease-in-out;

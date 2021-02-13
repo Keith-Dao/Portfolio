@@ -145,7 +145,7 @@ div#project-wrapper {
 		display: block;
 
 		// Animation
-		transform-origin: top;
+		transform-origin: center;
 		transition: opacity $transition-duration ease-in-out,
 			visibility $transition-duration ease-in-out,
 			max-height $transition-duration ease-in-out,
