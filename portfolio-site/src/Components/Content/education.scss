@@ -14,6 +14,7 @@ div#education-wrapper {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
+		align-items: stretch;
 		padding-top: 1rem;
 		padding-bottom: 0.5rem;
 
@@ -32,37 +33,49 @@ div#education-wrapper {
 		& img.course-image {
 			// Sizing
 			height: 100%;
-			flex: 1 1 20%;
+			max-height: 7rem;
+			flex: 1 1 5%;
+
+			// Positioning
+			margin: 0 auto;
 		}
 
 		// Description
 		& div.info-wrapper {
 			// Sizing
-			height: 100%;
-			max-width: 80%;
-			flex: 1 1 80%;
+			max-width: 95%;
+			flex: 1 1 95%;
 
 			// Text
-			text-align: center;
 			padding-left: 1rem;
 
 			// Positioning
 			margin: 0 auto;
+
+			// Content Alignment
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
 
 			@media screen and (min-width: $tablet-landscape-min-width) {
 				// Text
 				text-align: left;
 			}
 
-			& h1 {
-				// Font
-				font-size: 1.5rem;
-				font-weight: bold;
-			}
+			& div.vertical-center {
+				// Sizing
+				width: 100%;
 
-			& h2 {
-				// Font
-				font-size: 1rem;
+				& h1 {
+					// Font
+					font-size: 1.5rem;
+					font-weight: bold;
+				}
+
+				& h2 {
+					// Font
+					font-size: 1rem;
+				}
 			}
 		}
 	}
